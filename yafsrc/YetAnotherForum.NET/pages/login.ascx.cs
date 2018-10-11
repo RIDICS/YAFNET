@@ -352,8 +352,8 @@ namespace YAF.Pages
                     if (vokabularEnabled)
                     {
                         vokabularRegister.Visible = true;
-                        vokabularRegister.Text = this.GetTextFormatted("AUTH_CONNECT", "Google"); //TODO change texts
-                        vokabularRegister.ToolTip = this.GetTextFormatted("AUTH_CONNECT_HELP", "Google"); //TODO change texts
+                        vokabularRegister.Text = this.GetTextFormatted("AUTH_CONNECT", "Vokabular");
+                        vokabularRegister.ToolTip = this.GetTextFormatted("AUTH_CONNECT_HELP", "Vokabular");
                     }
                 }
                 else
@@ -537,7 +537,7 @@ namespace YAF.Pages
                                             this.GetTextFormatted(
                                                 "AUTH_CONNECT_ACCOUNT",
                                                 "Vokabular",
-                                                this.GetText("AUTH_CONNECT_GOOGLE"))//TODO Vokabular connect
+                                                this.GetText("AUTH_CONNECT_VOKABULAR"))
                                     });
 
                                 if (vokabularEnabled)

@@ -4283,6 +4283,7 @@ Spoiler Content
     <Resource tag="AUTH_CONNECT_ACCOUNT">Connect an Existing forums account with your {0} account You need to login thru the forums first. {1}</Resource>
     <Resource tag="AUTH_CONNECT_FACEBOOK">&lt;strong&gt;The Facebook email address must match the forum user email address to connect the user.&lt;/strong&gt;</Resource>
     <Resource tag="AUTH_CONNECT_GOOGLE">&lt;strong&gt;The Google email address must match the forum user email address to connect the user.&lt;/strong&gt;</Resource>
+    <Resource tag="AUTH_CONNECT_VOKABULAR">&lt;strong&gt;The Vokabular email address must match the forum user email address to connect the user.&lt;/strong&gt;</Resource>
     <Resource tag="AUTH_CONNECT_HELP">Login or Register with {0} or connect an existing User Account with {0}.</Resource>
     <Resource tag="AUTH_CONNECT_TWITTER">&lt;strong&gt;The Twitter user name must match the forum user name to connect the user.&lt;/strong&gt;</Resource>
     <Resource tag="AUTH_LOGIN_EXISTING">Login with an user Account that is connected with {0}. Or if no account is found a new account will be automatically created in the forums.</Resource>
@@ -4296,6 +4297,7 @@ Spoiler Content
     <Resource tag="FACEBOOK_LOGIN">Login with Facebook</Resource>
     <Resource tag="FORUM_LOGIN">Přihlásit do fóra</Resource>
     <Resource tag="GOOGLE_LOGIN">Login with Google</Resource>
+    <Resource tag="VOKABULAR_LOGIN">Login with Vokabular</Resource>
     <Resource tag="LOSTPASSWORD">Ztracené heslo</Resource>
     <Resource tag="PASSWORD">Heslo:</Resource>
     <Resource tag="PASSWORD_ERROR">Zadané uživatelské jméno nebo heslo není správné. Zkuste to prosím znovu.</Resource>
@@ -4308,11 +4310,14 @@ Spoiler Content
     <Resource tag="SSO_FACEBOOK_FAILED">The Facebook Login failed, User does not exists, or the account is not connected.</Resource>
     <Resource tag="SSO_FACEBOOK_FAILED2">The Facebook Login failed, an user account with the same email address as the facebook account already exists, please try to connect you your forum account instead.</Resource>
     <Resource tag="SSO_FACEBOOK_FAILED3">The Facebook Login failed, because the user does not provide a email address for the account.</Resource>
-    <Resource tag="SSO_FACEBOOKNAME_NOTMATCH">The Facebook email address must match the Forum email adress!</Resource>
+    <Resource tag="SSO_FACEBOOKNAME_NOTMATCH">The Facebook email address must match the Forum email address!</Resource>
     <Resource tag="SSO_FAILED">New Registrations are disabled.</Resource>
     <Resource tag="SSO_GOOGLE_FAILED">The Google Login failed, User does not exists, or the account is not connected.</Resource>
     <Resource tag="SSO_GOOGLE_FAILED2">The Google Login failed, an user account with the same email address as the Google account already exists, please try to connect you your forum account instead.</Resource>
-    <Resource tag="SSO_GOOGLENAME_NOTMATCH">The Google email address must match the Forum email adress!</Resource>
+    <Resource tag="SSO_GOOGLENAME_NOTMATCH">The Google email address must match the Forum email address!</Resource>
+    <Resource tag="SSO_VOKABULAR_FAILED">The Vokabular Login failed, User does not exists, or the account is not connected.</Resource>
+    <Resource tag="SSO_VOKABULAR_FAILED2">The Vokabular Login failed, an user account with the same email address as the Vokabular account already exists, please try to connect you your forum account instead.</Resource>
+    <Resource tag="SSO_VOKABULARNAME_NOTMATCH">The Vokabular email address must match the Forum email address!</Resource>
     <Resource tag="SSO_ID_NOTMATCH">The User Account is not connected or not found</Resource>
     <Resource tag="SSO_TWITTER_FAILED">The Twitter Login failed, User does not exists.</Resource>
     <Resource tag="SSO_TWITTER_FAILED2">The Twitter Login failed, an user account with the same user name as the Twitter account already exists, please try to connect you your forum account instead.</Resource>

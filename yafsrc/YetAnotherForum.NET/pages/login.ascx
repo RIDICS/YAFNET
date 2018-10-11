@@ -95,7 +95,7 @@
                                            </asp:PlaceHolder>
                                            <asp:PlaceHolder id="VokabularHolder" runat="server" Visible="false">
                                                <a id="VokabularLogin" runat="server" class="authLogin googleLogin">
-                                                   <YAF:LocalizedLabel ID="LocalizedLabel16" runat="server" LocalizedTag="GOOGLE_LOGIN" />
+                                                   <YAF:LocalizedLabel ID="LocalizedLabel16" runat="server" LocalizedTag="VOKABULAR_LOGIN" />
                                                </a>
                                            </asp:PlaceHolder>
                                            <asp:Button runat="server" ID="Cancel" CssClass="pbutton" Visible="False" OnClick="CancelAuthLoginClick" />

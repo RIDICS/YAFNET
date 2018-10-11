@@ -196,7 +196,7 @@ namespace YAF.Core.Services.Auth
 
             if (!yafUser.GoogleId.Equals(vokabularUser.UserID))
             {
-                message = YafContext.Current.Get<ILocalization>().GetText("LOGIN", "SSO_GOOGLE_FAILED2");//TODO Vokabular sso failed
+                message = YafContext.Current.Get<ILocalization>().GetText("LOGIN", "SSO_VOKABULAR_FAILED2");
 
                 return false;
             }
@@ -248,7 +248,7 @@ namespace YAF.Core.Services.Auth
                 // Match the Email address?
                 if (vokabularUser.Email != YafContext.Current.CurrentUserData.Email)
                 {
-                    message = YafContext.Current.Get<ILocalization>().GetText("LOGIN", "SSO_GOOGLENAME_NOTMATCH");//TODO Vokabular sso failed
+                    message = YafContext.Current.Get<ILocalization>().GetText("LOGIN", "SSO_VOKABULARNAME_NOTMATCH");
 
                     return false;
                 }
@@ -274,7 +274,7 @@ namespace YAF.Core.Services.Auth
                 return true;
             }
 
-            message = YafContext.Current.Get<ILocalization>().GetText("LOGIN", "SSO_GOOGLE_FAILED");//TODO Vokabular sso failed
+            message = YafContext.Current.Get<ILocalization>().GetText("LOGIN", "SSO_VOKABULAR_FAILED");
             return false;
         }
 
