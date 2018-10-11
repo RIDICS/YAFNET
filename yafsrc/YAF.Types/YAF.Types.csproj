@@ -186,6 +186,8 @@
     <Compile Include="Objects\GoogleUser.cs" />
     <Compile Include="Objects\MessageNotification.cs" />
     <Compile Include="Objects\SettingsProfilePropertyColumn.cs" />
+    <Compile Include="Objects\VokabularTokens.cs" />
+    <Compile Include="Objects\VokabularUser.cs" />
     <Compile Include="ThemeResources.cs" />
     <Compile Include="CodeContracts.cs" />
     <Compile Include="Constants\CollapsiblePanelState.cs" />

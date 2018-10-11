@@ -266,9 +266,13 @@ namespace YAF.Pages
             var googleHolder = this.Login1.FindControlAs<PlaceHolder>("GoogleHolder");
             var googleLogin = this.Login1.FindControlAs<HtmlAnchor>("GoogleLogin");
 
+            var vokabularHolder = this.Login1.FindControlAs<PlaceHolder>("VokabularHolder");
+            var vokabularLogin = this.Login1.FindControlAs<HtmlAnchor>("VokabularLogin");
+
             var facebookRegister = this.Login1.FindControlAs<LinkButton>("FacebookRegister");
             var twitterRegister = this.Login1.FindControlAs<LinkButton>("TwitterRegister");
             var googleRegister = this.Login1.FindControlAs<LinkButton>("GoogleRegister");
+            var vokabularRegister = this.Login1.FindControlAs<LinkButton>("VokabularRegister");
 
             userName.Focus();
 
@@ -318,6 +322,7 @@ namespace YAF.Pages
                 var facebookEnabled = Config.FacebookAPIKey.IsSet() && Config.FacebookSecretKey.IsSet();
                 var twitterEnabled = Config.TwitterConsumerKey.IsSet() && Config.TwitterConsumerSecret.IsSet();
                 var googleEnabled = Config.GoogleClientID.IsSet() && Config.GoogleClientSecret.IsSet();
+                var vokabularEnabled = Config.VokabularClientID.IsSet() && Config.VokabularClientSecret.IsSet();
 
                 string loginAuth = this.Get<HttpRequestBase>().QueryString.GetFirstOrDefault("auth");
 
@@ -343,6 +348,13 @@ namespace YAF.Pages
                         googleRegister.Text = this.GetTextFormatted("AUTH_CONNECT", "Google");
                         googleRegister.ToolTip = this.GetTextFormatted("AUTH_CONNECT_HELP", "Google");
                     }
+
+                    if (vokabularEnabled)
+                    {
+                        vokabularRegister.Visible = true;
+                        vokabularRegister.Text = this.GetTextFormatted("AUTH_CONNECT", "Google"); //TODO change texts
+                        vokabularRegister.ToolTip = this.GetTextFormatted("AUTH_CONNECT_HELP", "Google"); //TODO change texts
+                    }
                 }
                 else
                 {
@@ -351,6 +363,7 @@ namespace YAF.Pages
                     facebookRegister.Visible = false;
                     twitterRegister.Visible = false;
                     googleRegister.Visible = false;
+                    vokabularRegister.Visible = false;
 
                     userNameRow.Visible = false;
                     passwordRow.Visible = false;
@@ -503,6 +516,52 @@ namespace YAF.Pages
                             }
 
                             break;
+                        case AuthService.vokabular:
+                            {
+                                vokabularHolder.Visible = vokabularEnabled;
+
+                                singleSignOnOptions.Items.Clear();
+
+                                singleSignOnOptions.Items.Add(
+                                    new ListItem
+                                    {
+                                        Value = "login",
+                                        Text = this.GetTextFormatted("AUTH_LOGIN_EXISTING", "Vokabular"),
+                                        Selected = true
+                                    });
+                                singleSignOnOptions.Items.Add(
+                                    new ListItem
+                                    {
+                                        Value = "connect",
+                                        Text =
+                                            this.GetTextFormatted(
+                                                "AUTH_CONNECT_ACCOUNT",
+                                                "Vokabular",
+                                                this.GetText("AUTH_CONNECT_GOOGLE"))//TODO Vokabular connect
+                                    });
+
+                                if (vokabularEnabled)
+                                {
+                                    try
+                                    {
+                                        var vokabularLoginUrl = YafSingleSignOnUser.GenerateLoginUrl(AuthService.vokabular, true);
+
+                                        vokabularLogin.Attributes.Add(
+                                            "onclick",
+                                            "location.href='{0}'".FormatWith(vokabularLoginUrl));
+                                    }
+                                    catch (Exception exception)
+                                    {
+                                        this.Logger.Warn(
+                                            exception,
+                                            "YAF encountered an error when loading the Google Login Link");
+
+                                        vokabularHolder.Visible = false;
+                                    }
+                                }
+                            }
+
+                            break;
                     }
                 }
             }
@@ -553,6 +612,17 @@ namespace YAF.Pages
         {
             YafBuildLink.Redirect(ForumPages.login, "auth={0}", "google");
         }
+
+        /// <summary>
+        /// Show the Google Login/Register Form
+        /// </summary>
+        /// <param name="sender">The sender.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+        protected void VokabularFormClick(object sender, EventArgs e)
+        {
+            YafBuildLink.Redirect(ForumPages.login, "auth={0}", "vokabular");
+        }
+
 
         /// <summary>
         /// Redirects to the Register Page

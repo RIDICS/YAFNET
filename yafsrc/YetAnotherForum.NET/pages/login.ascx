@@ -76,6 +76,7 @@
                                            <asp:LinkButton runat="server" ID="FacebookRegister" CssClass="authLogin facebookLogin" Visible="False" OnClick="FacebookFormClick"></asp:LinkButton>
                                            <asp:LinkButton runat="server" ID="TwitterRegister" CssClass="authLogin twitterLogin" Visible="False" OnClick="TwitterFormClick"></asp:LinkButton>
                                            <asp:LinkButton runat="server" ID="GoogleRegister" CssClass="authLogin googleLogin" Visible="False" OnClick="GoogleFormClick"></asp:LinkButton>
+                                           <asp:LinkButton runat="server" ID="VokabularRegister" CssClass="authLogin googleLogin" Visible="False" OnClick="VokabularFormClick"></asp:LinkButton>
                                           
                                            <asp:PlaceHolder id="FacebookHolder" runat="server" Visible="false">
                                               <a id="FacebookLogin" runat="server" class="authLogin facebookLogin">
@@ -90,6 +91,11 @@
                                            <asp:PlaceHolder id="GoogleHolder" runat="server" Visible="false">
                                               <a id="GoogleLogin" runat="server" class="authLogin googleLogin">
                                                    <YAF:LocalizedLabel ID="LocalizedLabel6" runat="server" LocalizedTag="GOOGLE_LOGIN" />
+                                               </a>
+                                           </asp:PlaceHolder>
+                                           <asp:PlaceHolder id="VokabularHolder" runat="server" Visible="false">
+                                               <a id="VokabularLogin" runat="server" class="authLogin googleLogin">
+                                                   <YAF:LocalizedLabel ID="LocalizedLabel16" runat="server" LocalizedTag="GOOGLE_LOGIN" />
                                                </a>
                                            </asp:PlaceHolder>
                                            <asp:Button runat="server" ID="Cancel" CssClass="pbutton" Visible="False" OnClick="CancelAuthLoginClick" />

@@ -47,6 +47,11 @@ namespace YAF.Types.Constants
         /// <summary>
         /// The google AUTH service
         /// </summary>
-        google
+        google,
+
+        /// <summary>
+        /// The google AUTH service
+        /// </summary>
+        vokabular
     }
 }

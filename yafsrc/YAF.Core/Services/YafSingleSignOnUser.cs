@@ -65,6 +65,11 @@ namespace YAF.Core.Services
                         return new Auth.Google().GenerateLoginUrl(generatePopUpUrl, connectCurrentUser);
                     }
 
+                case AuthService.vokabular:
+                {
+                    return new Auth.Vokabular().GenerateLoginUrl(generatePopUpUrl, connectCurrentUser);
+                }
+
                 default:
                     return string.Empty;
             }

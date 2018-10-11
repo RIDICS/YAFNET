@@ -146,6 +146,7 @@
     <Compile Include="Modules\DynamicServicesModule.cs" />
     <Compile Include="Modules\GeneralModule.cs" />
     <Compile Include="Modules\ServicesModule.cs" />
+    <Compile Include="Services\Auth\Vokabular.cs" />
     <Compile Include="Services\Cache\BannedIPEventCacheInvalidate.cs" />
     <Compile Include="Services\Cache\CategoryEventHandleCacheInvalidate.cs" />
     <Compile Include="Events\InitDatabaseProviderEvent.cs" />

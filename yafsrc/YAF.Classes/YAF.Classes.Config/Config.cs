@@ -359,6 +359,34 @@ namespace YAF.Classes
         }
 
         /// <summary>
+        /// Gets the Vokabular client ID.
+        /// </summary>
+        /// <value>
+        /// The Vokabular client ID.
+        /// </value>
+        public static string VokabularClientID
+        {
+            get
+            {
+                return GetConfigValueAsString("YAF.VokabularClientID");
+            }
+        }
+
+        /// <summary>
+        /// Gets the Vokabular client secret.
+        /// </summary>
+        /// <value>
+        /// The Vokabular client secret.
+        /// </value>
+        public static string VokabularClientSecret
+        {
+            get
+            {
+                return GetConfigValueAsString("YAF.VokabularClientSecret");
+            }
+        }
+
+        /// <summary>
         ///     Gets Facebook API Key.
         /// </summary>
         public static string FacebookAPIKey
