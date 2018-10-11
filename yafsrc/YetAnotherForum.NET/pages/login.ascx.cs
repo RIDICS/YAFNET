@@ -315,7 +315,7 @@ namespace YAF.Pages
             }
 
             if (this.Get<YafBoardSettings>().AllowSingleSignOn
-                && (Config.FacebookAPIKey.IsSet() || Config.TwitterConsumerKey.IsSet() || Config.GoogleClientID.IsSet()))
+                && (Config.FacebookAPIKey.IsSet() || Config.TwitterConsumerKey.IsSet() || Config.GoogleClientID.IsSet() || Config.VokabularClientID.IsSet()))
             {
                 singleSignOnRow.Visible = true;
 
