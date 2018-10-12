@@ -1,11 +1,13 @@
 @midcolor: #444444;
 @lowcolor: #222222;
 @main-color: #388E3C;
-@text-color: #4CAF50;
+@text-color: #ffffff;
+@light-main-color: #4CAF50;
 @hover-color-dark: #2E7D32;
+@import url(https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic);
 
 .yafnet {
-    font-family: arial, helvetica, "lucida grande", verdana, sans-serif;
+    font-family: "PT Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 9pt;
     color: #333333;
 
@@ -126,10 +128,6 @@
     }
 
     input, select {
-        font-family: verdana, sans-serif;
-        -moz-border-radius: 5px;
-        -webkit-border-radius: 5px;
-        border-radius: 5px;
         font-size: 9pt;
         color: #3b3b3b;
         padding: 5px;
@@ -160,9 +158,6 @@
     }
 
     .RecoveryButtton, .LoginButton {
-        -webkit-border-radius: .5em;
-        -moz-border-radius: .5em;
-        border-radius: .5em;
         -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.2);
         -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.2);
         box-shadow: 0 1px 2px rgba(0,0,0,0.2);
@@ -218,21 +213,21 @@
 
     #yafheader {
         font-size: 90%;
+        background-color: @main-color;
+        margin: 0 -8px 0 -8px;
 
         .outerMenuContainer {
-            border: 1px solid #dddddd;
             padding: 0px 8px 0px 8px;
             box-sizing: border-box;
-            background-color: #eeeeee;
         }
 
         ul li {
             margin: 0;
-            border-left: 1px solid #dddddd;
 
             a {
                 font-weight: bold;
                 padding: 2px;
+                color: @text-color;
             }
         }
 
@@ -267,7 +262,6 @@
             margin-bottom: 10px;
             border: 1px solid #deb7b7;
             padding: 5px 10px 5px 30px;
-            border-radius: 10px;
         }
     }
 
@@ -323,7 +317,6 @@
     .MessageDetails {
         background-color: rgba(25, 25, 25, 0.1);
         border: 1px inset rgba(25, 25, 25, 0.1);
-        font-family: Consolas,"Lucida Console",Monaco,monospace;
         font-size: 0.9em;
         margin-top: 2em;
         padding: 5px;
@@ -405,9 +398,6 @@
         color: #888888;
         font-size: 9pt;
         text-align: center;
-        -moz-border-radius: 3px;
-        border-radius: 3px;
-        -webkit-border-radius: 3px;
     }
 
     div.postdiv {
@@ -425,6 +415,33 @@
         margin-top: 10px;
         margin-bottom: 10px;
         padding: 2px;
+    }
+
+    .breadcrumb {
+        background-color: #e6efe6;
+        margin: 0 -8px 0 -8px;
+        padding: 8px 15px;
+        font-size: 14px;
+        font-weight: normal;
+        
+        a {
+            &:link,
+            &:visited {
+                color: #337ab7;
+                text-decoration: none;
+            }
+
+            &:hover,
+            &:focus {
+                color: #23527c;
+                text-decoration: underline;
+            }
+        }
+
+        span.active,
+        .divider {
+            color: #777;
+        }
     }
 
     .edit {
@@ -493,26 +510,26 @@
     }
 
     a {
-        color: @text-color;
+        color: @light-main-color;
         text-decoration: none;
 
         &:link {
-            color: @text-color;
+            color: @light-main-color;
             text-decoration: none;
         }
 
         &:visited {
-            color: @text-color;
+            color: @light-main-color;
             text-decoration: none;
         }
 
         &:active {
-            color: @text-color;
+            color: @light-main-color;
             text-decoration: none;
         }
 
         &:hover {
-            color: @text-color;
+            color: @light-main-color;
             text-decoration: underline;
         }
 
@@ -640,7 +657,6 @@
         margin: 3px 0px 3px 3px;
         padding-right: 2px;
         text-decoration: none;
-        font-family: Arial;
         font-weight: bold;
         border: 1px solid #dcdcdc;
         -moz-box-shadow: inset 0px 1px 0px 0px #ffffff;
@@ -649,9 +665,6 @@
         background: -webkit-gradient(linear,left top,left bottom,color-stop(0.05,#ededed),color-stop(1,#dfdfdf));
         background: -moz-linear-gradient(center top,#ededed 5%,#dfdfdf 100%);
         filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed',endColorstr='#dfdfdf');
-        -moz-border-radius: 6px;
-        -webkit-border-radius: 6px;
-        border-radius: 6px;
         -webkit-text-shadow: 1px 1px 0px #ffffff;
         text-shadow: 1px 1px 0px #ffffff;
         padding: 5px 4px 5px 7px;
@@ -669,7 +682,6 @@
         margin: 3px 0px 3px 3px;
         padding-right: 2px;
         text-decoration: none;
-        font-family: Arial;
         font-weight: bold;
         border: solid 1px #cccccc;
         border: 1px solid #dcdcdc;
@@ -679,9 +691,6 @@
         background: -webkit-gradient(linear,left top,left bottom,color-stop(0.05,#ededed),color-stop(1,#dfdfdf));
         background: -moz-linear-gradient(center top,#ededed 5%,#dfdfdf 100%);
         filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed',endColorstr='#dfdfdf');
-        -moz-border-radius: 6px;
-        -webkit-border-radius: 6px;
-        border-radius: 6px;
         -webkit-text-shadow: 1px 1px 0px #ffffff;
         text-shadow: 1px 1px 0px #ffffff;
 
@@ -727,8 +736,6 @@
         margin: 4px 2px 4px 4px;
         padding-right: 2px;
         text-decoration: none;
-        font-family: Arial;
-        font-family: arial;
         font-weight: bold;
 
         span {
@@ -767,9 +774,6 @@
     }
 
     a.yafcssimagebutton {
-        -moz-border-radius: 3px;
-        -webkit-border-radius: 3px;
-        border-radius: 3px;
         background-color: #eeeeee;
         color: #555555;
         display: block;
@@ -779,7 +783,6 @@
         padding-right: 2px;
         text-decoration: none;
         text-transform: uppercase;
-        font-family: Arial;
         font-weight: bold;
         border: solid 1px #a0a0a0;
 
@@ -828,7 +831,6 @@
         li {
             padding: 5px 10px 5px 10px;
             margin: 0;
-            font-family: arial, helvetica, "lucida grande", verdana, sans-serif;
             font-size: 9pt;
             color: #333333;
             font-weight: normal;
@@ -857,9 +859,6 @@
         *display: inline;
         vertical-align: baseline;
         border: 1px solid black;
-        -webkit-border-radius: 4px;
-        -moz-border-radius: 4px;
-        border-radius: 4px;
     }
 
     .PopMenuLink {
@@ -868,9 +867,6 @@
         *display: inline;
         vertical-align: baseline;
         border: 1px solid black;
-        -webkit-border-radius: 4px;
-        -moz-border-radius: 4px;
-        border-radius: 4px;
         background: url("DownArrow.png") transparent no-repeat 100% 50%;
     }
 
@@ -887,9 +883,6 @@
     }
 
     .StandardButton {
-        -webkit-border-radius: .5em;
-        -moz-border-radius: .5em;
-        border-radius: .5em;
         -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.2);
         -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.2);
         box-shadow: 0 1px 2px rgba(0,0,0,0.2);
@@ -938,8 +931,6 @@
         padding: 2px 4px 2px 4px;
         background-color: red;
         height: 20px;
-        -webkit-border-radius: 0.4em;
-        border-radius: 0.4em;
         -webkit-box-shadow: 1px 1px 1px gray;
         box-shadow: 1px 1px 1px gray;
 
@@ -999,7 +990,6 @@
   padding:6px;
   border:1px solid @main-color;
   background-color:#ffffff;
-  border-radius:5px;
   div {
     text-align:right;
     display:inline;
@@ -1027,7 +1017,6 @@
   display:block;
 }
 .gotoPageForm {
-  font-family:Arial, Verdana, Tahoma;
   background-color:#f0f0f0;
   border:solid 1px #555555;
   width:80px;
@@ -1078,9 +1067,6 @@
         box-shadow: none;
         color: #ffffff;
         background: #666666;
-        -webkit-border-radius: 1px;
-        -moz-border-radius: 1px;
-        border-radius: 1px;
         text-align: center;
         font-size: 10pt;
 

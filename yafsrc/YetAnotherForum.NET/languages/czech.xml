@@ -4316,7 +4316,7 @@ Spoiler Content
     <Resource tag="SSO_GOOGLE_FAILED2">The Google Login failed, an user account with the same email address as the Google account already exists, please try to connect you your forum account instead.</Resource>
     <Resource tag="SSO_GOOGLENAME_NOTMATCH">The Google email address must match the Forum email address!</Resource>
     <Resource tag="SSO_VOKABULAR_FAILED">The Vokabular Login failed, User does not exists, or the account is not connected.</Resource>
-    <Resource tag="SSO_VOKABULAR_FAILED2">The Vokabular Login failed, an user account with the same email address as the Vokabular account already exists, please try to connect you your forum account instead.</Resource>
+    <Resource tag="SSO_VOKABULAR_FAILED2">The Vokabular Login failed, authentication failed.</Resource>
     <Resource tag="SSO_VOKABULARNAME_NOTMATCH">The Vokabular email address must match the Forum email address!</Resource>
     <Resource tag="SSO_ID_NOTMATCH">The User Account is not connected or not found</Resource>
     <Resource tag="SSO_TWITTER_FAILED">The Twitter Login failed, User does not exists.</Resource>
