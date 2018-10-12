@@ -11,6 +11,10 @@
     font-size: 9pt;
     color: #333333;
 
+    .ui-corner-all {
+        border-radius: 0px !important;
+    }
+
     tr.forumRowTitle, dt.header1, td.header1 {
         background-color: @main-color;
         color: #ffffff;
@@ -212,7 +216,8 @@
     }
 
     #yafheader {
-        font-size: 90%;
+        font-size: 18px;
+        padding: 5px 10px;
         background-color: @main-color;
         margin: 0 -8px 0 -8px;
 
@@ -419,11 +424,11 @@
 
     .breadcrumb {
         background-color: #e6efe6;
-        margin: 0 -8px 0 -8px;
+        margin: 0 -8px 15px -8px;
         padding: 8px 15px;
         font-size: 14px;
         font-weight: normal;
-        
+
         a {
             &:link,
             &:visited {
