@@ -361,12 +361,6 @@ namespace YAF.Core.Services.Auth
         /// </returns>
         private bool CreateVokabularUser(VokabularUser vokabularUser, int userGender, out string message)
         {
-            /*if (YafContext.Current.Get<YafBoardSettings>().DisableRegistrations)
-            {
-                message = YafContext.Current.Get<ILocalization>().GetText("LOGIN", "SSO_FAILED");
-                return false;
-            }*/
-
             // Check user for bot
             var spamChecker = new YafSpamCheck();
             string result;
