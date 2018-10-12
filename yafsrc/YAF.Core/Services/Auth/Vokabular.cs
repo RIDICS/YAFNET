@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Text;
 using System.Web;
@@ -30,9 +31,11 @@ namespace YAF.Core.Services.Auth
         /// </summary>
         private IDictionary<string, string> UserIpLocator { get; set; }
 
+        private const string Issuer = "http://localhost:5000";
         private const string AuthorizationEndpoint = "http://localhost:5000/connect/authorize";
         private const string TokenEndpoint = "http://localhost:5000/connect/token";
         private const string UserInfoEndpoint = "http://localhost:5000/connect/userinfo?alt=json";
+        private const string IntrospectEndpoint = "http://localhost:5000/connect/introspect";
         private const string Scopes = "openid profile email address";
     
         /// <summary>
@@ -75,10 +78,10 @@ namespace YAF.Core.Services.Auth
                 HttpUtility.UrlEncode(GenerateLoginUrl(false)),
                 "authorization_code");
 
-             var response = AuthUtilities.WebRequest(
-                  AuthUtilities.Method.POST,
-                  TokenEndpoint,
-                  data);
+            var response = AuthUtilities.WebRequest(
+                AuthUtilities.Method.POST,
+                TokenEndpoint,
+                data);
 
             return response.FromJson<VokabularTokens>();
         }
@@ -139,14 +142,41 @@ namespace YAF.Core.Services.Auth
             return authUrl;
         }
 
+        public bool LoginOrCreateUser(HttpRequest request, string parameters, out string message)
+        {
+            throw new NotImplementedException(); //TODO
+        }
+
+        public bool ValidateAccessToken(string accessToken)
+        {
+            var headers = new List<KeyValuePair<string, string>>
+            {
+                new KeyValuePair<string, string>(
+                    "Authorization",
+                    "Basic {0}".FormatWith(Convert.ToBase64String(Encoding.UTF8.GetBytes(
+                        $"{Config.VokabularClientID}:{Config.VokabularClientSecret}"))))
+            };
+
+            var data = "token={0}&token_type_hint=access_token".FormatWith(accessToken);
+
+            var response = AuthUtilities.WebRequest(
+                AuthUtilities.Method.POST,
+                IntrospectEndpoint,
+                data,
+                headers
+            );
+
+            return response.FromJson<VokabularValidationResponse>().Active;
+        }
+
         /// <summary>
         /// Logins the or create user.
         /// </summary>
         /// <param name="request">
         /// The request.
         /// </param>
-        /// <param name="parameters">
-        /// The access token.
+        /// <param name="tokens">
+        /// The access and ID token.
         /// </param>
         /// <param name="message">
         /// The message.
@@ -154,7 +184,7 @@ namespace YAF.Core.Services.Auth
         /// <returns>
         /// Returns if Login was successful or not
         /// </returns>
-        public bool LoginOrCreateUser(HttpRequest request, string parameters, out string message)
+        public bool LoginOrCreateUser(HttpRequest request, VokabularTokens tokens, out string message)
         {
             if (!YafContext.Current.Get<YafBoardSettings>().AllowSingleSignOn)
             {
@@ -163,7 +193,7 @@ namespace YAF.Core.Services.Auth
                 return false;
             }
 
-            var vokabularUser = this.GetVokabularUser(request, parameters);
+            var vokabularUser = this.GetVokabularUser(request, tokens.AccessToken);
 
             var userGender = 0;
 
@@ -189,23 +219,24 @@ namespace YAF.Core.Services.Auth
                 return this.CreateVokabularUser(vokabularUser, userGender, out message);
             }
 
-            var yafUser = YafUserProfile.GetProfile(userName);
-
             var yafUserData =
                 new CombinedUserDataHelper(YafContext.Current.Get<MembershipProvider>().GetUser(userName, true));
 
-            if (!yafUser.GoogleId.Equals(vokabularUser.UserID))
+            var handler = new JwtSecurityTokenHandler();
+            var token = (JwtSecurityToken) handler.ReadToken(tokens.IDToken);
+            if (token.Subject == vokabularUser.Subject 
+                && token.Audiences.Contains(Config.VokabularClientID) 
+                && token.Audiences.Count() == 1 
+                && token.Issuer == Issuer)//&& ValidateAccessToken(tokens.AccessToken))
             {
-                message = YafContext.Current.Get<ILocalization>().GetText("LOGIN", "SSO_VOKABULAR_FAILED2");
+                YafSingleSignOnUser.LoginSuccess(AuthService.vokabular, userName, yafUserData.UserID, true);
 
-                return false;
+                message = string.Empty;
+                return true;
             }
 
-            YafSingleSignOnUser.LoginSuccess(AuthService.vokabular, userName, yafUserData.UserID, true);
-
-            message = string.Empty;
-
-            return true;
+            message = YafContext.Current.Get<ILocalization>().GetText("LOGIN", "SSO_VOKABULAR_FAILED2");
+            return false;
         }
 
         /// <summary>
@@ -256,9 +287,11 @@ namespace YAF.Core.Services.Auth
                 // Update profile with Vokabular informations
                 var userProfile = YafContext.Current.Profile;
 
+                /*
                 userProfile.Google = vokabularUser.ProfileURL.IsNotSet() ? "" : vokabularUser.ProfileURL;
-                userProfile.GoogleId = vokabularUser.UserID;
+                userProfile.GoogleId = vokabularUser.Subject;
                 userProfile.Homepage = vokabularUser.ProfileURL.IsNotSet() ? "" : vokabularUser.ProfileURL;
+                */
 
                 userProfile.Gender = userGender;
 
@@ -419,9 +452,11 @@ namespace YAF.Core.Services.Auth
             // setup their initial profile information
             userProfile.Save();
 
+            /*
             userProfile.Google = vokabularUser.ProfileURL.IsNotSet() ? "" : vokabularUser.ProfileURL;
             userProfile.GoogleId = vokabularUser.UserID;
             userProfile.Homepage = vokabularUser.ProfileURL.IsNotSet() ? "" : vokabularUser.ProfileURL;
+            */
 
             userProfile.Gender = userGender;
             
@@ -480,7 +515,8 @@ namespace YAF.Core.Services.Auth
 
             // send user register notification to the user...
             YafContext.Current.Get<ISendNotification>()
-                .SendRegistrationNotificationToUser(user, pass, securityAnswer, "NOTIFICATION_ON_GOOGLE_REGISTER");//TODO Vokabular registration
+                .SendRegistrationNotificationToUser(user, pass, securityAnswer,
+                    "NOTIFICATION_ON_GOOGLE_REGISTER"); //TODO Vokabular registration
 
             // save the time zone...
             var userId = UserMembershipHelper.GetUserIDFromProviderUserKey(user.ProviderUserKey);

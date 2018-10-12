@@ -15,7 +15,7 @@
         /// The user ID.
         /// </value>
         [DataMember(Name = "sub")]
-        public string UserID { get; set; }
+        public string Subject { get; set; }
 
         /// <summary>
         /// Gets or sets the email.

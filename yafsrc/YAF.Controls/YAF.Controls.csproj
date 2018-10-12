@@ -216,6 +216,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="YafAdminMenu\YafMenu.xsc">
       <DependentUpon>YafMenu.xsd</DependentUpon>
     </None>

@@ -437,7 +437,7 @@ namespace YAF
 
                     try
                     {
-                        vokabularAuth.LoginOrCreateUser(this.Request, accessTokens.AccessToken, out message);
+                        vokabularAuth.LoginOrCreateUser(this.Request, accessTokens, out message);
                     }
                     catch (Exception ex)
                     {
