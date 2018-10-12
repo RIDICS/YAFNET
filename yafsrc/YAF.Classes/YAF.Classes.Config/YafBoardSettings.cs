@@ -2501,7 +2501,7 @@ namespace YAF.Classes
         {
             get
             {
-                return this._reg.GetValue("AllowSingleSignOn", false);
+                return this._reg.GetValue("AllowSingleSignOn", true);
             }
 
             set
@@ -2985,7 +2985,7 @@ namespace YAF.Classes
         {
             get
             {
-                return this._reg.GetValue("DisableRegistrations", false);
+                return this._reg.GetValue("DisableRegistrations", true);
             }
 
             set

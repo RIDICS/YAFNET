@@ -274,7 +274,7 @@ namespace YAF.Core.Services.Auth
             }
 
             // Create User if not exists?!
-            if (!YafContext.Current.IsGuest && !YafContext.Current.Get<YafBoardSettings>().DisableRegistrations)
+            if (!YafContext.Current.IsGuest)
             {
                 // Match the Email address?
                 if (vokabularUser.Email != YafContext.Current.CurrentUserData.Email)
@@ -361,11 +361,11 @@ namespace YAF.Core.Services.Auth
         /// </returns>
         private bool CreateVokabularUser(VokabularUser vokabularUser, int userGender, out string message)
         {
-            if (YafContext.Current.Get<YafBoardSettings>().DisableRegistrations)
+            /*if (YafContext.Current.Get<YafBoardSettings>().DisableRegistrations)
             {
                 message = YafContext.Current.Get<ILocalization>().GetText("LOGIN", "SSO_FAILED");
                 return false;
-            }
+            }*/
 
             // Check user for bot
             var spamChecker = new YafSpamCheck();
