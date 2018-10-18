@@ -700,26 +700,30 @@ body {
         margin-right: 5px;
     }
 
+    .postedRight {
+        a, .MultiQuoteButton {
+            margin-right: 5px;
+        }
+    }
+
     .MultiQuoteButton {
-        background-color: #ededed;
-        color: #777777;
+        background-color: @button-color;
+        color: #ffffff;
         display: block;
         float: right;
         font-size: 7.5pt;
-        margin: 3px 0px 3px 3px;
         padding-right: 2px;
         text-decoration: none;
         font-weight: bold;
-        border: 1px solid #dcdcdc;
-        -moz-box-shadow: inset 0px 1px 0px 0px #ffffff;
-        -webkit-box-shadow: inset 0px 1px 0px 0px #ffffff;
-        box-shadow: inset 0px 1px 0px 0px #ffffff;
-        background: -webkit-gradient(linear,left top,left bottom,color-stop(0.05,#ededed),color-stop(1,#dfdfdf));
-        background: -moz-linear-gradient(center top,#ededed 5%,#dfdfdf 100%);
-        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed',endColorstr='#dfdfdf');
-        -webkit-text-shadow: 1px 1px 0px #ffffff;
-        text-shadow: 1px 1px 0px #ffffff;
-        padding: 5px 4px 5px 7px;
+
+        &:hover {
+            background: @button-hover-color;
+        }
+
+        label {
+            display: block;
+            padding: 6.5px 7px 6.5px 7px;
+        }
     }
 
     a.yaflittlebutton {
@@ -907,19 +911,19 @@ body {
         *display: inline;
         vertical-align: baseline;
         border: 1px solid black;
-        background: url("DownArrow.png") transparent no-repeat 100% 50%;
+        background: url("DownArrowWhite.png") transparent no-repeat 100% 50%;
     }
 
     .UserPopMenuLink {
-        background: url("DownArrow.png") transparent no-repeat 100% 50%;
+        background: url("DownArrowWhite.png") transparent no-repeat 100% 50%;
     }
 
     .PrevTopicLink {
-        background: url("LeftArrow.png") transparent no-repeat 0% 50%;
+        background: url("LeftArrowWhite.png") transparent no-repeat 0% 50%;
     }
 
     .NextTopicLink {
-        background: url("RightArrow.png") transparent no-repeat 100% 50%;
+        background: url("RightArrowWhite.png") transparent no-repeat 100% 50%;
     }
 
     .StandardButton {
