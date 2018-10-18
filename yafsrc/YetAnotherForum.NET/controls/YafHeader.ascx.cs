@@ -446,45 +446,7 @@ namespace YAF.Controls
                 return;
             }
 
-            // Login
-            if (Config.AllowLoginAndLogoff)
-            {
-                if (this.Get<YafBoardSettings>().UseLoginBox && !(this.Get<IYafSession>().UseMobileTheme ?? false))
-                {
-                    RenderMenuItem(
-                        this.menuListItems,
-                        "menuAccount",
-                        "LoginLink",
-                        this.GetText("TOOLBAR", "LOGIN"),
-                        this.GetText("TOOLBAR", "LOGIN_TITLE"),
-                        "javascript:void(0);",
-                        true,
-                        false,
-                        null,
-                        null);
-                }
-                else
-                {
-                    var returnUrl = this.GetReturnUrl().IsSet()
-                                           ? "ReturnUrl={0}".FormatWith(this.GetReturnUrl())
-                                           : string.Empty;
-
-                    RenderMenuItem(
-                        this.menuListItems,
-                        "menuAccount",
-                        null,
-                        this.GetText("TOOLBAR", "LOGIN"),
-                        this.GetText("TOOLBAR", "LOGIN_TITLE"),
-                        !this.Get<YafBoardSettings>().UseSSLToLogIn
-                            ? YafBuildLink.GetLinkNotEscaped(ForumPages.login, returnUrl)
-                            : YafBuildLink.GetLinkNotEscaped(ForumPages.login, true, returnUrl)
-                                  .Replace("http:", "https:"),
-                        true,
-                        false,
-                        null,
-                        null);
-                }
-            }
+           
 
             // Register
             if (!this.Get<YafBoardSettings>().DisableRegistrations)
@@ -512,12 +474,52 @@ namespace YAF.Controls
         /// </summary>
         private void RenderUserContainer()
         {
+            this.UserContainer.Visible = true;
+           
             if (this.PageContext.IsGuest)
             {
+                // Login
+                if (Config.AllowLoginAndLogoff)
+                {
+                    if (this.Get<YafBoardSettings>().UseLoginBox && !(this.Get<IYafSession>().UseMobileTheme ?? false))
+                    {
+                        RenderMenuItem(
+                            this.LoginItem,
+                            "menuMy",
+                            "LoginLink",
+                            this.GetText("TOOLBAR", "LOGIN"),
+                            this.GetText("TOOLBAR", "LOGIN_TITLE"),
+                            "javascript:void(0);",
+                            true,
+                            false,
+                            null,
+                            null);
+                    }
+                    else
+                    {
+                        var returnUrl = this.GetReturnUrl().IsSet()
+                            ? "ReturnUrl={0}".FormatWith(this.GetReturnUrl())
+                            : string.Empty;
+
+                        RenderMenuItem(
+                            this.LoginItem,
+                            "menuMy",
+                            null,
+                            this.GetText("TOOLBAR", "LOGIN"),
+                            this.GetText("TOOLBAR", "LOGIN_TITLE"),
+                            !this.Get<YafBoardSettings>().UseSSLToLogIn
+                                ? YafBuildLink.GetLinkNotEscaped(ForumPages.login, returnUrl)
+                                : YafBuildLink.GetLinkNotEscaped(ForumPages.login, true, returnUrl)
+                                    .Replace("http:", "https:"),
+                            true,
+                            false,
+                            null,
+                            null);
+                    }
+                }
+
                 return;
             }
-
-            this.UserContainer.Visible = true;
 
             // My Profile
             this.MyProfile.ToolTip = this.GetText("TOOLBAR", "MYPROFILE_TITLE");

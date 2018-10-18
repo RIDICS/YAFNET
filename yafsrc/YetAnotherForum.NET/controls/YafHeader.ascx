@@ -39,6 +39,8 @@
                 <li class="menuMy myProfile">
                     <asp:HyperLink id="MyProfile" runat="server" Target="_top"></asp:HyperLink>
                 </li>
+                <asp:PlaceHolder ID="LoginItem" runat="server">
+                </asp:PlaceHolder>
                 <asp:PlaceHolder ID="MyBuddiesItem" runat="server">
                 </asp:PlaceHolder>
                 <asp:PlaceHolder ID="MyAlbumsItem" runat="server">
