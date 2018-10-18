@@ -22,6 +22,8 @@
  * under the License.
  */
 
+using YAF.Core.Services;
+
 namespace YAF.Controls
 {
     #region Using
@@ -481,41 +483,21 @@ namespace YAF.Controls
                 // Login
                 if (Config.AllowLoginAndLogoff)
                 {
-                    if (this.Get<YafBoardSettings>().UseLoginBox && !(this.Get<IYafSession>().UseMobileTheme ?? false))
-                    {
-                        RenderMenuItem(
-                            this.LoginItem,
-                            "menuMy",
-                            "LoginLink",
-                            this.GetText("TOOLBAR", "LOGIN"),
-                            this.GetText("TOOLBAR", "LOGIN_TITLE"),
-                            "javascript:void(0);",
-                            true,
-                            false,
-                            null,
-                            null);
-                    }
-                    else
-                    {
-                        var returnUrl = this.GetReturnUrl().IsSet()
-                            ? "ReturnUrl={0}".FormatWith(this.GetReturnUrl())
-                            : string.Empty;
+                    var returnUrl = this.GetReturnUrl().IsSet()
+                        ? "ReturnUrl={0}".FormatWith(this.GetReturnUrl())
+                        : string.Empty;
 
-                        RenderMenuItem(
-                            this.LoginItem,
-                            "menuMy",
-                            null,
-                            this.GetText("TOOLBAR", "LOGIN"),
-                            this.GetText("TOOLBAR", "LOGIN_TITLE"),
-                            !this.Get<YafBoardSettings>().UseSSLToLogIn
-                                ? YafBuildLink.GetLinkNotEscaped(ForumPages.login, returnUrl)
-                                : YafBuildLink.GetLinkNotEscaped(ForumPages.login, true, returnUrl)
-                                    .Replace("http:", "https:"),
-                            true,
-                            false,
-                            null,
-                            null);
-                    }
+                    RenderMenuItem(
+                        this.LoginItem,
+                        "menuMy",
+                        null,
+                        this.GetText("TOOLBAR", "LOGIN"),
+                        this.GetText("TOOLBAR", "LOGIN_TITLE"),
+                        YafSingleSignOnUser.GenerateLoginUrl(AuthService.vokabular, true),
+                        true,
+                        false,
+                        null,
+                        null);
                 }
 
                 return;
