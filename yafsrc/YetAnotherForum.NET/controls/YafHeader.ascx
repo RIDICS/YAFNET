@@ -13,10 +13,8 @@
             </div>
         </asp:HyperLink>
         
-        <!-- forum hledani uzivatele napoveda uplne vpravo-->
         <div class="menuContainer">
             <ul class="menuList">
-                <!-- prihlasit class menu account-->
                 <asp:PlaceHolder ID="menuListItems" runat="server">
                 </asp:PlaceHolder>
             </ul>
@@ -33,13 +31,11 @@
             </asp:PlaceHolder>
         </div>
         
-        <!-- Muj profil,Inobx, Odhlasit se vlevo  po logo-->
         <asp:Panel id="UserContainer" CssClass="menuMyContainer" runat="server" Visible="false">
             <ul class="menuMyList">
-                <li class="menuMy myProfile">
-                    <asp:HyperLink id="MyProfile" runat="server" Target="_top"></asp:HyperLink>
-                </li>
                 <asp:PlaceHolder ID="LoginItem" runat="server">
+                </asp:PlaceHolder>
+                <asp:PlaceHolder ID="MyProfile" runat="server">
                 </asp:PlaceHolder>
                 <asp:PlaceHolder ID="MyBuddiesItem" runat="server">
                 </asp:PlaceHolder>
