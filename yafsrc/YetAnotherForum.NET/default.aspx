@@ -17,10 +17,6 @@
     <title></title>
 </head>
 <body id="YafBody" runat="server">
-    <asp:HyperLink runat="server" id="BannerLink" >
-        <img src="~/forumlogo.jpg" runat="server" alt="logo" style="border: 0;" id="imgBanner" />
-    </asp:HyperLink>
-    <br />
     <url:Form id="form1" runat="server" enctype="multipart/form-data">
     <YAF:Forum runat="server" ID="forum" BoardID="1">
     </YAF:Forum>

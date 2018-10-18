@@ -214,7 +214,7 @@ namespace YAF.Controls
                 }
                 else
                 {
-                    writer.WriteLine(@"<span class=""linkSeperator divider"">&nbsp;&#187;&nbsp;</span>");
+                    writer.WriteLine(@"<span class=""linkSeperator divider"">&nbsp;&#47;&nbsp;</span>");
                 }
 
                 string encodedTitle = this.HtmlEncode(link.Title);

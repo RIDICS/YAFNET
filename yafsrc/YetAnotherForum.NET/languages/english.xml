@@ -5563,6 +5563,8 @@ Visit {forumname} at {forumlink}
     <Resource tag="UTC9.5">(UTC+09:30) Adelaide</Resource>
  </page>
  <page name="TOOLBAR">
+  <Resource tag="FORUMNAME">Vokabulář webový</Resource>
+  <Resource tag="FORUMNAME_TITLE">Forum name</Resource>
   <Resource tag="ACTIVETOPICS">Active Topics</Resource>
   <Resource tag="ACTIVETOPICS_TITLE">Shows the Active Topics Page.</Resource>
   <Resource tag="ADMIN">Admin</Resource>

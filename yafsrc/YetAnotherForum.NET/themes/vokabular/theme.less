@@ -4,16 +4,31 @@
 @text-color: #ffffff;
 @light-main-color: #4CAF50;
 @hover-color-dark: #2E7D32;
+@button-color: #8E5523;
+@button-hover-color: #633107;
 @import url(https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic);
+
+body {
+    margin-top: 0px;
+}
+
+.ui-corner-all,
+.ui-corner-top,
+.ui-corner-bottom,
+.ui-corner-left,
+.ui-corner-right,
+.ui-corner-tr,
+.ui-corner-tl,
+.ui-corner-br,
+.ui-corner-bl
+{
+    border-radius: 0px !important;
+}
 
 .yafnet {
     font-family: "PT Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 9pt;
     color: #333333;
-
-    .ui-corner-all {
-        border-radius: 0px !important;
-    }
 
     tr.forumRowTitle, dt.header1, td.header1 {
         background-color: @main-color;
@@ -217,13 +232,45 @@
 
     #yafheader {
         font-size: 18px;
-        padding: 5px 10px;
         background-color: @main-color;
         margin: 0 -8px 0 -8px;
 
         .outerMenuContainer {
-            padding: 0px 8px 0px 8px;
             box-sizing: border-box;
+            line-height: 1;
+
+            > a {
+                float: left;
+                display: inline-block;
+                margin-left: -8px;
+                padding-right: 10px;
+
+                &:hover {
+                    text-decoration: none;
+                    background-color: @hover-color-dark;
+                }
+
+                > img {
+                    padding: 10px 10px 10px 22px;
+                    height: 3.5rem;
+                }
+
+                .forumlogoText {
+                    color: white;
+                    line-height: normal;
+                    display: inline-block;
+                    margin-top: 9px;
+                    font-weight: bold;
+                    vertical-align: top;
+
+                    h1, h2 {
+                        display: block;
+                        font-size: 22px;
+                        font-weight: bold;
+                        margin: 0;
+                    }
+                }
+            }
         }
 
         ul li {
@@ -240,14 +287,6 @@
             border-left: none;
         }
 
-        ul.menuAdminList {
-            margin-left: 10px !important;
-
-            li a {
-                color: #999999;
-            }
-        }
-
         .loggedInUser {
             float: left !important;
             margin-right: 10px;
@@ -257,48 +296,48 @@
             font-weight: bold;
         }
 
-        .guestUser {
-            background: url("error.png") #ffdddd no-repeat 8px 50%;
-            color: #281b1b;
-            font-size: 1em;
-            font-weight: bold;
-            line-height: 150%;
-            margin: 0 auto;
-            margin-bottom: 10px;
-            border: 1px solid #deb7b7;
-            padding: 5px 10px 5px 30px;
+        .menuMyContainer {
+            display: inline;
         }
-    }
 
-    .menuMyContainer {
-        float: none !important;
-        display: inline;
-    }
-
-    .menuContainer {
-        float: right !important;
-        display: inline;
-
-        .menuList {
+        .menuContainer {
             float: left;
         }
-    }
 
-    .menuMyList {
-        margin-bottom: 10px;
-
-        li {
+        .menuContainer,
+        .menuMyContainer {
             display: inline;
-            padding: 0;
+            padding: 1.9rem .5rem;
+        }
 
-            a {
-                font-weight: bold;
+        .menuList,
+        .menuAdminList,
+        .menuMyList {
+            li {
+                a {
+                    padding: 1.8rem .5rem;
+
+                    &:hover {
+                        background: @hover-color-dark;
+                        text-decoration: none;
+                    }
+                }
             }
         }
-    }
 
-    .menuAdminList {
-        float: none !important;
+        .menuMyList {
+            li {
+                display: inline;
+
+                a {
+                    font-weight: bold;
+                }
+            }
+        }
+
+        .menuAdminList {
+            float: none !important;
+        }
     }
 
     tr.forumRowTitle th {
@@ -584,8 +623,16 @@
     }
 
     .pbutton {
-        padding: 4px;
-        color: @main-color;
+        padding: 6px;
+        border: none;
+        background-color: @button-color;
+        color: #ffffff;
+
+        &:hover {
+            border: none;
+            background-color: @button-hover-color;
+            color: #ffffff;
+        }
     }
 
     .textfield {
@@ -676,32 +723,23 @@
     }
 
     a.yaflittlebutton {
-        background-color: #f5f5f5;
-        background-color: #ededed;
-        color: @main-color;
-        color: #777777;
+        background-color: @button-color;
+        color: #ffffff;
         display: block;
         display: inline-block;
         float: right;
         font-size: 7.5pt;
-        margin: 3px 0px 3px 3px;
         padding-right: 2px;
         text-decoration: none;
         font-weight: bold;
-        border: solid 1px #cccccc;
-        border: 1px solid #dcdcdc;
-        -moz-box-shadow: inset 0px 1px 0px 0px #ffffff;
-        -webkit-box-shadow: inset 0px 1px 0px 0px #ffffff;
-        box-shadow: inset 0px 1px 0px 0px #ffffff;
-        background: -webkit-gradient(linear,left top,left bottom,color-stop(0.05,#ededed),color-stop(1,#dfdfdf));
-        background: -moz-linear-gradient(center top,#ededed 5%,#dfdfdf 100%);
-        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed',endColorstr='#dfdfdf');
-        -webkit-text-shadow: 1px 1px 0px #ffffff;
-        text-shadow: 1px 1px 0px #ffffff;
+
+        &:hover {
+            background: @button-hover-color;
+        }
 
         span {
             display: block;
-            padding: 5px 4px 5px 7px;
+            padding: 6.5px 7px 6.5px 7px;
         }
 
         img {
@@ -726,18 +764,16 @@
 
         span {
             background-position: bottom left;
-            padding: 6px 4px 4px 7px;
+            padding: 6.5px 7px 6.5px 7px;
         }
     }
 
     a.yafcssbigbutton {
-        background-color: #ffffff;
-        background-color: @main-color;
-        color: @main-color;
+        background-color: @button-color;
         color: #ffffff;
         display: block;
         display: inline-block;
-        font-size: 8pt;
+        font-size: 13px;
         margin: 4px 2px 4px 4px;
         padding-right: 2px;
         text-decoration: none;
@@ -755,7 +791,7 @@
     }
 
     a.yafcssbigbutton:hover {
-        background-color: @hover-color-dark;
+        background-color: @button-hover-color;
         text-decoration: none;
     }
 
@@ -779,8 +815,8 @@
     }
 
     a.yafcssimagebutton {
-        background-color: #eeeeee;
-        color: #555555;
+        background-color: @button-color;
+        color: #ffffff;
         display: block;
         float: left;
         font-size: 10px;
@@ -789,7 +825,6 @@
         text-decoration: none;
         text-transform: uppercase;
         font-weight: bold;
-        border: solid 1px #a0a0a0;
 
         span {
             display: block;
@@ -805,8 +840,8 @@
 
     a.yafcssimagebutton:hover {
         text-decoration: none;
-        background-color: #ffffff;
-        color: @main-color;
+        background-color: @button-hover-color;
+        color: #ffffff;
     }
 
     a.yafcssimagebutton:active {
@@ -1046,23 +1081,32 @@
 .ui-widget {
   font-size:9pt !important;
 }
-.ModalDialog
-{
-    input, select
-    {
+.ModalDialog {
+    input, select {
         padding: 0px;
     }
 
-    .DialogContent
-    {
+
+    .DialogContent {
         display: table;
         width: 370px;
         padding: 4px 0 4px 0;
         background: #eeeeee;
+        border-radius: 0px;
+
+        input {
+            border: none;
+            border-radius: 0px;
+            background: @button-color;
+
+            &:hover {
+                border: none;
+                background: @button-hover-color
+            }
+        }
     }
 
-    .modalHeader
-    {
+    .modalHeader {
         padding: 4px;
         border: 1px solid #999999;
         -webkit-text-shadow: none;
@@ -1071,37 +1115,32 @@
         -moz-box-shadow: none;
         box-shadow: none;
         color: #ffffff;
-        background: #666666;
+        background: @main-color;
         text-align: center;
         font-size: 10pt;
 
-        h3
-        {
+        h3 {
             display: inline;
         }
     }
 
-    .modalFooter
-    {
+    .modalFooter {
         padding: 2px;
         text-align: right;
     }
 
-    hr
-    {
+    hr {
         height: 1px;
         border: 0;
         background-color: #aaaaaa;
         clear: both;
     }
 
-    .modalInner
-    {
+    .modalInner {
         display: inline;
     }
 
-    .close
-    {
+    .close {
         margin: 3px;
         border: 1px solid #777777;
         background: #888888;

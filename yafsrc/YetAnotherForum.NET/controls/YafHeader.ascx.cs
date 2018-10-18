@@ -323,25 +323,6 @@ namespace YAF.Controls
                     null);
             }
 
-            // Host
-            if (this.PageContext.IsHostAdmin)
-            {
-                this.AdminModHolder.Visible = true;
-
-                // Admin
-                RenderMenuItem(
-                    this.menuAdminItems,
-                    "menuAdmin",
-                    null,
-                    this.GetText("TOOLBAR", "HOST"),
-                    this.GetText("TOOLBAR", "HOST_TITLE"),
-                    YafBuildLink.GetLink(ForumPages.admin_hostsettings),
-                    false,
-                    false,
-                    null,
-                    null);
-            }
-
             // Moderate
             if (this.PageContext.IsModeratorInAnyForum)
             {
@@ -543,22 +524,6 @@ namespace YAF.Controls
             this.MyProfile.NavigateUrl = YafBuildLink.GetLink(ForumPages.cp_profile);
             this.MyProfile.Text = this.GetText("TOOLBAR", "MYPROFILE");
 
-            // My Inbox
-            if (this.Get<YafBoardSettings>().AllowPrivateMessages)
-            {
-                RenderMenuItem(
-                    this.MyInboxItem,
-                    "menuMy myPm",
-                    null,
-                    this.GetText("TOOLBAR", "INBOX"),
-                    this.GetText("TOOLBAR", "INBOX_TITLE"),
-                    YafBuildLink.GetLink(ForumPages.cp_pm),
-                    false,
-                    this.PageContext.UnreadPrivate > 0,
-                    this.PageContext.UnreadPrivate.ToString(),
-                    this.GetText("TOOLBAR", "NEWPM").FormatWith(this.PageContext.UnreadPrivate));
-            }
-
             // My Buddies
             if (this.Get<YafBoardSettings>().EnableBuddyList && this.PageContext.UserHasBuddies)
             {
@@ -615,6 +580,7 @@ namespace YAF.Controls
                 this.LogOutButton.ToolTip = this.GetText("TOOLBAR", "LOGOUT");
             }
 
+            /*
             // Logged in as : username
             this.LoggedInUserPanel.Visible = true;
 
@@ -625,7 +591,7 @@ namespace YAF.Controls
 
             this.LoggedInUserPanel.Controls.Add(
                 new Label { Text = this.GetText("TOOLBAR", "LOGGED_IN_AS").FormatWith("&nbsp;") });
-
+           
             var userLink = new UserLink
                 {
                     ID = "UserLoggedIn", 
@@ -634,7 +600,7 @@ namespace YAF.Controls
                     EnableHoverCard = false
                 };
 
-            this.LoggedInUserPanel.Controls.Add(userLink);
+            this.LoggedInUserPanel.Controls.Add(userLink);*/
         }
 
         /// <summary>
