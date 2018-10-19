@@ -86,17 +86,9 @@ namespace YAF
             }
 
 
-            AuthService loginAuth;
-            try
-            {
-                loginAuth = (AuthService) Enum.Parse(typeof(AuthService),
+            AuthService loginAuth = loginAuth = (AuthService) Enum.Parse(typeof(AuthService),
                     YafContext.Current.Get<HttpRequestBase>().QueryString.GetFirstOrDefaultAs<string>("auth"), true);
-            }
-            catch (ArgumentNullException exception)
-            {
-               SendErrorResponse();
-                return;
-            }
+
 
             switch (loginAuth)
             {
@@ -461,7 +453,7 @@ namespace YAF
                     }
                     else
                     {
-                        this.Response.Redirect(YafBuildLink.GetLink(ForumPages.login, true));
+                        this.Response.Redirect(YafBuildLink.GetLink(ForumPages.forum).Replace("auth.aspx", "default.aspx"));
                     }
                 }
             }
