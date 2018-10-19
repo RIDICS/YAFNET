@@ -32,10 +32,10 @@ namespace YAF.Core.Services.Auth
         private IDictionary<string, string> UserIpLocator { get; set; }
 
         private const string Issuer = "http://localhost:5000";
-        private const string AuthorizationEndpoint = "http://localhost:5000/connect/authorize";
-        private const string TokenEndpoint = "http://localhost:5000/connect/token";
-        private const string UserInfoEndpoint = "http://localhost:5000/connect/userinfo?alt=json";
-        private const string IntrospectEndpoint = "http://localhost:5000/connect/introspect";
+        private const string AuthorizationEndpoint = Issuer + "/connect/authorize";
+        private const string TokenEndpoint = Issuer + "/connect/token";
+        private const string UserInfoEndpoint = Issuer + "/connect/userinfo?alt=json";
+        private const string IntrospectEndpoint = Issuer + "/connect/introspect";
         private const string Scopes = "openid profile email address";
     
         /// <summary>
@@ -287,12 +287,6 @@ namespace YAF.Core.Services.Auth
                 // Update profile with Vokabular informations
                 var userProfile = YafContext.Current.Profile;
 
-                /*
-                userProfile.Google = vokabularUser.ProfileURL.IsNotSet() ? "" : vokabularUser.ProfileURL;
-                userProfile.GoogleId = vokabularUser.Subject;
-                userProfile.Homepage = vokabularUser.ProfileURL.IsNotSet() ? "" : vokabularUser.ProfileURL;
-                */
-
                 userProfile.Gender = userGender;
 
                 userProfile.Save();
@@ -445,12 +439,6 @@ namespace YAF.Core.Services.Auth
 
             // setup their initial profile information
             userProfile.Save();
-
-            /*
-            userProfile.Google = vokabularUser.ProfileURL.IsNotSet() ? "" : vokabularUser.ProfileURL;
-            userProfile.GoogleId = vokabularUser.UserID;
-            userProfile.Homepage = vokabularUser.ProfileURL.IsNotSet() ? "" : vokabularUser.ProfileURL;
-            */
 
             userProfile.Gender = userGender;
             
