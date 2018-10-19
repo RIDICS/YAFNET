@@ -71,22 +71,40 @@ namespace YAF
             if (this.Request.QueryString.GetFirstOrDefault("denied") != null)
             {
                 this.Response.Clear();
-
                 this.Response.Write("{0} {1} {2}".FormatWith(SCRIPTBEGINTAG, closeScript.ToString(), SCRIPTENDTAG));
-
                 return;
             }
 
-            
-            AuthService loginAuth = (AuthService)Enum.Parse(typeof(AuthService), YafContext.Current.Get<HttpRequestBase>().QueryString.GetFirstOrDefaultAs<string>("auth"), true);
-          
+
+            if (this.Request.QueryString.GetFirstOrDefault("error") != null)
+            {
+                if (this.Request.QueryString.GetFirstOrDefault("error") == "access_denied")
+                {
+                   SendErrorResponse(YafContext.Current.Get<ILocalization>().GetText("LOGIN_CANCELED"));
+                    return;
+                }
+            }
+
+
+            AuthService loginAuth;
+            try
+            {
+                loginAuth = (AuthService) Enum.Parse(typeof(AuthService),
+                    YafContext.Current.Get<HttpRequestBase>().QueryString.GetFirstOrDefaultAs<string>("auth"), true);
+            }
+            catch (ArgumentNullException exception)
+            {
+               SendErrorResponse();
+                return;
+            }
+
             switch (loginAuth)
             {
                 case AuthService.twitter:
                     this.HandleTwitterReturn();
                     break;
                 case AuthService.facebook:
-                    this.HandleFacebookReturn(); 
+                    this.HandleFacebookReturn();
                     break;
                 case AuthService.google:
                     this.HandleGoogleReturn();
@@ -392,13 +410,7 @@ namespace YAF
 
                 if (accessTokens.AccessToken == null)
                 {
-                    this.Response.Write(
-                        "{2} alert('{0}');window.location.href = '{1}'; {3}".FormatWith(
-                            YafContext.Current.Get<ILocalization>().GetText("AUTH_NO_ACCESS_TOKEN"),
-                            YafBuildLink.GetLink(ForumPages.login).Replace("auth.aspx", "default.aspx"),
-                            SCRIPTBEGINTAG,
-                            SCRIPTENDTAG));
-
+                    SendErrorResponse(YafContext.Current.Get<ILocalization>().GetText("AUTH_NO_ACCESS_TOKEN"));
                     return;
                 }
 
@@ -412,19 +424,14 @@ namespace YAF
                     }
                     catch (Exception ex)
                     {
-                        YafContext.Current.Get<ILogger>().Error(ex, "Error while trying to connect the google user");
+                        YafContext.Current.Get<ILogger>().Error(ex, "Error while trying to connect the vokabular user");
 
                         message = ex.Message;
                     }
 
                     if (message.IsSet())
                     {
-                        this.Response.Write(
-                            "{2} alert('{0}');window.location.href = '{1}'; {3}".FormatWith(
-                                message,
-                                YafBuildLink.GetLink(ForumPages.forum).Replace("auth.aspx", "default.aspx"),
-                                SCRIPTBEGINTAG,
-                                SCRIPTENDTAG));
+                        SendErrorResponse(message);
                     }
                     else
                     {
@@ -442,29 +449,19 @@ namespace YAF
                     catch (Exception ex)
                     {
                         YafContext.Current.Get<ILogger>()
-                            .Error(ex, "Error while trying to login or register the google user");
+                            .Error(ex, "Error while trying to login or register the vokabular user");
 
                         message = ex.Message;
+                        
                     }
-
-                    this.Response.Clear();
 
                     if (message.IsSet())
                     {
-                        this.Response.Write(
-                            "{2} alert('{0}');window.location.href = '{1}';window.close(); {3}".FormatWith(
-                                message,
-                                YafBuildLink.GetLink(ForumPages.login).Replace("auth.aspx", "default.aspx"),
-                                SCRIPTBEGINTAG,
-                                SCRIPTENDTAG));
+                       SendErrorResponse(HttpUtility.JavaScriptStringEncode(message));
                     }
                     else
                     {
-                        this.Response.Write(
-                            "{1} window.location.href = '{0}';window.close(); {2}".FormatWith(
-                                YafBuildLink.GetLink(ForumPages.forum).Replace("auth.aspx", "default.aspx"),
-                                SCRIPTBEGINTAG,
-                                SCRIPTENDTAG));
+                        this.Response.Redirect(YafBuildLink.GetLink(ForumPages.login, true));
                     }
                 }
             }
@@ -478,6 +475,21 @@ namespace YAF
                 // Authorize first
                 this.Response.Redirect(vokabularAuth.GetAuthorizeUrl(this.Request), true);
             }
+        }
+
+        private void SendErrorResponse(string errorMessage = null)
+        {
+            string link = YafBuildLink.GetLink(ForumPages.login).Replace("auth.aspx", "default.aspx");
+            int index = link.IndexOf("?", StringComparison.Ordinal);
+            link = index > 0 ? link.Substring(0, index) : link;
+
+            this.Response.Clear();
+            this.Response.Write(
+                "{2} alert('{0}');window.location.href = '{1}'; {3}".FormatWith(
+                    errorMessage ?? YafContext.Current.Get<ILocalization>().GetText("SSO_VOKABULAR_FAILED2"),
+                    link,
+                    SCRIPTBEGINTAG,
+                    SCRIPTENDTAG));    
         }
     }
 }

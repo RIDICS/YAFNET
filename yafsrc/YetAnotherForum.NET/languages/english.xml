@@ -4283,6 +4283,7 @@ Spoiler Content
   <Resource tag="AUTH_CONNECT_VOKABULAR">&lt;strong&gt;The Vokabular email address must match the forum user email address to connect the user.&lt;/strong&gt;</Resource>
   <Resource tag="AUTH_LOGIN_EXISTING">Login with an user Account that is connected with {0}. Or if no account is found a new account will be automatically created in the forums.</Resource>
   <Resource tag="AUTH_NO_ACCESS_TOKEN">Could not get access_token!</Resource>
+  <Resource tag="LOGIN_CANCELED">Login was canceled by user!</Resource>
   <Resource tag="CAPS_LOCK">Caps Lock is on</Resource>
   <Resource tag="CONNECT_VIA">Or Connect via</Resource>
   <Resource tag="BOTH_USERNAME_EMAIL">Both user name and email address must be entered.</Resource>
