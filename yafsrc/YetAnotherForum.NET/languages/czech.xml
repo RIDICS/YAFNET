@@ -5338,6 +5338,17 @@ Hello!
       User Email: {email} (Please don't change your email, or you are unable to login with Google)
 	  
     </Resource>
+    <Resource tag="NOTIFICATION_ON_VOKABULAR_REGISTER">
+      Hello {user}.
+
+      You have been successfully registered on the {forumname} forum using Vokabular Login:
+
+      User Name: {user}
+      Auto Generated Password: {pass}
+      Auto Generated Security Answer: {answer}
+      User Email: {email} (Please don't change your email, or you are unable to login with Google)
+
+    </Resource>
     <Resource tag="NOTIFICATION_ON_MEDAL_AWARDED_TEXT">
     Hello {user}.
 

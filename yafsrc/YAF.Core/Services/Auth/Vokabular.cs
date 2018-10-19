@@ -510,7 +510,7 @@ namespace YAF.Core.Services.Auth
             // send user register notification to the user...
             YafContext.Current.Get<ISendNotification>()
                 .SendRegistrationNotificationToUser(user, pass, securityAnswer,
-                    "NOTIFICATION_ON_GOOGLE_REGISTER"); //TODO Vokabular registration
+                    "NOTIFICATION_ON_VOKABULAR_REGISTER");
 
             // save the time zone...
             var userId = UserMembershipHelper.GetUserIDFromProviderUserKey(user.ProviderUserKey);
