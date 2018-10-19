@@ -208,7 +208,7 @@ namespace YAF.Controls
             {
                 if (row["RemoteURL"] != DBNull.Value)
                 {
-                    output = "<a href=\"{0}\" title=\"{1}\" target=\"_blank\">{2}</a>".FormatWith(
+                    output = "<a href=\"{0}\" title=\"{1}\">{2}</a>".FormatWith(
                         (string)row["RemoteURL"],
                         this.GetText("COMMON", "VIEW_FORUM"),
                         this.Page.HtmlEncode(output));
