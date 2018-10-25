@@ -990,6 +990,7 @@ namespace YAF.Install
             }
 
             MembershipUser user;
+            MembershipUser defaultAuthor = null;
 
             if (this.UserChoice.SelectedValue == "create")
             {
@@ -1017,6 +1018,26 @@ namespace YAF.Install
                     return false;
                 }
 
+
+                //default author
+                if (this.DefaultAuthorName.Text.Length == 0)
+                {
+                    this.ShowErrorMessage("You must enter the default author name,");
+                    return false;
+                }
+
+                if (this.DefaultAuthorPassword.Text.Length == 0)
+                {
+                    this.ShowErrorMessage("You must enter a password.");
+                    return false;
+                }
+
+                if (this.DefaultAuthorPassword.Text != this.DefaultAuthorPassword2.Text)
+                {
+                    this.ShowErrorMessage("The passwords must match.");
+                    return false;
+                }
+
                 // create the admin user...
                 MembershipCreateStatus status;
                 user = this.Get<MembershipProvider>()
@@ -1033,6 +1054,25 @@ namespace YAF.Install
                 {
                     this.ShowErrorMessage(
                         "Create Admin User Failed: {0}".FormatWith(this.GetMembershipErrorMessage(status)));
+                    return false;
+                }
+
+                // create the default author
+                MembershipCreateStatus defaultAuthorStatus;
+                defaultAuthor = this.Get<MembershipProvider>()
+                    .CreateUser(
+                        this.DefaultAuthorName.Text,
+                        this.DefaultAuthorPassword.Text,
+                        "info@ridics.cz",
+                        this.DefaultAuthorSecurityQuestion.Text,
+                        this.DefaultAuthorSecurityAnswer.Text,
+                        true,
+                        null,
+                        out defaultAuthorStatus);
+                if (defaultAuthorStatus != MembershipCreateStatus.Success)
+                {
+                    this.ShowErrorMessage(
+                        "Create default author Failed: {0}".FormatWith(this.GetMembershipErrorMessage(status)));
                     return false;
                 }
             }
@@ -1067,6 +1107,14 @@ namespace YAF.Install
                 if (!RoleMembershipHelper.IsUserInRole(user.UserName, "{0}Administrators".FormatWith(prefix)))
                 {
                     RoleMembershipHelper.AddUserToRole(user.UserName, "{0}Administrators".FormatWith(prefix));
+                }
+
+                if (defaultAuthor != null)
+                {
+                    if (!RoleMembershipHelper.IsUserInRole(defaultAuthor.UserName, "{0}Administrators".FormatWith(prefix)))
+                    {
+                        RoleMembershipHelper.AddUserToRole(defaultAuthor.UserName, "{0}Administrators".FormatWith(prefix));
+                    }
                 }
 
                 // logout administrator...

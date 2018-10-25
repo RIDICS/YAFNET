@@ -396,6 +396,33 @@
                         Placeholder="The answer to the security question" RenderWrapper="True" 
                         LabelText="Security Answer"/>
                     </asp:PlaceHolder>
+                    
+                    <h3>Default author</h3>
+                    <YAF:ModernTextBox ID="DefaultAuthorName" runat="server"
+                                       Text="RIDICS" RenderWrapper="True" 
+                                       LabelText="Default author name"/>
+                    <YAF:ModernTextBox ID="DefaultAuthorEmail" runat="server" 
+                                       RenderWrapper="True" 
+                                       LabelText="Default author email"
+                                       Text="info@ridics.cz"
+                                       Type="Email"
+                                       ReadOnly="True"/>
+                    <YAF:ModernTextBox ID="DefaultAuthorPassword" runat="server" 
+                                       Placeholder="Enter the password of the deafult auhtor." RenderWrapper="True" 
+                                       LabelText="Default author password"
+                                       TextMode="Password" Type="Password" />
+                    <YAF:ModernTextBox ID="DefaultAuthorPassword2" runat="server"
+                                       Placeholder="Verify the password" RenderWrapper="True" 
+                                       LabelText="Confirm Password"
+                                       TextMode="Password" Type="Password" />
+                    <YAF:ModernTextBox runat="server" ID="DefaultAuthorSecurityQuestion" 
+                                       Placeholder="The question you will be asked when you need to retrieve your lost password" 
+                                       RenderWrapper="True" 
+                                       LabelText="Security Question"/>
+                    <YAF:ModernTextBox runat="server" ID="DefaultAuthorSecurityAnswer" 
+                                       Placeholder="The answer to the security question" RenderWrapper="True" 
+                                       LabelText="Security Answer"/>
+                    </asp:PlaceHolder>
                 </asp:WizardStep>
                 <asp:WizardStep runat="server" Title="Migrate Users" ID="WizMigrateUsers">
                     <h4>

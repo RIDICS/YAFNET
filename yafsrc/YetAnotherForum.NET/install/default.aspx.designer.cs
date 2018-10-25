@@ -931,6 +931,60 @@ namespace YAF.Install {
         protected global::YAF.Controls.ModernTextBox SecurityAnswer;
         
         /// <summary>
+        /// DefaultAuthorName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::YAF.Controls.ModernTextBox DefaultAuthorName;
+        
+        /// <summary>
+        /// ModernTextBox2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::YAF.Controls.ModernTextBox ModernTextBox2;
+        
+        /// <summary>
+        /// ModernTextBox3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::YAF.Controls.ModernTextBox ModernTextBox3;
+        
+        /// <summary>
+        /// ModernTextBox4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::YAF.Controls.ModernTextBox ModernTextBox4;
+        
+        /// <summary>
+        /// ModernTextBox5 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::YAF.Controls.ModernTextBox ModernTextBox5;
+        
+        /// <summary>
+        /// ModernTextBox6 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::YAF.Controls.ModernTextBox ModernTextBox6;
+        
+        /// <summary>
         /// WizMigrateUsers control.
         /// </summary>
         /// <remarks>
