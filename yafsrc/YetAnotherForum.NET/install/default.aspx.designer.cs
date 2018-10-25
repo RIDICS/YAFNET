@@ -940,49 +940,49 @@ namespace YAF.Install {
         protected global::YAF.Controls.ModernTextBox DefaultAuthorName;
         
         /// <summary>
-        /// ModernTextBox2 control.
+        /// DefaultAuthorEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::YAF.Controls.ModernTextBox ModernTextBox2;
+        protected global::YAF.Controls.ModernTextBox DefaultAuthorEmail;
         
         /// <summary>
-        /// ModernTextBox3 control.
+        /// DefaultAuthorPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::YAF.Controls.ModernTextBox ModernTextBox3;
+        protected global::YAF.Controls.ModernTextBox DefaultAuthorPassword;
         
         /// <summary>
-        /// ModernTextBox4 control.
+        /// DefaultAuthorPassword2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::YAF.Controls.ModernTextBox ModernTextBox4;
+        protected global::YAF.Controls.ModernTextBox DefaultAuthorPassword2;
         
         /// <summary>
-        /// ModernTextBox5 control.
+        /// DefaultAuthorSecurityQuestion control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::YAF.Controls.ModernTextBox ModernTextBox5;
+        protected global::YAF.Controls.ModernTextBox DefaultAuthorSecurityQuestion;
         
         /// <summary>
-        /// ModernTextBox6 control.
+        /// DefaultAuthorSecurityAnswer control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::YAF.Controls.ModernTextBox ModernTextBox6;
+        protected global::YAF.Controls.ModernTextBox DefaultAuthorSecurityAnswer;
         
         /// <summary>
         /// WizMigrateUsers control.
