@@ -31,12 +31,11 @@ namespace YAF.Core.Services.Auth
         /// </summary>
         private IDictionary<string, string> UserIpLocator { get; set; }
 
-        private const string Issuer = "http://localhost:5000";
-        private const string AuthorizationEndpoint = Issuer + "/connect/authorize";
-        private const string TokenEndpoint = Issuer + "/connect/token";
-        private const string UserInfoEndpoint = Issuer + "/connect/userinfo?alt=json";
-        private const string IntrospectEndpoint = Issuer + "/connect/introspect";
-        private const string Scopes = "openid profile email address";
+        private readonly string m_authorizationEndpoint = Config.VokabularUrl + "/connect/authorize";
+        private readonly string m_tokenEndpoint = Config.VokabularUrl + "/connect/token";
+        private readonly string m_userInfoEndpoint = Config.VokabularUrl + "/connect/userinfo?alt=json";
+        private readonly string m_introspectEndpoint = Config.VokabularUrl + "/connect/introspect";
+        private readonly string m_scopes = "openid profile email address";
     
         /// <summary>
         /// Gets the authorize URL.
@@ -49,11 +48,11 @@ namespace YAF.Core.Services.Auth
         /// </returns>
         public string GetAuthorizeUrl(HttpRequest request)
         {
-            return (AuthorizationEndpoint + "?client_id={0}&response_type={1}&scope={2}&redirect_uri={3}").FormatWith
+            return (m_authorizationEndpoint + "?client_id={0}&response_type={1}&scope={2}&redirect_uri={3}").FormatWith
                 (Config.VokabularClientID,
                 "code",
-                HttpUtility.UrlEncode(Scopes),
-                HttpUtility.UrlEncode(GetRedirectURL(request)));
+                HttpUtility.UrlEncode(m_scopes),
+                HttpUtility.UrlEncode(GetRedirectUrl(request)));
         }
 
         /// <summary>
@@ -80,7 +79,7 @@ namespace YAF.Core.Services.Auth
 
             var response = AuthUtilities.WebRequest(
                 AuthUtilities.Method.POST,
-                TokenEndpoint,
+                m_tokenEndpoint,
                 data);
 
             return response.FromJson<VokabularTokens>();
@@ -111,7 +110,7 @@ namespace YAF.Core.Services.Auth
 
             var response = AuthUtilities.WebRequest(
                 AuthUtilities.Method.GET,
-                UserInfoEndpoint,
+                m_userInfoEndpoint,
                 string.Empty,
                 headers);
             return response.FromJson<VokabularUser>();
@@ -161,7 +160,7 @@ namespace YAF.Core.Services.Auth
 
             var response = AuthUtilities.WebRequest(
                 AuthUtilities.Method.POST,
-                IntrospectEndpoint,
+                m_introspectEndpoint,
                 data,
                 headers
             );
@@ -314,7 +313,7 @@ namespace YAF.Core.Services.Auth
         /// <returns>
         /// Returns the Redirect URL
         /// </returns>
-        private static string GetRedirectURL(HttpRequest request)
+        private static string GetRedirectUrl(HttpRequest request)
         {
             var urlCurrentPage = request.Url.AbsoluteUri.IndexOf('?') == -1
                 ? request.Url.AbsoluteUri
@@ -441,7 +440,8 @@ namespace YAF.Core.Services.Auth
             userProfile.Save();
 
             userProfile.Gender = userGender;
-            
+            userProfile.VokabularId = vokabularUser.Subject;
+
             if (YafContext.Current.Get<YafBoardSettings>().EnableIPInfoService && this.UserIpLocator == null)
             {
                 this.UserIpLocator = new IPDetails().GetData(
