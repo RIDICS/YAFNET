@@ -78,6 +78,11 @@ namespace YAF.Types.Interfaces
     string GoogleId { get; set; }
 
     /// <summary>
+    /// Gets or sets Vokabular ID.
+    /// </summary>
+    string VokabularId { get; set; }
+
+    /// <summary>
     /// Gets or sets Homepage.
     /// </summary>
     string Homepage { get; set; }

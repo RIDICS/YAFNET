@@ -274,10 +274,29 @@ namespace YAF.Utils
         }
     }
 
-    /// <summary>
-    /// Gets or sets Twitter.
-    /// </summary>
-    [SettingsAllowAnonymous(false)]
+      
+      /// <summary>
+      /// Gets or sets Vokabular Id.
+      /// </summary>
+      [SettingsAllowAnonymous(false)]
+      [CustomProviderData("VokabularId;nvarchar;255")]
+      public string VokabularId
+      {
+          get
+          {
+              return base["VokabularId"] as string;
+          }
+
+          set
+          {
+              base["VokabularId"] = value;
+          }
+      }
+
+        /// <summary>
+        /// Gets or sets Twitter.
+        /// </summary>
+        [SettingsAllowAnonymous(false)]
     [CustomProviderData("Twitter;nvarchar;400")]
     public string Twitter
     {

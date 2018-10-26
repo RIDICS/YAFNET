@@ -387,10 +387,10 @@ namespace YAF.Classes
         }
 
         /// <summary>
-        /// Gets the Vokabular client secret.
+        /// Gets the Vokabular authentication URL.
         /// </summary>
         /// <value>
-        /// The Vokabular client secret.
+        /// The Vokabular authentication URL.
         /// </value>
         public static string VokabularUrl
         {
@@ -399,8 +399,6 @@ namespace YAF.Classes
                 return GetConfigValueAsString("YAF.VokabularUrl");
             }
         }
-
-        
 
         /// <summary>
         ///     Gets Facebook API Key.

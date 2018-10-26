@@ -146,7 +146,7 @@ namespace YAF.Core.Services.Auth
             throw new NotImplementedException(); //TODO
         }
 
-        public bool ValidateAccessToken(string accessToken)
+        private bool ValidateAccessToken(string accessToken)
         {
             var headers = new List<KeyValuePair<string, string>>
             {
@@ -218,15 +218,21 @@ namespace YAF.Core.Services.Auth
                 return this.CreateVokabularUser(vokabularUser, userGender, out message);
             }
 
+            
             var yafUserData =
                 new CombinedUserDataHelper(YafContext.Current.Get<MembershipProvider>().GetUser(userName, true));
 
+            var yafUser = YafUserProfile.GetProfile(userName);
+
             var handler = new JwtSecurityTokenHandler();
             var token = (JwtSecurityToken) handler.ReadToken(tokens.IDToken);
-            if (token.Subject == vokabularUser.Subject 
-                && token.Audiences.Contains(Config.VokabularClientID) 
-                && token.Audiences.Count() == 1 
-                && token.Issuer == Issuer)//&& ValidateAccessToken(tokens.AccessToken))
+
+            if (token.Subject == vokabularUser.Subject
+                && token.Audiences.Contains(Config.VokabularClientID)
+                && token.Audiences.Count() == 1
+                && token.Issuer == Config.VokabularUrl
+                && token.ValidFrom < DateTime.UtcNow
+                && token.ValidTo > DateTime.UtcNow)//&& ValidateAccessToken(tokens.AccessToken) && yafUser.VokabularId == token.Subject)
             {
                 YafSingleSignOnUser.LoginSuccess(AuthService.vokabular, userName, yafUserData.UserID, true);
 
@@ -427,6 +433,11 @@ namespace YAF.Core.Services.Auth
                 null,
                 out status);
 
+            if (status != MembershipCreateStatus.Success)
+            {
+                throw new InvalidOperationException("An error occurred while creating a new user: " + status.ToString());
+            }
+            
             // setup initial roles (if any) for this user
             RoleMembershipHelper.SetupUserRoles(YafContext.Current.PageBoardID, vokabularUser.UserName);
 
