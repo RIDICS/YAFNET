@@ -145,7 +145,7 @@
   <Resource tag="ACTIVE">Aktivní</Resource>
   <Resource tag="BROWSER">Prohlížeč</Resource>
   <Resource tag="LAST_ACTIVE">Naposledy aktivní</Resource>
-  <Resource tag="LATEST_ACTION">Latest Action</Resource>
+  <Resource tag="LATEST_ACTION">Poslední akce</Resource>
   <Resource tag="LOGGED_IN">Přihlášen</Resource>
   <Resource tag="MINUTES">{0:N0} minut</Resource>
   <Resource tag="PLATFORM">Platforma</Resource>
@@ -394,13 +394,13 @@
   <Resource tag="TITLE">Board Settings</Resource>
  </page>
  <page name="ADMIN_COMMON">
-  <Resource tag="CANCEL">Cancel</Resource>
-  <Resource tag="CLEAR">Clear</Resource>
-  <Resource tag="DISABLED">Disabled</Resource>
-  <Resource tag="NO">No</Resource>
-  <Resource tag="SAVE">Save</Resource>
-  <Resource tag="TABLE_RESPONSIVE">Swipe Table to the left to Reveal More Data</Resource>
-  <Resource tag="YES">Yes</Resource>
+  <Resource tag="CANCEL">Zrušit</Resource>
+  <Resource tag="CLEAR">Vyčistit</Resource>
+  <Resource tag="DISABLED">Vypnuto</Resource>
+  <Resource tag="NO">Ne</Resource>
+  <Resource tag="SAVE">Uložit</Resource>
+  <Resource tag="TABLE_RESPONSIVE">Posuň tabulku doleva pro zobrazení dalších informacích</Resource>
+  <Resource tag="YES">Ano</Resource>
  </page>
  <page name="ADMIN_DELETEFORUM">
   <Resource tag="DELETE_FORUM">Delete Forum</Resource>
@@ -1905,17 +1905,17 @@
   <Resource tag="UsersandRoles">Users and Roles</Resource>
  </page>
  <page name="ALBUM">
-  <Resource tag="ALBUM_CHANGE_TITLE">Add Title</Resource>
-  <Resource tag="ALBUM_IMAGE_CHANGE_CAPTION">Add Caption</Resource>
-  <Resource tag="ALBUM_IMAGES_NUMBER">{0} Image(s)</Resource>
-  <Resource tag="ALBUM_VIEW">Click to View Album</Resource>
-  <Resource tag="ALBUMS">Albums</Resource>
-  <Resource tag="ALBUMS_HEADER_TEXT">{0}'s albums</Resource>
-  <Resource tag="ALBUMS_INFO">Currently you have {0} Album(s). You can have max. {1} Album(s).</Resource>
-  <Resource tag="ALBUMS_NOTALLOWED">You are not allowed to have Albums.</Resource>
+  <Resource tag="ALBUM_CHANGE_TITLE">Přidat název</Resource>
+  <Resource tag="ALBUM_IMAGE_CHANGE_CAPTION">Přidat popisek</Resource>
+  <Resource tag="ALBUM_IMAGES_NUMBER">{0} obrázků</Resource>
+  <Resource tag="ALBUM_VIEW">Klikni pro zobrazení alba</Resource>
+  <Resource tag="ALBUMS">Alba</Resource>
+  <Resource tag="ALBUMS_HEADER_TEXT">Album uživatele {0}</Resource>
+  <Resource tag="ALBUMS_INFO">Nyní máte {0} alb. Maximálně můžete mít {1} alb.</Resource>
+  <Resource tag="ALBUMS_NOTALLOWED">Nemáte povolení vlastnit alba.</Resource>
   <Resource tag="ALBUMS_TITLE">{0} Album: {1}</Resource>
-  <Resource tag="BACK_ALBUMS">Go Back to Albums</Resource>
-  <Resource tag="TITLE">Album Images</Resource>
+  <Resource tag="BACK_ALBUMS">Vrátit se zpět na alba</Resource>
+  <Resource tag="TITLE">Obrázky alb</Resource>
  </page>
  <page name="APPROVE">
   <Resource tag="EMAIL_VERIFIED">Vaše e-mailová adresa byla ověřena.</Resource>
@@ -1925,131 +1925,131 @@
   <Resource tag="VALIDATE">Ověřit</Resource>
  </page>
  <page name="ATTACHMENTS">
-  <Resource tag="ADD_FILES">Add file(s)...</Resource>
-  <Resource tag="ALLOWED_EXTENSIONS">Allowed File Types</Resource>
+  <Resource tag="ADD_FILES">Přidat soubory...</Resource>
+  <Resource tag="ALLOWED_EXTENSIONS">Povolené typy souborů</Resource>
   <Resource tag="ASK_DELETE">Smazat tuto přílohu?</Resource>
-  <Resource tag="COMPLETE_WARNING">Please wait until all Upload(s) are completed and the Dialog closes itself!</Resource>
-  <Resource tag="CONFIRM_DELETE">Delete attachment(s)?</Resource>
-  <Resource tag="CURRENT_UPLOADS">Current Attachment Uploads:</Resource>
-  <Resource tag="DELETE">Smazat</Resource>
-  <Resource tag="DISALLOWED_EXTENSIONS">Disallowed File Types</Resource>
-  <Resource tag="DROP_HERE">Drop file(s) here</Resource>
+  <Resource tag="COMPLETE_WARNING">Vyčkejte prosím, až se provede nahrání všech souborů. Dialogové okno se potom samo zavře.</Resource>
+  <Resource tag="CONFIRM_DELETE">Odstranit přílohy?</Resource>
+  <Resource tag="CURRENT_UPLOADS">Aktuálně nahrané přílohy:</Resource>
+  <Resource tag="DELETE">Odstranit</Resource>
+  <Resource tag="DISALLOWED_EXTENSIONS">Nepovolené typy souborů</Resource>
+  <Resource tag="DROP_HERE">Pusťte soubory zde</Resource>
   <Resource tag="FILEERROR">'{0}' není platný soubor pro nahrání.</Resource>
   <Resource tag="FILENAME">Jméno souboru</Resource>
-  <Resource tag="NO_ATTACHMENTS">You are not having any attachments yet, to add one click on the &lt;strong&gt;Upload New File(s)&lt;/strong&gt; button</Resource>
+  <Resource tag="NO_ATTACHMENTS">Nemáte zatím žádné přílohy pro přidání přílohy klikněte na tlačítko &lt;strong&gt;Nahrát nové soubory&lt;/strong&gt;</Resource>
   <Resource tag="SELECT_FILE">Zvolte soubor, který chcete nahrát.</Resource>
   <Resource tag="SIZE">Velikost</Resource>
-  <Resource tag="START_UPLOADS">Start upload(s)</Resource>
+  <Resource tag="START_UPLOADS">Začít nahrávat</Resource>
   <Resource tag="TITLE">Přílohy</Resource>
   <Resource tag="UPLOAD">Nahrát</Resource>
-  <Resource tag="UPLOAD_NEW">Upload New File(s)</Resource>
-  <Resource tag="UPLOAD_NOTE">Note: Max. File Size of an Attachment is {0} KB.</Resource>
+  <Resource tag="UPLOAD_NEW">Nahrát nové soubory</Resource>
+  <Resource tag="UPLOAD_NOTE">Poznámka: Maximální velikost přílohy je {0} KB.</Resource>
   <Resource tag="UPLOAD_TITLE">Nahrát soubor</Resource>
-  <Resource tag="UPLOAD_TOOBIG">You cannot attach files that bigger than {1} KB. Your File size is {0} KB.</Resource>
+  <Resource tag="UPLOAD_TOOBIG">Nemůžete nahrát přílohu větší než {1} KB. velikost vašeho souboru je {0} KB.</Resource>
  </page>
  <page name="AVATAR">
-  <Resource tag="CANCEL_TITLE">Go Back to the Modify Avatar Page without selecting an Avatar.</Resource>
-  <Resource tag="EDITPROFILE">Upravit profil</Resource>
-  <Resource tag="TITLE">Personalizace</Resource>
-  <Resource tag="UP_TITLE">Go to the Parent Folder.</Resource>
+  <Resource tag="CANCEL_TITLE">Jít zpět na stránku "Změnit avatar", bez vybrání avatara.</Resource>
+  <Resource tag="EDITPROFILE">Změnit avatar</Resource>
+  <Resource tag="TITLE">Avatary</Resource>
+  <Resource tag="UP_TITLE">Jít do nadřazené složky</Resource>
  </page>
  <page name="BBCODEMODULE">
-  <Resource tag="ALBUMIMG_DESCRIPTION">Enter a Album Image Number</Resource>
-  <Resource tag="ATTACH_DESCRIPTION">Enter a Attachment ID</Resource>
-  <Resource tag="DAILYMOTION_DESCRIPTION">Enter Dailymotion Url (http://www.dailymotion.com/video/xxxx)</Resource>
-  <Resource tag="GOOGLEMAPS_DESCRIPTION">Enter Google Maps Url</Resource>
-  <Resource tag="HIDDENMOD_DESC">The content of this post is hidden. After you THANK the poster, refresh the page to see the hidden content. You need to thank the Current Post</Resource>
-  <Resource tag="HIDDENMOD_GROUP">You have insufficient rights to see the hidden content.</Resource>
-  <Resource tag="HIDDENMOD_GUEST">This board requires you to be registered and logged-in before you can view hidden messages.</Resource>
-  <Resource tag="HIDDENMOD_POST">Hidden Content (You must be registered and have {0} post(s) or more.)</Resource>
-  <Resource tag="HIDDENMOD_THANKS">Hidden Content (You must be registered, and have at least {0} thank(s) received.)</Resource>
-  <Resource tag="HIDEGROUPMOD_DESCRIPTION">Hide the Content from Guests, or other Roles if defined.</Resource>
-  <Resource tag="HIDEMOD_DESCRIPTION">This tag hides content from people until they press the thank you button for the post.</Resource>
-  <Resource tag="HIDEMOD_REPLY">Hidden Content (You must be registered and reply to the message to see the hidden Content.)</Resource>
-  <Resource tag="HIDEMOD_REPLYTHANKS">Hidden Content (You must be registered and reply to the message, or give thank, to see the hidden Content.)</Resource>
-  <Resource tag="HIDEPOSTS_DESCRIPTION">The tag hides content from people who have below then X posts.</Resource>
-  <Resource tag="HIDEREPLY_DESCRIPTION">The tag hides content from people until they replied in the same thread.</Resource>
-  <Resource tag="HIDEREPLYTHANKS_DESCRIPTION">The tag hides content from people until they either reply in the same thread or press the thank you button for the post.</Resource>
-  <Resource tag="HIDETHANKS_DESCRIPTION">The tag hides content from people who have below then X thanks received.</Resource>
-  <Resource tag="SPOILERMOD_DESCRIPTION">Put Spoiler Text in Here</Resource>
-  <Resource tag="SPOILERMOD_HIDE">Hide Spoiler</Resource>
-  <Resource tag="SPOILERMOD_SHOW">Show Spoiler</Resource>
-  <Resource tag="SPOILERMOD_TOOLTIP">Click here to show or hide the hidden text (also known as a spoiler)</Resource>
-  <Resource tag="TWITTER_DESCRIPTION">Enter the Status ID of the Tweet you want to embed</Resource>
-  <Resource tag="UERLINKMOD_DESCRIPTION">Put User Name Here</Resource>
-  <Resource tag="YOUTUBEMOD_DESCRIPTION">Put YouTube URL in Here</Resource>
+  <Resource tag="ALBUMIMG_DESCRIPTION">Vložte číslo obrázku v albumu</Resource>
+  <Resource tag="ATTACH_DESCRIPTION">Vlože ID přílohy</Resource>
+  <Resource tag="DAILYMOTION_DESCRIPTION">Vložte Dailymotion Url (http://www.dailymotion.com/video/xxxx)</Resource>
+  <Resource tag="GOOGLEMAPS_DESCRIPTION">Vložte URL Google Maps</Resource>
+  <Resource tag="HIDDENMOD_DESC">Obsah tohoto příspěvku je skryt. Poděkujte autorovi za tento příspěvek a obnovte stránku pro zobrazrní skrytého obsahu. </Resource>
+  <Resource tag="HIDDENMOD_GROUP">Nemáte dostatečná práva k zobrazení tohoto příspěvku.</Resource>
+  <Resource tag="HIDDENMOD_GUEST">Toto fórum vyžaduje přihlášení abyste mohli zobrazit skryté příspěvky.</Resource>
+  <Resource tag="HIDDENMOD_POST">Skrytý obsah (musíte být přihlášen a mít {0} nebo více příspěvků pro zobrazení skryté obsahu).</Resource>
+  <Resource tag="HIDDENMOD_THANKS">Skrytý obsah (musíte být přihlášen a mít obdržených alespoň {0} poděkování pro zobrazení skryté obsahu).</Resource>
+  <Resource tag="HIDEGROUPMOD_DESCRIPTION">Skrýt obsah hostům, nebo jiným rolí, pokud jsou definovány.</Resource>
+  <Resource tag="HIDEMOD_DESCRIPTION">Tato značka skryje obsah uživatelům. Dokud vám nepoděkují za tento příspěvek.</Resource>
+  <Resource tag="HIDEMOD_REPLY">Skyrtý obsah (musíte být přihlášen a odpovědět na tento příspěvek pro zobrazení skryté obsahu).</Resource>
+  <Resource tag="HIDEMOD_REPLYTHANKS">Skyrtý obsah (musíte být přihlášen a odpovědět na tento příspěvek, nebo za něj poděkovat autorovi pro zobrazení skryté obsahu).</Resource>
+  <Resource tag="HIDEPOSTS_DESCRIPTION">Tento značky skryje obsah lidem, kteří mají méně než X příspěvků.</Resource>
+  <Resource tag="HIDEREPLY_DESCRIPTION">Tato značka skryje obsah lidem, dokud neodpoví v tomto tématu.</Resource>
+  <Resource tag="HIDEREPLYTHANKS_DESCRIPTION">Tato značka skryje obsah lidem, dokud neodpoví v tomto tématu nebo vám nepoděkují za tento příspěvek.</Resource>
+  <Resource tag="HIDETHANKS_DESCRIPTION">Tato značka skryje obsah lidem, kteří obrdželi méně než X poděkování.</Resource>
+  <Resource tag="SPOILERMOD_DESCRIPTION">Vložit spoiler text (bude uživateli skryto dokud neklikne pro zobrazení, vhodné například pro rozuzlení zápletky apod.) sem</Resource>
+  <Resource tag="SPOILERMOD_HIDE">Skrýt skrytý text (spoiler)</Resource>
+  <Resource tag="SPOILERMOD_SHOW">Zobrazit skrytý text (spoiler)</Resource>
+  <Resource tag="SPOILERMOD_TOOLTIP">Klikni pro zobrazení skrytého textu (nebo-li spoileru)</Resource>
+  <Resource tag="TWITTER_DESCRIPTION">Zadejte Status ID vašeho tweetu, který chcete vložit.</Resource>
+  <Resource tag="UERLINKMOD_DESCRIPTION">Vložte uživatelské jméno sem</Resource>
+  <Resource tag="YOUTUBEMOD_DESCRIPTION">Vložte YouTube URL sem</Resource>
  </page>
  <page name="BUDDY">
-  <Resource tag="ADDBUDDY">Add as Friend</Resource>
-  <Resource tag="AWAIT_BUDDY_APPROVAL">(Awaiting Friend Approval)</Resource>
-  <Resource tag="NOTIFICATION_ALL_APPROVED">All Friend requests approved.</Resource>
-  <Resource tag="NOTIFICATION_ALL_APPROVED_ADDED">All Friend requests approved and added to your Friend list.</Resource>
-  <Resource tag="NOTIFICATION_ALL_DENIED">All Friend requests more than 14 days old denied.</Resource>
-  <Resource tag="NOTIFICATION_BUDDYAPPROVED">You have been added to {0}'s Friend list.</Resource>
-  <Resource tag="NOTIFICATION_BUDDYAPPROVED_MUTUAL">You and {0} are now Friends.</Resource>
-  <Resource tag="NOTIFICATION_BUDDYDENIED">Friend request denied.</Resource>
-  <Resource tag="NOTIFICATION_BUDDYREQUEST">Friend request sent.</Resource>
-  <Resource tag="PENDINGBUDDIES">You have {0} pending Friend request(s)</Resource>
-  <Resource tag="PENDINGBUDDIES_TITLE">New Friend request(s)</Resource>
-  <Resource tag="PENDINGBUDDIES2">You have {0} pending Friend request(s). Would you like to go to your Friend list now?</Resource>
-  <Resource tag="REMOVEBUDDY">Remove Friend</Resource>
-  <Resource tag="REMOVEBUDDY_NOTIFICATION">{0} has been removed from your Friend list.</Resource>
+  <Resource tag="ADDBUDDY">Přidat jako přítele</Resource>
+  <Resource tag="AWAIT_BUDDY_APPROVAL">(Čekají žádosti o přátelství)</Resource>
+  <Resource tag="NOTIFICATION_ALL_APPROVED">Všechny žádosti o přátelství schváleny</Resource>
+  <Resource tag="NOTIFICATION_ALL_APPROVED_ADDED">Všechny žádosti o přátelství schváleny.</Resource>
+  <Resource tag="NOTIFICATION_ALL_DENIED">Všechny žádosti o přátleství starší 14 dnů zamítnuty.</Resource>
+  <Resource tag="NOTIFICATION_BUDDYAPPROVED">Byl jste přidán do přátel uživatele {0}.</Resource>
+  <Resource tag="NOTIFICATION_BUDDYAPPROVED_MUTUAL">Vy a {0} jste nyní přátelé.</Resource>
+  <Resource tag="NOTIFICATION_BUDDYDENIED">Žádost o přátelství zamítnuta.</Resource>
+  <Resource tag="NOTIFICATION_BUDDYREQUEST">Žádost o přátelství odeslána.</Resource>
+  <Resource tag="PENDINGBUDDIES">Nevyřízené žádosti o přátelství: {0}</Resource>
+  <Resource tag="PENDINGBUDDIES_TITLE">Nová žádost o přátelství</Resource>
+  <Resource tag="PENDINGBUDDIES2">Nevyřízené žádosti o přátelství: {0}. Chete přejít do správy přátel nyní?</Resource>
+  <Resource tag="REMOVEBUDDY">Odstranit přítele</Resource>
+  <Resource tag="REMOVEBUDDY_NOTIFICATION">{0} byl odstraněn z vašich přátel.</Resource>
  </page>
  <page name="BUTTON">
-  <Resource tag="BUTTON_ADDALBUM">Add New Album</Resource>
-  <Resource tag="BUTTON_ATTACH">Attach</Resource>
-  <Resource tag="BUTTON_ATTACH_TT">Attach files to this post</Resource>
-  <Resource tag="BUTTON_DELETE">Delete</Resource>
-  <Resource tag="BUTTON_DELETE_TT">Delete this Post</Resource>
-  <Resource tag="BUTTON_DELETEALBUM">Delete Album</Resource>
-  <Resource tag="BUTTON_DELETEATTACHMENT">Delete Attachment(s)</Resource>
-  <Resource tag="BUTTON_DELETEATTACHMENT_TT">Delete selected attachment(s)s</Resource>
-  <Resource tag="BUTTON_DELETETOPIC">Delete Topic</Resource>
-  <Resource tag="BUTTON_DELETETOPIC_TT">Delete this topic</Resource>
-  <Resource tag="BUTTON_EDIT">Edit</Resource>
-  <Resource tag="BUTTON_EDIT_TT">Edit this Post</Resource>
-  <Resource tag="BUTTON_EDITALBUMIMAGES">Upload/Delete Images</Resource>
-  <Resource tag="BUTTON_LOCKTOPIC">Lock Topic</Resource>
-  <Resource tag="BUTTON_LOCKTOPIC_TT">Lock this topic</Resource>
-  <Resource tag="BUTTON_MODERATE">Moderate</Resource>
-  <Resource tag="BUTTON_MODERATE_TT">Delete, lock, unlock, and move topics this forum</Resource>
-  <Resource tag="BUTTON_MOVE">Move</Resource>
-  <Resource tag="BUTTON_MOVE_TT">Move this Post</Resource>
-  <Resource tag="BUTTON_MOVETOPIC">Move Topic</Resource>
-  <Resource tag="BUTTON_MOVETOPIC_TT">Move this topic</Resource>
-  <Resource tag="BUTTON_MULTI_QUOTE">Multi-Quote</Resource>
-  <Resource tag="BUTTON_MULTI_QUOTE_TT">Multi-Quote this Message</Resource>
-  <Resource tag="BUTTON_NEWPM">New PM</Resource>
-  <Resource tag="BUTTON_NEWPM_TT">Create a new private message</Resource>
-  <Resource tag="BUTTON_NEWTOPIC">New Topic</Resource>
-  <Resource tag="BUTTON_NEWTOPIC_TT">Post a new topic in this forum</Resource>
-  <Resource tag="BUTTON_POSTREPLY">Post Reply</Resource>
-  <Resource tag="BUTTON_POSTREPLY_TT">Post a reply to this topic</Resource>
-  <Resource tag="BUTTON_QUOTE">Quote</Resource>
-  <Resource tag="BUTTON_QUOTE_TT">Reply with Quote</Resource>
-  <Resource tag="BUTTON_REPLY">Reply</Resource>
-  <Resource tag="BUTTON_REPLY_TT">Reply to Message</Resource>
-  <Resource tag="BUTTON_RESETCOVER">Remove Cover</Resource>
+  <Resource tag="BUTTON_ADDALBUM">Přidat nové album</Resource>
+  <Resource tag="BUTTON_ATTACH">Připojit</Resource>
+  <Resource tag="BUTTON_ATTACH_TT">Připojit soubory k tomuto příspěvku</Resource>
+  <Resource tag="BUTTON_DELETE">Odstranit</Resource>
+  <Resource tag="BUTTON_DELETE_TT">Odstranit tento příspěvek</Resource>
+  <Resource tag="BUTTON_DELETEALBUM">Odstranit album</Resource>
+  <Resource tag="BUTTON_DELETEATTACHMENT">Odstranit přílohy</Resource>
+  <Resource tag="BUTTON_DELETEATTACHMENT_TT">Odstranit vybrané přílohy</Resource>
+  <Resource tag="BUTTON_DELETETOPIC">Odstranit téma</Resource>
+  <Resource tag="BUTTON_DELETETOPIC_TT">Odstranit toto téma</Resource>
+  <Resource tag="BUTTON_EDIT">Upravit</Resource>
+  <Resource tag="BUTTON_EDIT_TT">Upravit tento příspěvek</Resource>
+  <Resource tag="BUTTON_EDITALBUMIMAGES">Nahrát/odstranit obrázky</Resource>
+  <Resource tag="BUTTON_LOCKTOPIC">Uzamknout téma</Resource>
+  <Resource tag="BUTTON_LOCKTOPIC_TT">Uzamknout toto téma</Resource>
+  <Resource tag="BUTTON_MODERATE">Moderovat</Resource>
+  <Resource tag="BUTTON_MODERATE_TT">Odstranit, uzamknout, odemknout a přesouvat témata v tomto příspěvku</Resource>
+  <Resource tag="BUTTON_MOVE">Přesunout</Resource>
+  <Resource tag="BUTTON_MOVE_TT">Přesunout tento příspěvek</Resource>
+  <Resource tag="BUTTON_MOVETOPIC">Přesunout téma</Resource>
+  <Resource tag="BUTTON_MOVETOPIC_TT">Přesunout toto téma</Resource>
+  <Resource tag="BUTTON_MULTI_QUOTE">Multi-citace</Resource>
+  <Resource tag="BUTTON_MULTI_QUOTE_TT">Citovat tento a další vybraný příspěvek.</Resource>
+  <Resource tag="BUTTON_NEWPM">Nová zpráva</Resource>
+  <Resource tag="BUTTON_NEWPM_TT">Vytvořit novou zprávu</Resource>
+  <Resource tag="BUTTON_NEWTOPIC">Nové téma</Resource>
+  <Resource tag="BUTTON_NEWTOPIC_TT">Vytvořit nové téma v tomto fóru</Resource>
+  <Resource tag="BUTTON_POSTREPLY">Odeslat odpověď</Resource>
+  <Resource tag="BUTTON_POSTREPLY_TT">Odeslat odpověď v tomto tématu</Resource>
+  <Resource tag="BUTTON_QUOTE">Citovat</Resource>
+  <Resource tag="BUTTON_QUOTE_TT">Odpovědět citací.</Resource>
+  <Resource tag="BUTTON_REPLY">Odpovědět</Resource>
+  <Resource tag="BUTTON_REPLY_TT">Odpovědět na příspěvek.</Resource>
+  <Resource tag="BUTTON_RESETCOVER">Odstranit obrázek</Resource>
   <Resource tag="BUTTON_RETWEET">Retweet</Resource>
-  <Resource tag="BUTTON_RETWEET_TT">Retweet this Message</Resource>
-  <Resource tag="BUTTON_SETCOVER">Set as Cover</Resource>
-  <Resource tag="BUTTON_TAGFAVORITE">Tag as favorite</Resource>
-  <Resource tag="BUTTON_TAGFAVORITE_TT">Tag this topic as a favorite.</Resource>
-  <Resource tag="BUTTON_THANKS">Thank</Resource>
-  <Resource tag="BUTTON_THANKS_TT">Thank the post sender</Resource>
-  <Resource tag="BUTTON_THANKSDELETE">Remove Thank</Resource>
-  <Resource tag="BUTTON_THANKSDELETE_TT">Remove your thank note from the post sender</Resource>
-  <Resource tag="BUTTON_UNDELETE">Undelete</Resource>
-  <Resource tag="BUTTON_UNDELETE_TT">Undelete this Post</Resource>
-  <Resource tag="BUTTON_UNLOCKTOPIC">Unlock Topic</Resource>
-  <Resource tag="BUTTON_UNLOCKTOPIC_TT">Unlock this topic</Resource>
-  <Resource tag="BUTTON_UNTAGFAVORITE">Untag as favorite</Resource>
-  <Resource tag="BUTTON_UNTAGFAVORITE_TT">Remove this topic from your Favorites List.</Resource>
+  <Resource tag="BUTTON_RETWEET_TT">Retweetovat tento příspěvek.</Resource>
+  <Resource tag="BUTTON_SETCOVER">Nastavit jako obrázek</Resource>
+  <Resource tag="BUTTON_TAGFAVORITE">Označit jako oblíbené</Resource>
+  <Resource tag="BUTTON_TAGFAVORITE_TT">Označit toto téma jako oblíbené</Resource>
+  <Resource tag="BUTTON_THANKS">Poděkovat</Resource>
+  <Resource tag="BUTTON_THANKS_TT">Poděkovat autorovi za tento příspěvěk</Resource>
+  <Resource tag="BUTTON_THANKSDELETE">Odstranit poděkování</Resource>
+  <Resource tag="BUTTON_THANKSDELETE_TT">Odstranit poděkování autorovi za tento příspěvěk.</Resource>
+  <Resource tag="BUTTON_UNDELETE">Zrušit odstranění</Resource>
+  <Resource tag="BUTTON_UNDELETE_TT">Zrušit odstranění tohoto příspěvku</Resource>
+  <Resource tag="BUTTON_UNLOCKTOPIC">Odemknout téma</Resource>
+  <Resource tag="BUTTON_UNLOCKTOPIC_TT">Odemknout toto téma</Resource>
+  <Resource tag="BUTTON_UNTAGFAVORITE">Odebrat z oblíbených</Resource>
+  <Resource tag="BUTTON_UNTAGFAVORITE_TT">Odstranit toto téma z vašich oblíbených témat.</Resource>
  </page>
  <page name="CHARACTER_CHECKER">
-  <Resource tag="ISEMPTY">Message body can not be empty.Why do you want to post an empty message?</Resource>
-  <Resource tag="ISEXCEEDED">You have exceeded the maximum number of characters in each post.Make it shorter and try again.</Resource>
-  <Resource tag="MAXNUMBEROF">Maximum number of characters in each post is: {0}</Resource>
+  <Resource tag="ISEMPTY">Zpráva nemůže být prázdná.</Resource>
+  <Resource tag="ISEXCEEDED">Překročen maximální možný počet znaků. Zkraťte prosím váš příspěvek:</Resource>
+  <Resource tag="MAXNUMBEROF">Maximální počet znaků v každém příspěvku je {0}.</Resource>
  </page>
  <page name="COMMON">
   <Resource tag="ALBUMIMG_BBCODE">Vložit obrázek z alba...</Resource>
@@ -2082,141 +2082,159 @@
   <Resource tag="CANNOT_VOTE">V tomto fóru [b]nemůžete[/b] hlasovat v průzkumech mínění.</Resource>
   <Resource tag="CAPTCHA_ENTER">Vložte písmena z bezpečnostního obrázku:</Resource>
   <Resource tag="CAPTCHA_IMAGE">Bezpečnostní obrázek:</Resource>
-  <Resource tag="CHANGEEMAIL_SUBJECT">Changed Email</Resource>
+  <Resource tag="CHANGEEMAIL_SUBJECT">Změněný email</Resource>
   <Resource tag="COMMON_WORDS">out,please,a,able,about,across,after,all,almost,also,am,among,an,and,any,are,as,at,be,because,been,but,by,can,cannot,could,dear,did,do,does,either,else,ever,every,for,from,get,got,had,has,have,he,her,hers,him,his,how,however,i,if,in,into,is,it,its,just,least,let,like,likely,may,me,might,most,must,my,neither,no,nor,not,of,off,often,on,only,or,other,our,own,rather,said,say,says,she,should,since,so,some,than,that,the,their,them,then,there,these,they,this,tis,to,too,twas,us,wants,was,we,were,what,when,where,which,while,who,whom,why,will,with,would,yet,you,your</Resource>
-  <Resource tag="CONTINUE">Continue</Resource>
-  <Resource tag="COOKIE">The {0} uses cookies. By continuing to browse this site, you are agreeing to our use of cookies.</Resource>
-  <Resource tag="COOKIE_AGREE">Close</Resource>
-  <Resource tag="COOKIE_DETAILS">More Details</Resource>
-  <Resource tag="COOKIE_HEADER">Important Information:</Resource>
-  <Resource tag="COPY">Copy</Resource>
-  <Resource tag="CUSTOM_BBCODE">More BBCode</Resource>
-  <Resource tag="DELETE">Delete</Resource>
-  <Resource tag="DISALLOWED">Disallowed</Resource>
-  <Resource tag="DOWNLOAD">Download</Resource>
-  <Resource tag="EDIT">Edit</Resource>
-  <Resource tag="EMAILVERIFICATION_SUBJECT">{0} Email Verification</Resource>
-  <Resource tag="EXTERNALUSER">(External User)</Resource>
-  <Resource tag="FONT_COLOR">Font Color</Resource>
-  <Resource tag="FONT_SIZE">Font Size</Resource>
-  <Resource tag="FOR">For</Resource>
+  <Resource tag="CONTINUE">Pokračovat</Resource>
+  <Resource tag="COOKIE">{0} používá cookies. Pokračovínm v prohlížení této stránky, souhlasíte s využitím cookies.</Resource>
+  <Resource tag="COOKIE_AGREE">Zavřít</Resource>
+  <Resource tag="COOKIE_DETAILS">Více detailů</Resource>
+  <Resource tag="COOKIE_HEADER">Důležitá informace:</Resource>
+  <Resource tag="COPY">Kopie</Resource>
+  <Resource tag="CUSTOM_BBCODE">Více BB kódů</Resource>
+  <Resource tag="DELETE">Smazat</Resource>
+  <Resource tag="DISALLOWED">Nepovoleno</Resource>
+  <Resource tag="DOWNLOAD">Stáhnout</Resource>
+  <Resource tag="EDIT">Upravit</Resource>
+  <Resource tag="EMAILVERIFICATION_SUBJECT">{0} ověření emailu</Resource>
+  <Resource tag="EXTERNALUSER">(Externí uživatel)</Resource>
+  <Resource tag="FONT_COLOR">Barva fontu</Resource>
+  <Resource tag="FONT_SIZE">Velikost fontu</Resource>
+  <Resource tag="FOR">Pro</Resource>
   <Resource tag="FORMAT_DATE_LONG">D</Resource>
   <Resource tag="FORMAT_DATE_SHORT">d</Resource>
   <Resource tag="FORMAT_DATE_TIME_LONG">F</Resource>
   <Resource tag="FORMAT_DATE_TIME_SHORT">G</Resource>
   <Resource tag="FORMAT_TIME">T</Resource>
-  <Resource tag="FORUM_JUMP">Výběr fóra</Resource>
+  <Resource tag="FORUM_JUMP">Přejít na fórum</Resource>
   <Resource tag="GENERATED">Stránka sestavena za {0:N3} sekundy.</Resource>
-  <Resource tag="GO">GO</Resource>
-  <Resource tag="GOTOFIRSTPAGE_TT">First page</Resource>
-  <Resource tag="GOTOLASTPAGE_TT">Go to last page</Resource>
-  <Resource tag="GOTONEXTPAGE_TT">Next Page</Resource>
-  <Resource tag="GOTOPAGE_HEADER">Go to Page...</Resource>
-  <Resource tag="GOTOPOST_ТТ">Go to message</Resource>
-  <Resource tag="GOTOPREVPAGE_TT">Prev Page</Resource>
-  <Resource tag="HIDDEN">Hidden</Resource>
-  <Resource tag="HTMLTAG_FORBIDDEN">Your input data should not contain HTML tags.</Resource>
-  <Resource tag="HTMLTAG_WRONG">Your input data contains forbidden {0} HTML tag.</Resource>
-  <Resource tag="LOADING">Loading...</Resource>
-  <Resource tag="MAX_ONLINE">Nejvíce uživatelů online: {0:N0} on {1}.</Resource>
+  <Resource tag="GO">JDI</Resource>
+  <Resource tag="GOTOFIRSTPAGE_TT">První strana</Resource>
+  <Resource tag="GOTOLASTPAGE_TT">Poslední strana</Resource>
+  <Resource tag="GOTONEXTPAGE_TT">Další strana</Resource>
+  <Resource tag="GOTOPAGE_HEADER">Přejít na stranu...</Resource>
+  <Resource tag="GOTOPOST_ТТ">Přejít na zprávu...</Resource>
+  <Resource tag="GOTOPREVPAGE_TT">Předchozí strana</Resource>
+  <Resource tag="HIDDEN">Skrytý</Resource>
+  <Resource tag="HTMLTAG_FORBIDDEN">Vložená data by neměla obsahovat HTML značky.</Resource>
+  <Resource tag="HTMLTAG_WRONG">Vložená data obsahují nepovolené {0} HTML značky.</Resource>
+  <Resource tag="LOADING">Načítání...</Resource>
+  <Resource tag="MAX_ONLINE">Nejvíce uživatelů online: {0:N0} dne {1}.</Resource>
   <Resource tag="MENU">Menu</Resource>
-  <Resource tag="MESSAGE">Message</Resource>
-  <Resource tag="MOBILE_FULLSITE">View Full Site</Resource>
-  <Resource tag="MOBILE_VIEWSITE">View Mobile Site</Resource>
-  <Resource tag="MODAL_NOTIFICATION_HEADER">Notification</Resource>
-  <Resource tag="MODERATOR">Moderator</Resource>
-  <Resource tag="NAME">Name</Resource>
-  <Resource tag="NO">No</Resource>
-  <Resource tag="NONE">None</Resource>
-  <Resource tag="NOTIFICATION_ON_BOT_USER_REGISTER_EMAIL_SUBJECT">New SPAM BOT User Registered on {0} Forum</Resource>
-  <Resource tag="NOTIFICATION_ON_MEDAL_AWARDED_SUBJECT">you have been awarded on the {0} Forum</Resource>
-  <Resource tag="NOTIFICATION_ON_MODERATOR_MESSAGE_APPROVAL">New Message on {0} Forum Needs to be Approved</Resource>
-  <Resource tag="NOTIFICATION_ON_MODERATOR_REPORTED_MESSAGE">A Message on {0} Forum was reported</Resource>
-  <Resource tag="NOTIFICATION_ON_MODERATOR_SPAMMESSAGE_APPROVAL">New SPAM Message on {0} Forum needs to be checked</Resource>
-  <Resource tag="NOTIFICATION_ON_NEW_FACEBOOK_USER_SUBJECT">Registration on {0} Forum successfully</Resource>
-  <Resource tag="NOTIFICATION_ON_SUSPENDING_USER_SUBJECT">Suspension of your {0} Forum Account</Resource>
-  <Resource tag="NOTIFICATION_ON_USER_REGISTER_EMAIL_SUBJECT">New User Registered on {0} Forum</Resource>
-  <Resource tag="NOTIFICATION_ON_WELCOME_USER_SUBJECT">Welcome to the {0} Forum</Resource>
-  <Resource tag="NOTIFICATION_ROLE_ASSIGNMENT_SUBJECT">{0} Forum Account Update</Resource>
+  <Resource tag="MESSAGE">Zpráva</Resource>
+  <Resource tag="MOBILE_FULLSITE">Zobrazit celou stránku</Resource>
+  <Resource tag="MOBILE_VIEWSITE">Zobrazit mobilní vzhled</Resource>
+  <Resource tag="MODAL_NOTIFICATION_HEADER">Notifikace</Resource>
+  <Resource tag="MODERATOR">Moderátor</Resource>
+  <Resource tag="NAME">Jméno</Resource>
+  <Resource tag="NO">Ne</Resource>
+  <Resource tag="NONE">Žádný</Resource>
+  <Resource tag="NOTIFICATION_ON_BOT_USER_REGISTER_EMAIL_SUBJECT">Nový SPAM BOT se registroval na fóru {0}</Resource>
+  <Resource tag="NOTIFICATION_ON_MEDAL_AWARDED_SUBJECT">byl jste oceněn na fóru {0}</Resource>
+  <Resource tag="NOTIFICATION_ON_MODERATOR_MESSAGE_APPROVAL">Nová zpráva na fóru {0} vyžaduje schválení.</Resource>
+  <Resource tag="NOTIFICATION_ON_MODERATOR_REPORTED_MESSAGE">Zpráva byla nahlášena na fóru {0} </Resource>
+  <Resource tag="NOTIFICATION_ON_MODERATOR_SPAMMESSAGE_APPROVAL">Nová SPAM zpráva vyžaduje kontrolu na fóru {0}</Resource>
+  <Resource tag="NOTIFICATION_ON_NEW_FACEBOOK_USER_SUBJECT">Registrace na fóru {0} byla úspěšná.</Resource>
+  <Resource tag="NOTIFICATION_ON_SUSPENDING_USER_SUBJECT">Pozastavení vašeho účtu na fóru {0}</Resource>
+  <Resource tag="NOTIFICATION_ON_USER_REGISTER_EMAIL_SUBJECT">Nový uživatel zaregistrován na fóru {0}</Resource>
+  <Resource tag="NOTIFICATION_ON_WELCOME_USER_SUBJECT">Vítejte na fóru {0}</Resource>
+  <Resource tag="NOTIFICATION_ROLE_ASSIGNMENT_SUBJECT">Účet na fóru {0} aktualizován</Resource>
   <Resource tag="OK">OK</Resource>
-  <Resource tag="OR">or</Resource>
-  <Resource tag="PAGES">Pages</Resource>
-  <Resource tag="PM_NOTIFICATION_SUBJECT">Nová soukromá zpráva od {0} o {1}</Resource>
-  <Resource tag="POST">Post</Resource>
-  <Resource tag="POWERED_BY">Powered by </Resource>
-  <Resource tag="PRIORITY">Priority</Resource>
-  <Resource tag="PRIVACY_POLICY">Privacy Policy</Resource>
-  <Resource tag="READ">Read</Resource>
+  <Resource tag="OR">nebo </Resource>
+  <Resource tag="PAGES">Strany</Resource>
+  <Resource tag="PM_NOTIFICATION_SUBJECT">Nová zpráva od {0}, předmět: {1}</Resource>
+  <Resource tag="POST">Příspěvěk</Resource>
+  <Resource tag="POWERED_BY">Vytvořeno pomocí</Resource>
+  <Resource tag="PRIORITY">Priorita</Resource>
+  <Resource tag="PRIVACY_POLICY">Zásady ochrany osobních údajů</Resource>
+  <Resource tag="READ">Číst</Resource>
   <Resource tag="REGMAIL_SENT">Byla vám odeslána e-mailová zpráva. Podívejte se do své schránky a klikněte na odkaz, který je ve zprávě uveden.</Resource>
   <Resource tag="REGMAIL_WILL_BE_SEND">Po zaregistrování vám bude zaslána e-mailová zpráva. Abyste se mohli přihlásit, podívejte se do své poštovní schránky a klikněte na odkaz, který je ve zprávě uveden.</Resource>
-  <Resource tag="REPLY">Reply</Resource>
+  <Resource tag="REPLY">Odpověď</Resource>
   <Resource tag="SAVE">Uložit</Resource>
   <Resource tag="SELECT_LOCALE_JS">
       language:  {
               errorLoading: function() {
-                    return "The results could not be loaded."
+                    return "Výsledky nemohly být načteny."
                 },
                 inputTooLong: function(e) {
                     var t = e.input.length - e.maximum,
-                        n = "Please delete " + t + " character";
+                        n = "Text je příliš dlouhý, odstraňte prosím " + t + " znaků";
                     return t != 1 &amp;&amp; (n += "s"), n
                 },
                 inputTooShort: function(e) {
                     var t = e.minimum - e.input.length,
-                        n = "Please enter " + t + " or more characters";
+                        n = "Vložte prosím alespoň " + t + " znaků.";
                     return n
                 },
                 loadingMore: function() {
-                    return "Loading more results…"
+                    return "Načítám další výsledky…"
                 },
                 maximumSelected: function(e) {
                     var t = "You can only select " + e.maximum + " item";
                     return e.maximum != 1 &amp;&amp; (t += "s"), t
                 },
                 noResults: function() {
-                    return "No results found"
+                    return "Nebyly nalezeny žádné výsledky"
                 },
                 searching: function() {
-                    return "Searching…"
+                    return "Hledám…"
                 }
           }
   </Resource>
-  <Resource tag="SHOWHIDE">Show/Hide</Resource>
-  <Resource tag="SUBMIT">Submit</Resource>
+  <Resource tag="SHOWHIDE">Zobrazit/Skrýt</Resource>
+  <Resource tag="SUBMIT">Odeslat</Resource>
   <Resource tag="TIMEAGO_JS">
-      // defaults to english... no need for localization.
+      // czech
+     jQuery.timeago.settings.strings = {
+      prefixAgo: null,
+      prefixFromNow: null,
+      suffixAgo: null,
+      suffixFromNow: "od teď",
+      seconds: "méně než před minutou",
+      minute: "před minutou",
+      minutes: "%d minut",
+      hour: "před hodinou",
+      hours: "před %d hodinami",
+      day: "včera",
+      days: "před %d dny",
+      month: "před měsícem",
+      months: "před %d měsíci",
+      year: "před rokem",
+      years: "před %d roky",
+      numbers: []
+      };
     </Resource>
-  <Resource tag="TOPIC_NOTIFICATION_SUBJECT">Nová zpráva v sledovaném tématu (Od {0})</Resource>
-  <Resource tag="TT_ALIGNCENTER">Center Justify</Resource>
-  <Resource tag="TT_ALIGNLEFT">Left Justify</Resource>
-  <Resource tag="TT_ALIGNRIGHT">Right Justify</Resource>
-  <Resource tag="TT_BOLD">Bold</Resource>
-  <Resource tag="TT_CODE">Code</Resource>
-  <Resource tag="TT_CODELANG">Choose Language for Syntax Highlighting</Resource>
-  <Resource tag="TT_CREATELINK">Create Link</Resource>
-  <Resource tag="TT_CUSTOMBBCODE">More BBCode Tags</Resource>
-  <Resource tag="TT_HIGHLIGHT">Highlight</Resource>
-  <Resource tag="TT_IMAGE">Insert Image</Resource>
-  <Resource tag="TT_IPDETAILS">Show IP details</Resource>
-  <Resource tag="TT_ITALIC">Italic</Resource>
-  <Resource tag="TT_LISTORDERED">Ordered List</Resource>
-  <Resource tag="TT_LISTUNORDERED">Unordered List</Resource>
-  <Resource tag="TT_QUOTE">Quote</Resource>
-  <Resource tag="TT_UNDERLINE">Underline</Resource>
+  <Resource tag="TOPIC_NOTIFICATION_SUBJECT">Nový příspěvek ve sledovaném tématu (od {0})</Resource>
+  <Resource tag="TT_ALIGNCENTER">Zarovnání na střed</Resource>
+  <Resource tag="TT_ALIGNLEFT">Zarovnání vlevo</Resource>
+  <Resource tag="TT_ALIGNRIGHT">Zarovnání vpravo</Resource>
+  <Resource tag="TT_BOLD">Tučně</Resource>
+  <Resource tag="TT_CODE">Kód</Resource>
+  <Resource tag="TT_CODELANG">Vyberte syntaxi jazyka pro zvýrazňování</Resource>
+  <Resource tag="TT_CREATELINK">Vytvořit odkaz</Resource>
+  <Resource tag="TT_CUSTOMBBCODE">Více BB kódů</Resource>
+  <Resource tag="TT_HIGHLIGHT">Zvýraznění</Resource>
+  <Resource tag="TT_IMAGE">Vložit obrázek</Resource>
+  <Resource tag="TT_IPDETAILS">Ukázat IP adresu</Resource>
+  <Resource tag="TT_ITALIC">Kurzíva</Resource>
+  <Resource tag="TT_LISTORDERED">Číslovaný seznam</Resource>
+  <Resource tag="TT_LISTUNORDERED">Odrážkový seznam</Resource>
+  <Resource tag="TT_QUOTE">Uvozovky</Resource>
+  <Resource tag="TT_UNDERLINE">Podtržení</Resource>
   <Resource tag="UNREAD_MSG">Ve schránce máte {0} nečtených zpráv.</Resource>
-  <Resource tag="UNREAD_MSG_TITLE">New Private Message(s)</Resource>
-  <Resource tag="UNREAD_MSG2">You have {0} unread message(s) in your Inbox. Would You Like to go to your Inbox now?</Resource>
+  <Resource tag="UNREAD_MSG_TITLE">Nové zprávy</Resource>
+  <Resource tag="UNREAD_MSG2">Ve schránce máte {0} nepřečtných zpráv. Chcete jít do vaší schránky nyní?</Resource>
   <Resource tag="UPDATE">Aktualizovat</Resource>
-  <Resource tag="USERNAME_TOOLONG">User Name or Display User Name cannot be more than {0} characters.</Resource>
-  <Resource tag="USERNAME_TOOSMALL">User Name or Display User Name must be more than {0} characters.</Resource>
-  <Resource tag="VIEW_CATEGORY">View category</Resource>
-  <Resource tag="VIEW_FORUM">View forum</Resource>
-  <Resource tag="VIEW_FULLINFO">View full info</Resource>
-  <Resource tag="VIEW_TOPIC">View topic</Resource>
-  <Resource tag="VIEW_TOPIC_STARTED_BY">View topic started by {0}</Resource>
-  <Resource tag="VIEW_USRPROFILE">View profile</Resource>
-  <Resource tag="VOTE">Vote</Resource>
-  <Resource tag="YES">Yes</Resource>
+  <Resource tag="USERNAME_TOOLONG">Uživatelské jméno nebo přezdívka nemůže být delší než {0} znaků.</Resource>
+  <Resource tag="USERNAME_TOOSMALL">Uživatelské jméno nebo přezdívka musí být dlouhé alespoň {0} znaků.</Resource>
+  <Resource tag="VIEW_CATEGORY">Zobrazit kategorii</Resource>
+  <Resource tag="VIEW_FORUM">Zobrazit fórum</Resource>
+  <Resource tag="VIEW_FULLINFO">Zobrazit všechny informace</Resource>
+  <Resource tag="VIEW_TOPIC">Zobrazit témata</Resource>
+  <Resource tag="VIEW_TOPIC_STARTED_BY">Zobrazit témata zahájená {0}</Resource>
+  <Resource tag="VIEW_USRPROFILE">Zobrazit profil</Resource>
+  <Resource tag="VOTE">Hlasovat</Resource>
+  <Resource tag="YES">Ano</Resource>
  </page>
  <page name="COOKIES">
   <Resource tag="COOKIES_TEXT">
@@ -2721,7 +2739,7 @@
  <page name="DEFAULT">
   <Resource tag="ACTIVE_DISCUSSIONS">Aktivní diskuse</Resource>
   <Resource tag="ACTIVE_USERS">Aktivní uživatelé</Resource>
-  <Resource tag="ACTIVE_USERS_COUNT1">{0:N0} aktivních uživatelů</Resource>
+  <Resource tag="ACTIVE_USERS_COUNT1">{0:N0} aktivní uživatel</Resource>
   <Resource tag="ACTIVE_USERS_COUNT2">{0:N0} aktivních uživatelů</Resource>
   <Resource tag="ACTIVE_USERS_GUESTS1">{0:N0} host</Resource>
   <Resource tag="ACTIVE_USERS_GUESTS2">{0:N0} hostů</Resource>
@@ -2734,7 +2752,7 @@
   <Resource tag="ATOMICONTOOLTIPFAVORITE">Odebírat vaše oblíbená témata skrze Atom.</Resource>
   <Resource tag="ATOMICONTOOLTIPFORUM">Odebírat fórum skrze Atom.</Resource>
   <Resource tag="BY">od {0}</Resource>
-  <Resource tag="CURRENT_TIME">Teď máme přesně {0}.</Resource>
+  <Resource tag="CURRENT_TIME">Aktuální čas {0}.</Resource>
   <Resource tag="ERROR_FB_HOVERCARD">Požadovaný uživatel nenalezen.</Resource>
   <Resource tag="ERROR_HOVERCARD">Omlouváme se, data nebyla nalezena, nebo nastala chyba.</Resource>
   <Resource tag="ERROR_TWIT_HOVERCARD">Neplatné uživatelské jméno nebo byl přesažen limit Twitter příspěveků.&lt;br/&gt;&lt;small&gt;Pamatujte, že Twitter dovoluje pouze 150 příspěvků za hodinu.&lt;/small&gt;.</Resource>
@@ -2744,8 +2762,8 @@
   <Resource tag="IN">v {0}</Resource>
   <Resource tag="INFORMATION">Informace</Resource>
   <Resource tag="LAST_VISIT">Vaše poslední návštěva: {0}</Resource>
-  <Resource tag="LASTPOST">Poslední zpráva</Resource>
-  <Resource tag="LATEST_POSTS">Poslední zprávy</Resource>
+  <Resource tag="LASTPOST">Poslední příspěvek</Resource>
+  <Resource tag="LATEST_POSTS">Poslední příspěvky</Resource>
   <Resource tag="LOADING_FB_HOVERCARD">Načítání Facebook informací ...</Resource>
   <Resource tag="LOADING_HOVERCARD">Načítání uživatelských informací...</Resource>
   <Resource tag="LOADING_TWIT_HOVERCARD">Načítání Twitter informací ...</Resource>
@@ -2754,25 +2772,25 @@
   <Resource tag="MARKALL">Označit všechna fóra jako přečtená</Resource>
   <Resource tag="MODERATORS">Moderátoři</Resource>
   <Resource tag="NO_FORUM_ACCESS">(Přístup odepřen)</Resource>
-  <Resource tag="NO_POSTS">Žádné zprávy</Resource>
+  <Resource tag="NO_POSTS">Žádné příspěvky</Resource>
   <Resource tag="ONDATE">na {0}</Resource>
-  <Resource tag="POSTS">Zprávy</Resource>
+  <Resource tag="POSTS">Příspěvky</Resource>
   <Resource tag="RECENT_ONLINE_USERS">{0} uživatelů bylo online v posledních 24 hodinách a {1} v posledních 30 dnech.</Resource>
   <Resource tag="RECENT_USERS">Poslední uživatelé</Resource>
   <Resource tag="RSSICONTOOLTIPACTIVE">Odebírat aktivní témata skrze RSS.</Resource>
   <Resource tag="RSSICONTOOLTIPFAVORITE">Odebírat vaše oblíbená témata skrze RSS.</Resource>
-  <Resource tag="RSSICONTOOLTIPFORUM">Subscribe to forum RSS feed.</Resource>
+  <Resource tag="RSSICONTOOLTIPFORUM">Odebírat fórum skrze RSS.</Resource>
   <Resource tag="SHOW_UNREAD_ONLY">Ukázat pouze nepřečtená témata.</Resource>
   <Resource tag="STATS">Statistika</Resource>
   <Resource tag="STATS_BIRTHDAYS">Dnešní narozeniny:</Resource>
   <Resource tag="STATS_LASTMEMBER">Nejnovějším členem je</Resource>
-  <Resource tag="STATS_LASTPOST">Poslední zprávu {0}.</Resource>
+  <Resource tag="STATS_LASTPOST">Poslední příspěvek přidal {0}.</Resource>
   <Resource tag="STATS_MEMBERS">Máme {0:N0} registrovaných členů.</Resource>
-  <Resource tag="STATS_POSTS">Počet fór: {2:N0}; počet témat: {1:N0}; počet zpráv: {0:N0}.</Resource>
+  <Resource tag="STATS_POSTS">Nachízí se zde {0:N0} příspěvků v {1:N0} tématech, která jsou  {2:N0} v fórech.</Resource>
   <Resource tag="TOPICS">Témata</Resource>
   <Resource tag="UNREAD0">Ve své schránce máte {0} nepřečtených zpráv.</Resource>
   <Resource tag="UNREAD1">Ve své schránce máte {0} nepřečtených zpráv.</Resource>
-  <Resource tag="VIEWING">({0} se právě dívá)</Resource>
+  <Resource tag="VIEWING">({0} uživatelů si právě prohlíží)</Resource>
   <Resource tag="VOTE_DOWN_TITLE">Odebrat bod reputace užavateli.</Resource>
   <Resource tag="VOTE_UP_TITLE">Přidat bod reputace uživateli.</Resource>
  </page>
@@ -4376,7 +4394,7 @@ Spoiler Content
  <page name="MODERATE_DEFAULT">
   <Resource tag="CATEGORY">Kategorie</Resource>
   <Resource tag="FORUM">Fórum</Resource>
-  <Resource tag="REPORTED">Příspěvky nahlášené jako urážlivé</Resource>
+  <Resource tag="REPORTED">Příspěvky nahlášené jako nevhodné</Resource>
   <Resource tag="SPAM_REPORTED">Přsípěvek byl úspěšně nahlášen jako SPAM službě Akismet SPAM Service</Resource>
   <Resource tag="SPAM_REPORTED_FAILED">Nahlášení příspěvku jako SPAM neproběhlo úspěšně. Zkontrolujte prosím váš API klíč.</Resource>
   <Resource tag="TITLE">Moderování</Resource>
@@ -4593,7 +4611,7 @@ Spoiler Content
   <Resource tag="CLOSE_TEXT">Zavřít</Resource>
   <Resource tag="CONFIRM_DELETEMESSAGE">Chcete smazat tuto zprávu?</Resource>
   <Resource tag="CONFIRM_DELETETOPIC">Chcete smazat toto téma?</Resource>
-  <Resource tag="CONFIRM_REPORTPOST">Opravdu nahlásit příspěvek jako urážlivý?</Resource>
+  <Resource tag="CONFIRM_REPORTPOST">Opravdu nahlásit příspěvek jako nevhodný?</Resource>
   <Resource tag="DIGG_TOPIC">Sdílet příspěvek na Digg</Resource>
   <Resource tag="EDIT_REASON">Důvod</Resource>
   <Resource tag="EDIT_REASON_NA">Nespecifikován</Resource>
@@ -4646,15 +4664,15 @@ Spoiler Content
   <Resource tag="PM_TITLE">Poslat uživateli {0} zprávu</Resource>
   <Resource tag="POINTS">Body</Resource>
   <Resource tag="POLL_CLOSED">(Průzkum je uzavřen)</Resource>
-  <Resource tag="POST_REPLY">Odešli odpověď</Resource>
+  <Resource tag="POST_REPLY">Odeslat odpověď</Resource>
   <Resource tag="POSTED">Odesláno</Resource>
   <Resource tag="POSTS">Zpráv</Resource>
   <Resource tag="PREVTOPIC">Předchozí téma</Resource>
   <Resource tag="PRINTTOPIC">Vytisknout toto téma</Resource>
   <Resource tag="QUESTION">Otázka pro průzkum mínění</Resource>
-  <Resource tag="QUICKREPLY">Rýchla odpověď</Resource>
-  <Resource tag="QUICKREPLY_HIDE">Schovej rychlou odpověď</Resource>
-  <Resource tag="QUICKREPLY_SHOW">Zobraz rychlou odpověď</Resource>
+  <Resource tag="QUICKREPLY">Rychlá odpověď</Resource>
+  <Resource tag="QUICKREPLY_HIDE">Schovat rychlou odpověď</Resource>
+  <Resource tag="QUICKREPLY_SHOW">Zobrazit rychlou odpověď</Resource>
   <Resource tag="QUOTE_SELECTED">Citovat označený příspěvek</Resource>
   <Resource tag="RANK">Kategorie</Resource>
   <Resource tag="REDDIT_TOPIC">Sdílet téma na Reddit</Resource>
@@ -4702,7 +4720,7 @@ Spoiler Content
   <Resource tag="USERONLINESTATUS">Uživatel je online</Resource>
   <Resource tag="USERPROFILE">Profil uživatele</Resource>
   <Resource tag="USERSUSPENDED">Uživateli je pozastaveno členství do {0}</Resource>
-  <Resource tag="VIEW">Zobraz</Resource>
+  <Resource tag="VIEW">Zobrazit</Resource>
   <Resource tag="VIEW_TOOLTIP">Změnit zobrazení tématu mezi normálním a vláknovým.</Resource>
   <Resource tag="VOTES">Hlasy</Resource>
   <Resource tag="WARN_ALREADY_VOTED">Už jste hlasoval.</Resource>
@@ -4723,7 +4741,7 @@ Spoiler Content
  </page>
  <page name="PROFILE">
   <Resource tag="ABOUT">Informace o uživateli</Resource>
-  <Resource tag="ADMIN_USER">Administrátor</Resource>
+  <Resource tag="ADMIN_USER">Administrovat</Resource>
   <Resource tag="AIM">Jméno AIM:</Resource>
   <Resource tag="ALBUMS">Alba</Resource>
   <Resource tag="AVATAR">Avatar</Resource>
@@ -4754,7 +4772,7 @@ Spoiler Content
   <Resource tag="MEDALS">Medaile:</Resource>
   <Resource tag="MEMBERS">Uživatelé</Resource>
   <Resource tag="MINUTES">minut</Resource>
-  <Resource tag="MODERATION">Moderování</Resource>
+  <Resource tag="MODERATION">Moderovat</Resource>
   <Resource tag="MSN">MSN Messenger:</Resource>
   <Resource tag="NUMALL">{0:N2}% všech zpráv</Resource>
   <Resource tag="NUMDAY">{0:N2} zpráv denně</Resource>
