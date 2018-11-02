@@ -161,7 +161,7 @@
   <Resource tag="MSG_NOT_DELETE">You cannot delete this access mask because it is in use.</Resource>
   <Resource tag="NAME">Name</Resource>
   <Resource tag="NEW_MASK">New Access Mask</Resource>
-  <Resource tag="POLL">Poll</Resource>
+  <Resource tag="POLL">Průzkum</Resource>
   <Resource tag="POST">Post</Resource>
   <Resource tag="PRIORITY">Priority</Resource>
   <Resource tag="READ">Read</Resource>
@@ -2023,7 +2023,7 @@
   <Resource tag="BUTTON_NEWPM_TT">Vytvořit novou zprávu</Resource>
   <Resource tag="BUTTON_NEWTOPIC">Nové téma</Resource>
   <Resource tag="BUTTON_NEWTOPIC_TT">Vytvořit nové téma v tomto fóru</Resource>
-  <Resource tag="BUTTON_POSTREPLY">Odeslat odpověď</Resource>
+  <Resource tag="BUTTON_POSTREPLY">Odpovědět</Resource>
   <Resource tag="BUTTON_POSTREPLY_TT">Odeslat odpověď v tomto tématu</Resource>
   <Resource tag="BUTTON_QUOTE">Citovat</Resource>
   <Resource tag="BUTTON_QUOTE_TT">Odpovědět citací.</Resource>
@@ -2091,6 +2091,7 @@
   <Resource tag="COOKIE_HEADER">Důležitá informace:</Resource>
   <Resource tag="COPY">Kopie</Resource>
   <Resource tag="CUSTOM_BBCODE">Více BB kódů</Resource>
+  <Resource tag="DEFAULT">Výchozí</Resource>
   <Resource tag="DELETE">Smazat</Resource>
   <Resource tag="DISALLOWED">Nepovoleno</Resource>
   <Resource tag="DOWNLOAD">Stáhnout</Resource>
@@ -2757,7 +2758,7 @@
   <Resource tag="ERROR_HOVERCARD">Omlouváme se, data nebyla nalezena, nebo nastala chyba.</Resource>
   <Resource tag="ERROR_TWIT_HOVERCARD">Neplatné uživatelské jméno nebo byl přesažen limit Twitter příspěveků.&lt;br/&gt;&lt;small&gt;Pamatujte, že Twitter dovoluje pouze 150 příspěvků za hodinu.&lt;/small&gt;.</Resource>
   <Resource tag="FORUM">Fórum</Resource>
-  <Resource tag="GO_LAST_POST">Přejít k nejnovější zprávě</Resource>
+  <Resource tag="GO_LAST_POST">Přejít k nejnovějšímu příspěvku</Resource>
   <Resource tag="GO_LASTUNREAD_POST">Přejít k prvnímu nepřečtenému</Resource>
   <Resource tag="IN">v {0}</Resource>
   <Resource tag="INFORMATION">Informace</Resource>
@@ -4197,8 +4198,8 @@ Spoiler Content
   <Resource tag="NEW_POSTS_LOCKED">Nové příspěvky (uzamčeno)</Resource>
   <Resource tag="NO_NEW_POSTS">Žádné nové příspěvky</Resource>
   <Resource tag="NO_NEW_POSTS_LOCKED">Žádné nové příspěvky (uzamčeno)</Resource>
-  <Resource tag="POLL">Průzkum mínění</Resource>
-  <Resource tag="POLL_NEW">Průzkum mínění (nové zprávy)</Resource>
+  <Resource tag="POLL">Průzkum</Resource>
+  <Resource tag="POLL_NEW">Průzkum (nové zprávy)</Resource>
   <Resource tag="STICKY">Ukotvené</Resource>
   <Resource tag="STICKY_NEW">Ukotvené (nové příspěvky)</Resource>
  </page>
@@ -4351,7 +4352,7 @@ Spoiler Content
   <Resource tag="NOTHING_SELECTED">Žádné vybrané položky</Resource>
   <Resource tag="OLD">Stará</Resource>
   <Resource tag="ORIGINALMESSAGE">Původní zpráva</Resource>
-  <Resource tag="POSTED">Odesláno:</Resource>
+  <Resource tag="POSTED">Publikováno:</Resource>
   <Resource tag="RESTORE_MESSAGE">Obnovit verzi</Resource>
   <Resource tag="SELECT_BOTH">Vyberte prosím jednu novou a jednu starou zprávu</Resource>
   <Resource tag="SELECT_DIFFERENT">Musíte vybrat dvě rozdílné verze pro porovnání.</Resource>
@@ -4469,7 +4470,7 @@ Spoiler Content
   <Resource tag="SINCE">Od</Resource>
   <Resource tag="TOPIC_STARTER">Zakladatel tématu</Resource>
   <Resource tag="TOPICS">Témata</Resource>
-  <Resource tag="UNANSWEREDTOPICS">Neodpovězená témata</Resource>
+  <Resource tag="UNANSWEREDTOPICS">Nezodpovězená témata</Resource>
   <Resource tag="UNREADTOPICS">Nepřečtená témata</Resource>
   <Resource tag="VIEWS">Zobrazení</Resource>
  </page>
@@ -4519,7 +4520,7 @@ Spoiler Content
   <Resource tag="POLL_ALLOWSKIPVOTE">Polovit přeskočit hlasování a rovnou zobrazit výsledky.</Resource>
   <Resource tag="POLL_ALLOWSKIPVOTE_INFO">Můžete přeskočit hlasování a rovnou zobrazit výsledky.</Resource>
   <Resource tag="POLL_CLOSEDBOUND">Nelze zobrazit výsledky dokud neskončí hlasování.</Resource>
-  <Resource tag="POLL_EXPIRE">Spustit průzkum pro:</Resource>
+  <Resource tag="POLL_EXPIRE">Trvání průzkumu</Resource>
   <Resource tag="POLL_EXPIRE_EXPLAIN">[b]Dny[/b] [ Ponechat prázdné pro nekončící průzkum ]</Resource>
   <Resource tag="POLL_EXPIRED">Průzkum byl ukončen.</Resource>
   <Resource tag="POLL_IMGWIDTH">Šířka obrázku v pixelech:</Resource>
@@ -4571,7 +4572,7 @@ Spoiler Content
   <Resource tag="NORMAL">Normální</Resource>
   <Resource tag="PERSISTENCY">Je toto téma perzistentní?</Resource>
   <Resource tag="PERSISTENCY_INFO">Perzistentní témata nejsou prořezávané.</Resource>
-  <Resource tag="POSTED">Odesláno:</Resource>
+  <Resource tag="POSTED">Publikováno:</Resource>
   <Resource tag="POSTTOBLOG_FAILED">Nastala chyba při odesílání příspěvku do blogu. Možná selhalo ověření totožnosti. </Resource>
   <Resource tag="PREVIEW">Náhled</Resource>
   <Resource tag="PREVIEW_TITLE">Získat náhled příspěvku.</Resource>
@@ -4664,8 +4665,8 @@ Spoiler Content
   <Resource tag="PM_TITLE">Poslat uživateli {0} zprávu</Resource>
   <Resource tag="POINTS">Body</Resource>
   <Resource tag="POLL_CLOSED">(Průzkum je uzavřen)</Resource>
-  <Resource tag="POST_REPLY">Odeslat odpověď</Resource>
-  <Resource tag="POSTED">Odesláno</Resource>
+  <Resource tag="POST_REPLY">Odpovědět</Resource>
+  <Resource tag="POSTED">Publikováno</Resource>
   <Resource tag="POSTS">Zpráv</Resource>
   <Resource tag="PREVTOPIC">Předchozí téma</Resource>
   <Resource tag="PRINTTOPIC">Vytisknout toto téma</Resource>
@@ -4702,7 +4703,7 @@ Spoiler Content
   <Resource tag="TIP_LOCK_TOPIC">Uzamknout toto téma</Resource>
   <Resource tag="TIP_MOVE_TOPIC">Přesunout toto téma</Resource>
   <Resource tag="TIP_NEW_TOPIC">Odeslat nové téma</Resource>
-  <Resource tag="TIP_REPLY_TOPIC">Odeslat odpověď</Resource>
+  <Resource tag="TIP_REPLY_TOPIC">Odpovědět</Resource>
   <Resource tag="TIP_UNLOCK_TOPIC">Odemknout toto téma</Resource>
   <Resource tag="TOGGLEPOST">Zobrazit/Skrýt příspěvek</Resource>
   <Resource tag="TOGGLEUSERPOSTS_HIDE">Skrýt příspěvek uživatele</Resource>
@@ -5592,7 +5593,7 @@ Visit {forumname} at {forumlink}
   <Resource tag="MODERATE_TITLE">Zobrazit moderátorskou stránku, kde můžete zobrazit neschávelené a nahlášené příspěvky.</Resource>
   <Resource tag="MYALBUMS">Moje galerie</Resource>
   <Resource tag="MYALBUMS_TITLE">Zobrazit galerii</Resource>
-  <Resource tag="MYPROFILE">Můj profil</Resource>
+  <Resource tag="MYPROFILE">Profil</Resource>
   <Resource tag="MYPROFILE_TITLE">Zobrazit uživatelský panel.</Resource>
   <Resource tag="MYTOPICS">Moje témata</Resource>
   <Resource tag="MYTOPICS_TITLE">Zobrazit aktivní a oblíbená témata.</Resource>

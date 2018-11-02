@@ -2096,6 +2096,7 @@
    <Resource tag="COOKIE_DETAILS">More Details</Resource>
   <Resource tag="COPY">Copy</Resource>
   <Resource tag="CUSTOM_BBCODE">More BBCode</Resource>
+  <Resource tag="DEFAULT">Default</Resource>
   <Resource tag="DELETE">Delete</Resource>
   <Resource tag="DISALLOWED">Disallowed</Resource>
   <Resource tag="DOWNLOAD">Download</Resource>

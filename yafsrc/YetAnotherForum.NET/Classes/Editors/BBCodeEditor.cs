@@ -438,7 +438,7 @@ namespace YAF.Editors
             writer.WriteLine(this.GetText("COMMON", "FONT_COLOR"));
             writer.WriteLine(
                 "<select onchange=\"if(this.value!='') setStyle('color',this.value); this.value=''\">");
-            writer.WriteLine("<option value=\"\">Default</option>");
+            writer.WriteLine("<option value=\"\">{0}</option>", this.GetText("COMMON", "DEFAULT"));
 
             string[] colors =
                 {
@@ -462,7 +462,7 @@ namespace YAF.Editors
             writer.WriteLine("<option value=\"2\">2</option>");
             writer.WriteLine("<option value=\"3\">3</option>");
             writer.WriteLine("<option value=\"4\">4</option>");
-            writer.WriteLine("<option selected=\"selected\" value=\"5\">Default</option>");
+            writer.WriteLine("<option selected=\"selected\" value=\"5\">5</option>");
             writer.WriteLine("<option value=\"6\">6</option>");
             writer.WriteLine("<option value=\"7\">7</option>");
             writer.WriteLine("<option value=\"8\">8</option>");
