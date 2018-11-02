@@ -2522,9 +2522,9 @@
   <Resource tag="PASSWORD_NOT_COMPLEX">Jsou vyžadovány speciální znaky (například: .,*/...): {1}.</Resource>
   <Resource tag="PASSWORD_NOT_NEW">Nové heslo musí být odlišné od starého.</Resource>
   <Resource tag="SECURITY_ANSWER_NEW">Nová bezpečnostní odpověď:</Resource>
-  <Resource tag="SECURITY_ANSWER_OLD">Současné heslo:</Resource>
-  <Resource tag="SECURITY_CHANGED">Heslo, otázka a odpověď byly změněny.</Resource>
-  <Resource tag="SECURITY_NOT_CHANGED">Změna selhala. Zkuste znovu vložit hodnoty.</Resource>
+  <Resource tag="SECURITY_ANSWER_OLD">Stará bezpečnostní odpověď:</Resource>
+  <Resource tag="SECURITY_CHANGED">Bezpečnostní otázka a odpověď byly úspěšně změněny.</Resource>
+  <Resource tag="SECURITY_NOT_CHANGED">Změna selhala, možná je vložena špatná odpověď. Zkuste znovu vložit hodnoty.</Resource>
   <Resource tag="SECURITY_QUESTION_NEW">Nová bezpečnostní otázka:</Resource>
   <Resource tag="SECURITY_QUESTION_OLD">Stará bezpečnostní otázka:</Resource>
   <Resource tag="TITLE">Změnit heslo</Resource>
@@ -4283,6 +4283,7 @@ Spoiler Content
   <Resource tag="EMAIL_SENT_PASSWORD">Byl vám odeslán e-mail s novým heslem.</Resource>
   <Resource tag="FACEBOOK_LOGIN">Přihlášení pomocí Facebook</Resource>
   <Resource tag="FORUM_LOGIN">Přihlásit do fóra</Resource>
+  <Resource tag="GENERATED_QUESTION">Odpověď byla vygenerována při registraci a odeslána na váš email.</Resource>
   <Resource tag="GOOGLE_LOGIN">Přihlášení pomocí Google</Resource>
   <Resource tag="LOGIN_CANCELED">Přihlášení bylo zrušeno uživatelem!</Resource>
   <Resource tag="LOSTPASSWORD">Ztracené heslo</Resource>

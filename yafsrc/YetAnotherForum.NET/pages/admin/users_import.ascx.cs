@@ -270,7 +270,7 @@ namespace YAF.Pages.Admin
 
             var pass = Membership.GeneratePassword(32, 16);
             var securityAnswer = Membership.GeneratePassword(64, 30);
-            var securityQuestion = "Answer is a generated Pass";
+            var securityQuestion = YafContext.Current.Get<ILocalization>().GetText("LOGIN", "GENERATED_QUESTION");
 
             if (row.Table.Columns.Contains("Password") && !string.IsNullOrEmpty((string)row["Password"])
                 && row.Table.Columns.Contains("SecurityQuestion")

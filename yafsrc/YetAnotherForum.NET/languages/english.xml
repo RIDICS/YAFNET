@@ -4292,6 +4292,7 @@ Spoiler Content
   <Resource tag="EMAIL_SENT_PASSWORD">A mail has been sent with your new password.</Resource>
   <Resource tag="FACEBOOK_LOGIN">Login with Facebook</Resource>
   <Resource tag="FORUM_LOGIN">Forum Login</Resource>
+  <Resource tag="GENERATED_QUESTION">Answer is a generated Pass</Resource>
   <Resource tag="GOOGLE_LOGIN">Login with Google</Resource>
   <Resource tag="VOKABULAR_LOGIN">Login with Vokabular</Resource>
   <Resource tag="LOSTPASSWORD">Lost Password</Resource>

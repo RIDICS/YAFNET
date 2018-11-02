@@ -340,7 +340,7 @@ namespace YAF.Core.Services.Auth
                 twitterUser.UserName,
                 pass,
                 email,
-                memberShipProvider.RequiresQuestionAndAnswer ? "Answer is a generated Pass" : null,
+                memberShipProvider.RequiresQuestionAndAnswer ? YafContext.Current.Get<ILocalization>().GetText("LOGIN", "GENERATED_QUESTION") : null,
                 memberShipProvider.RequiresQuestionAndAnswer ? securityAnswer : null,
                 true,
                 null,
