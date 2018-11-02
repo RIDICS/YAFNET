@@ -5324,7 +5324,7 @@ Hello!
      User Name: {user}
      Auto Generated Password: {pass}
      Auto Generated Security Answer: {answer}
-     User Email: {email} (Please don't change your email, or you are unable to login with Google)
+     User Email: {email} (Please don't change your email, or you are unable to login with Vokabular)
 
    </Resource>
   <Resource tag="NOTIFICATION_ON_MEDAL_AWARDED_TEXT">
