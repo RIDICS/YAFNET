@@ -164,12 +164,12 @@ namespace YAF.Controls
                             this.GetText("TOOLBAR", "MYALBUMS")));
                 }
 
-                buildHeader.AppendFormat(
-                    "	<a target='_top' href=\"{0}\">{1}</a> | ".FormatWith(
-                        YafBuildLink.GetLink(ForumPages.help_index), this.GetText("TOOLBAR", "HELP")));
-
                 if (this.PageContext.IsAdmin)
                 {
+                    buildHeader.AppendFormat(
+                        "	<a target='_top' href=\"{0}\">{1}</a> | ".FormatWith(
+                            YafBuildLink.GetLink(ForumPages.help_index), this.GetText("TOOLBAR", "HELP")));
+
                     buildHeader.AppendFormat(
                         "	<a target='_top' href=\"{0}\">{1}</a> | ".FormatWith(
                             YafBuildLink.GetLink(ForumPages.admin_admin), this.GetText("TOOLBAR", "ADMIN")));
