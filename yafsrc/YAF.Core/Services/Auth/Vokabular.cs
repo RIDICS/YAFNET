@@ -35,8 +35,8 @@ namespace YAF.Core.Services.Auth
         private readonly string m_tokenEndpoint = Config.VokabularUrl + "/connect/token";
         private readonly string m_userInfoEndpoint = Config.VokabularUrl + "/connect/userinfo?alt=json";
         private readonly string m_introspectEndpoint = Config.VokabularUrl + "/connect/introspect";
-        private readonly string m_scopes = "openid profile email address";
-    
+        private readonly string m_scopes = "openid profile";
+
         /// <summary>
         /// Gets the authorize URL.
         /// </summary>
@@ -156,7 +156,7 @@ namespace YAF.Core.Services.Auth
                         $"{Config.VokabularClientID}:{Config.VokabularClientSecret}"))))
             };
 
-            var data = "token={0}&token_type_hint=access_token".FormatWith(accessToken);
+            var data = "token={0}".FormatWith(accessToken);
 
             var response = AuthUtilities.WebRequest(
                 AuthUtilities.Method.POST,
@@ -232,7 +232,8 @@ namespace YAF.Core.Services.Auth
                 && token.Audiences.Count() == 1
                 && token.Issuer == Config.VokabularUrl
                 && token.ValidFrom < DateTime.UtcNow
-                && token.ValidTo > DateTime.UtcNow)//&& ValidateAccessToken(tokens.AccessToken) && yafUser.VokabularId == token.Subject)
+                && token.ValidTo > DateTime.UtcNow
+                && yafUser.VokabularId == token.Subject)
             {
                 YafSingleSignOnUser.LoginSuccess(AuthService.vokabular, userName, yafUserData.UserID, true);
 
@@ -427,7 +428,9 @@ namespace YAF.Core.Services.Auth
                 vokabularUser.UserName,
                 pass,
                 vokabularUser.Email,
-                memberShipProvider.RequiresQuestionAndAnswer ? YafContext.Current.Get<ILocalization>().GetText("LOGIN", "GENERATED_QUESTION") : null,
+                memberShipProvider.RequiresQuestionAndAnswer
+                    ? YafContext.Current.Get<ILocalization>().GetText("LOGIN", "GENERATED_QUESTION")
+                    : null,
                 memberShipProvider.RequiresQuestionAndAnswer ? securityAnswer : null,
                 true,
                 null,
