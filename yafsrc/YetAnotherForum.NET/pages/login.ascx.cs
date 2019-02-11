@@ -315,14 +315,14 @@ namespace YAF.Pages
             }
 
             if (this.Get<YafBoardSettings>().AllowSingleSignOn
-                && (Config.FacebookAPIKey.IsSet() || Config.TwitterConsumerKey.IsSet() || Config.GoogleClientID.IsSet() || Config.VokabularClientID.IsSet()))
+                && (Config.FacebookAPIKey.IsSet() || Config.TwitterConsumerKey.IsSet() || Config.GoogleClientID.IsSet() || Config.OidcClientId.IsSet()))
             {
                 singleSignOnRow.Visible = true;
 
                 var facebookEnabled = Config.FacebookAPIKey.IsSet() && Config.FacebookSecretKey.IsSet();
                 var twitterEnabled = Config.TwitterConsumerKey.IsSet() && Config.TwitterConsumerSecret.IsSet();
                 var googleEnabled = Config.GoogleClientID.IsSet() && Config.GoogleClientSecret.IsSet();
-                var vokabularEnabled = Config.VokabularClientID.IsSet() && Config.VokabularClientSecret.IsSet();
+                var vokabularEnabled = Config.OidcClientId.IsSet() && Config.OidcClientSecret.IsSet();
 
                 string loginAuth = this.Get<HttpRequestBase>().QueryString.GetFirstOrDefault("auth");
 

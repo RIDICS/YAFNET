@@ -359,44 +359,58 @@ namespace YAF.Classes
         }
 
         /// <summary>
-        /// Gets the Vokabular client ID.
+        /// Gets the OIDC Client ID.
         /// </summary>
         /// <value>
-        /// The Vokabular client ID.
+        /// The OIDC client ID.
         /// </value>
-        public static string VokabularClientID
+        public static string OidcClientId
         {
             get
             {
-                return GetConfigValueAsString("YAF.VokabularClientID");
+                return GetConfigValueAsString("OIDC.ClientId");
             }
         }
 
         /// <summary>
-        /// Gets the Vokabular client secret.
+        /// Gets the OIDC client secret.
         /// </summary>
         /// <value>
-        /// The Vokabular client secret.
+        /// The OIDC client secret.
         /// </value>
-        public static string VokabularClientSecret
+        public static string OidcClientSecret
         {
             get
             {
-                return GetConfigValueAsString("YAF.VokabularClientSecret");
+                return GetConfigValueAsString("OIDC.ClientSecret");
             }
         }
 
         /// <summary>
-        /// Gets the Vokabular authentication URL.
+        /// Gets the OIDC authentication server URL.
         /// </summary>
         /// <value>
-        /// The Vokabular authentication URL.
+        /// The OIDC authentication server URL.
         /// </value>
-        public static string VokabularUrl
+        public static string OidcUrl
         {
             get
             {
-                return GetConfigValueAsString("YAF.VokabularUrl");
+                return GetConfigValueAsString("OIDC.Url");
+            }
+        }
+
+        /// <summary>
+        /// Gets the OIDC Login Check Base Path.
+        /// </summary>
+        /// <value>
+        /// The OIDC Login Check Base Path.
+        /// </value>
+        public static string OidcLoginCheckBasePath
+        {
+            get
+            {
+                return GetConfigValueAsString("OIDC.LoginCheckBasePath");
             }
         }
 

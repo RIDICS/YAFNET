@@ -86,7 +86,7 @@ namespace YAF
             }
 
 
-            AuthService loginAuth = loginAuth = (AuthService) Enum.Parse(typeof(AuthService),
+            AuthService loginAuth = (AuthService) Enum.Parse(typeof(AuthService),
                     YafContext.Current.Get<HttpRequestBase>().QueryString.GetFirstOrDefaultAs<string>("auth"), true);
 
 

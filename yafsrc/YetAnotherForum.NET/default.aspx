@@ -17,6 +17,18 @@
     <title></title>
 </head>
 <body id="YafBody" runat="server">
+    <%    
+        if (User == null || !User.Identity.IsAuthenticated && Context.Request.Cookies.Get("AutoLoginAttempted") == null)
+        {
+            var url = Config.OidcUrl + Config.OidcLoginCheckBasePath;
+    %>
+            <script type="text/javascript" asp-append-version="true" src="<%= url %>" id="sso-script" data-login-url="/auth.aspx?auth=vokabular"></script>
+    <%
+            var cookie = new HttpCookie("AutoLoginAttempted", "true");
+            cookie.Expires = DateTime.Now.AddMinutes(5);
+            Context.Response.Cookies.Add(cookie);
+        }
+    %>    
     <url:Form id="form1" runat="server" enctype="multipart/form-data">
     <YAF:Forum runat="server" ID="forum" BoardID="1">
     </YAF:Forum>

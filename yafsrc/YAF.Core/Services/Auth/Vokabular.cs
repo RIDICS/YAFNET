@@ -31,10 +31,10 @@ namespace YAF.Core.Services.Auth
         /// </summary>
         private IDictionary<string, string> UserIpLocator { get; set; }
 
-        private readonly string m_authorizationEndpoint = Config.VokabularUrl + "/connect/authorize";
-        private readonly string m_tokenEndpoint = Config.VokabularUrl + "/connect/token";
-        private readonly string m_userInfoEndpoint = Config.VokabularUrl + "/connect/userinfo?alt=json";
-        private readonly string m_introspectEndpoint = Config.VokabularUrl + "/connect/introspect";
+        private readonly string m_authorizationEndpoint = Config.OidcUrl + "/connect/authorize";
+        private readonly string m_tokenEndpoint = Config.OidcUrl + "/connect/token";
+        private readonly string m_userInfoEndpoint = Config.OidcUrl + "/connect/userinfo?alt=json";
+        private readonly string m_introspectEndpoint = Config.OidcUrl + "/connect/introspect";
         private readonly string m_scopes = "openid profile";
 
         /// <summary>
@@ -49,7 +49,7 @@ namespace YAF.Core.Services.Auth
         public string GetAuthorizeUrl(HttpRequest request)
         {
             return (m_authorizationEndpoint + "?client_id={0}&response_type={1}&scope={2}&redirect_uri={3}").FormatWith
-                (Config.VokabularClientID,
+                (Config.OidcClientId,
                 "code",
                 HttpUtility.UrlEncode(m_scopes),
                 HttpUtility.UrlEncode(GetRedirectUrl(request)));
@@ -72,8 +72,8 @@ namespace YAF.Core.Services.Auth
             var code = "code={0}".FormatWith(HttpUtility.UrlEncode(authorizationCode)); 
             var data = "client_id={1}&client_secret={2}&grant_type={4}&{0}&redirect_uri={3}".FormatWith(
                 code,
-                Config.VokabularClientID,
-                Config.VokabularClientSecret,
+                Config.OidcClientId,
+                Config.OidcClientSecret,
                 HttpUtility.UrlEncode(GenerateLoginUrl(false)),
                 "authorization_code");
 
@@ -153,7 +153,7 @@ namespace YAF.Core.Services.Auth
                 new KeyValuePair<string, string>(
                     "Authorization",
                     "Basic {0}".FormatWith(Convert.ToBase64String(Encoding.UTF8.GetBytes(
-                        $"{Config.VokabularClientID}:{Config.VokabularClientSecret}"))))
+                        $"{Config.OidcClientId}:{Config.OidcClientSecret}"))))
             };
 
             var data = "token={0}".FormatWith(accessToken);
@@ -194,20 +194,7 @@ namespace YAF.Core.Services.Auth
 
             var vokabularUser = this.GetVokabularUser(request, tokens.AccessToken);
 
-            var userGender = 0;
-
-            if (vokabularUser.Gender.IsSet())
-            {
-                switch (vokabularUser.Gender)
-                {
-                    case "male":
-                        userGender = 1;
-                        break;
-                    case "female":
-                        userGender = 2;
-                        break;
-                }
-            }
+            var userGender = 0; //male = 1, female = 2
 
             // Check if user exists
             var userName = YafContext.Current.Get<MembershipProvider>().GetUserNameByEmail(vokabularUser.Email);
@@ -228,9 +215,9 @@ namespace YAF.Core.Services.Auth
             var token = (JwtSecurityToken) handler.ReadToken(tokens.IDToken);
 
             if (token.Subject == vokabularUser.Subject
-                && token.Audiences.Contains(Config.VokabularClientID)
+                && token.Audiences.Contains(Config.OidcClientId)
                 && token.Audiences.Count() == 1
-                && token.Issuer == Config.VokabularUrl
+                && token.Issuer == Config.OidcUrl
                 && token.ValidFrom < DateTime.UtcNow
                 && token.ValidTo > DateTime.UtcNow
                 && yafUser.VokabularId == token.Subject)
@@ -265,19 +252,6 @@ namespace YAF.Core.Services.Auth
             var vokabularUser = this.GetVokabularUser(request, parameters);
 
             var userGender = 0;
-
-            if (vokabularUser.Gender.IsSet())
-            {
-                switch (vokabularUser.Gender)
-                {
-                    case "male":
-                        userGender = 1;
-                        break;
-                    case "female":
-                        userGender = 2;
-                        break;
-                }
-            }
 
             // Create User if not exists?!
             if (!YafContext.Current.IsGuest)
