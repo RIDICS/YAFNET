@@ -212,7 +212,7 @@ namespace YAF.Core.Services.Auth
             var yafUser = YafUserProfile.GetProfile(userName);
 
             var handler = new JwtSecurityTokenHandler();
-            var token = (JwtSecurityToken) handler.ReadToken(tokens.IDToken);
+            var token = (JwtSecurityToken) handler.ReadToken(tokens.IdToken);
 
             if (token.Subject == vokabularUser.Subject
                 && token.Audiences.Contains(Config.OidcClientId)

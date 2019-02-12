@@ -398,9 +398,9 @@ namespace YAF
             if (YafContext.Current.Get<HttpRequestBase>().QueryString.GetFirstOrDefault("code") != null)
             {
                 var authorizationCode = YafContext.Current.Get<HttpRequestBase>().QueryString.GetFirstOrDefault("code");
-                var accessTokens = vokabularAuth.GetAccessToken(authorizationCode, this.Request);
+                var tokens = vokabularAuth.GetAccessToken(authorizationCode, this.Request);
 
-                if (accessTokens.AccessToken == null)
+                if (tokens.AccessToken == null)
                 {
                     SendErrorResponse(YafContext.Current.Get<ILocalization>().GetText("AUTH_NO_ACCESS_TOKEN"));
                     return;
@@ -412,7 +412,7 @@ namespace YAF
 
                     try
                     {
-                        vokabularAuth.ConnectUser(this.Request, accessTokens.AccessToken, out message);
+                        vokabularAuth.ConnectUser(this.Request, tokens.AccessToken, out message);
                     }
                     catch (Exception ex)
                     {
@@ -436,7 +436,7 @@ namespace YAF
 
                     try
                     {
-                        vokabularAuth.LoginOrCreateUser(this.Request, accessTokens, out message);
+                        vokabularAuth.LoginOrCreateUser(this.Request, tokens, out message);
                     }
                     catch (Exception ex)
                     {

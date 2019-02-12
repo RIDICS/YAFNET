@@ -815,6 +815,13 @@
     <Compile Include="pages\login.ascx.designer.cs">
       <DependentUpon>login.ascx</DependentUpon>
     </Compile>
+    <Compile Include="pages\client_logout.ascx.cs">
+      <DependentUpon>client_logout.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\client_logout.ascx.designer.cs">
+      <DependentUpon>client_logout.ascx</DependentUpon>
+    </Compile>
     <Compile Include="pages\logout.ascx.designer.cs">
       <DependentUpon>logout.ascx</DependentUpon>
     </Compile>
@@ -1763,6 +1770,7 @@
     <Content Include="pages\im_yim.ascx" />
     <Content Include="pages\info.ascx" />
     <Content Include="pages\login.ascx" />
+    <Content Include="pages\client_logout.ascx" />
     <Content Include="pages\logout.ascx" />
     <Content Include="pages\members.ascx" />
     <Content Include="pages\messagehistory.ascx" />

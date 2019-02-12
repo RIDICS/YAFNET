@@ -22,6 +22,12 @@
  * under the License.
  */
 
+using System.Net;
+using System.Threading;
+using YAF.Core.Services.Auth;
+using YAF.Types.Constants;
+using YAF.Utils;
+
 namespace YAF.Pages
 {
   // YAF.Pages
@@ -31,14 +37,11 @@ namespace YAF.Pages
   using System.Web.Security;
 
   using YAF.Core;
-  using YAF.Core.Services;
   using YAF.Types;
-  using YAF.Types.Constants;
   using YAF.Types.EventProxies;
   using YAF.Types.Interfaces;
-  using YAF.Utils;
 
-  #endregion
+    #endregion
 
   /// <summary>
   /// Summary description for logout.
@@ -53,7 +56,7 @@ namespace YAF.Pages
     public logout()
       : base("LOGOUT")
     {
-      this.PageContext.Globals.IsSuspendCheckEnabled = false;
+      PageContext.Globals.IsSuspendCheckEnabled = false;
     }
 
     #endregion
@@ -71,15 +74,15 @@ namespace YAF.Pages
     /// </param>
     protected void Page_Load([NotNull] object sender, [NotNull] EventArgs e)
     {
-      FormsAuthentication.SignOut();
+        Response.Redirect("https://localhost:44395/connect/endsession", false);
+        
+        FormsAuthentication.SignOut();
 
-      this.Get<IRaiseEvent>().Raise(new UserLogoutEvent(this.PageContext.PageUserID));
+        this.Get<IRaiseEvent>().Raise(new UserLogoutEvent(this.PageContext.PageUserID));
 
-      this.Session.Abandon();
+        Session.Abandon();
+     }
 
-      YafBuildLink.Redirect(ForumPages.forum);
+        #endregion
     }
-
-    #endregion
-  }
 }

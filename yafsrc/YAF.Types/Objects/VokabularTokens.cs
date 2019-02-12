@@ -42,6 +42,6 @@ namespace YAF.Types.Objects
         /// The refresh token.
         /// </value>
         [DataMember(Name = "id_token")]
-        public string IDToken { get; set; }
+        public string IdToken { get; set; }
     }
 }
