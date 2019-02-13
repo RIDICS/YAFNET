@@ -393,7 +393,7 @@ namespace YAF
         /// </summary>
         private void HandleVokabularReturn()
         {
-            var vokabularAuth = new Vokabular();
+            var vokabularAuth = new VokabularAuthentication();
 
             if (YafContext.Current.Get<HttpRequestBase>().QueryString.GetFirstOrDefault("code") != null)
             {

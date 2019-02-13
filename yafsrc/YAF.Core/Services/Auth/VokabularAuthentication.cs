@@ -24,7 +24,7 @@ namespace YAF.Core.Services.Auth
     /// <summary>
     /// Vokabular Single Sign On Class
     /// </summary>
-    public class Vokabular : IAuthBase
+    public class VokabularAuthentication : IAuthBase
     {
         /// <summary>
         ///   Gets or sets the User IP Info.
@@ -192,24 +192,24 @@ namespace YAF.Core.Services.Auth
                 return false;
             }
 
-            var vokabularUser = this.GetVokabularUser(request, tokens.AccessToken);
+            var vokabularUser = GetVokabularUser(request, tokens.AccessToken);
 
             var userGender = 0; //male = 1, female = 2
 
             // Check if user exists
-            var userName = YafContext.Current.Get<MembershipProvider>().GetUserNameByEmail(vokabularUser.Email);
+            var membershipUser = YafContext.Current.Get<MembershipProvider>().GetUser(vokabularUser.UserName, true);
 
-            if (userName.IsNotSet())
+            if (membershipUser == null)
             {
                 // Create User if not exists?!
-                return this.CreateVokabularUser(vokabularUser, userGender, out message);
+                return CreateVokabularUser(vokabularUser, userGender, out message);
             }
 
             
             var yafUserData =
-                new CombinedUserDataHelper(YafContext.Current.Get<MembershipProvider>().GetUser(userName, true));
+                new CombinedUserDataHelper(YafContext.Current.Get<MembershipProvider>().GetUser(membershipUser.UserName, true));
 
-            var yafUser = YafUserProfile.GetProfile(userName);
+            var yafUser = YafUserProfile.GetProfile(membershipUser.UserName);
 
             var handler = new JwtSecurityTokenHandler();
             var token = (JwtSecurityToken) handler.ReadToken(tokens.IdToken);
@@ -222,7 +222,7 @@ namespace YAF.Core.Services.Auth
                 && token.ValidTo > DateTime.UtcNow
                 && yafUser.VokabularId == token.Subject)
             {
-                YafSingleSignOnUser.LoginSuccess(AuthService.vokabular, userName, yafUserData.UserID, true);
+                YafSingleSignOnUser.LoginSuccess(AuthService.vokabular, membershipUser.UserName, yafUserData.UserID, true);
 
                 message = string.Empty;
                 return true;
@@ -249,7 +249,7 @@ namespace YAF.Core.Services.Auth
         /// </returns>
         public bool ConnectUser(HttpRequest request, string parameters, out string message)
         {
-            var vokabularUser = this.GetVokabularUser(request, parameters);
+            var vokabularUser = GetVokabularUser(request, parameters);
 
             var userGender = 0;
 
@@ -337,13 +337,12 @@ namespace YAF.Core.Services.Auth
         {
             // Check user for bot
             var spamChecker = new YafSpamCheck();
-            string result;
             var isPossibleSpamBot = false;
 
             var userIpAddress = YafContext.Current.Get<HttpRequestBase>().GetUserRealIPAddress();
 
             // Check content for spam
-            if (spamChecker.CheckUserForSpamBot(vokabularUser.UserName, vokabularUser.Email, userIpAddress, out result))
+            if (spamChecker.CheckUserForSpamBot(vokabularUser.UserName, vokabularUser.Email, userIpAddress, out string result))
             {
                 YafContext.Current.Get<ILogger>().Log(
                     null,
@@ -391,8 +390,6 @@ namespace YAF.Core.Services.Auth
                 }
             }
 
-            MembershipCreateStatus status;
-
             var memberShipProvider = YafContext.Current.Get<MembershipProvider>();
 
             var pass = Membership.GeneratePassword(32, 16);
@@ -408,11 +405,11 @@ namespace YAF.Core.Services.Auth
                 memberShipProvider.RequiresQuestionAndAnswer ? securityAnswer : null,
                 true,
                 null,
-                out status);
+                out var status);
 
             if (status != MembershipCreateStatus.Success)
             {
-                throw new InvalidOperationException("An error occurred while creating a new user: " + status.ToString());
+                throw new InvalidOperationException("An error occurred while creating a new user: " + status);
             }
             
             // setup initial roles (if any) for this user
@@ -430,9 +427,9 @@ namespace YAF.Core.Services.Auth
             userProfile.Gender = userGender;
             userProfile.VokabularId = vokabularUser.Subject;
 
-            if (YafContext.Current.Get<YafBoardSettings>().EnableIPInfoService && this.UserIpLocator == null)
+            if (YafContext.Current.Get<YafBoardSettings>().EnableIPInfoService && UserIpLocator == null)
             {
-                this.UserIpLocator = new IPDetails().GetData(
+                UserIpLocator = new IPDetails().GetData(
                     YafContext.Current.Get<HttpRequestBase>().GetUserRealIPAddress(),
                     "text",
                     false,
@@ -440,23 +437,23 @@ namespace YAF.Core.Services.Auth
                     string.Empty,
                     string.Empty);
 
-                if (this.UserIpLocator != null && this.UserIpLocator["StatusCode"] == "OK"
-                                               && this.UserIpLocator.Count > 0)
+                if (UserIpLocator != null && UserIpLocator["StatusCode"] == "OK"
+                                               && UserIpLocator.Count > 0)
                 {
-                    userProfile.Country = this.UserIpLocator["CountryCode"];
+                    userProfile.Country = UserIpLocator["CountryCode"];
 
                     var location = new StringBuilder();
 
-                    if (this.UserIpLocator["RegionName"] != null && this.UserIpLocator["RegionName"].IsSet()
-                                                                 && !this.UserIpLocator["RegionName"].Equals("-"))
+                    if (UserIpLocator["RegionName"] != null && UserIpLocator["RegionName"].IsSet()
+                                                                 && !UserIpLocator["RegionName"].Equals("-"))
                     {
-                        location.Append(this.UserIpLocator["RegionName"]);
+                        location.Append(UserIpLocator["RegionName"]);
                     }
 
-                    if (this.UserIpLocator["CityName"] != null && this.UserIpLocator["CityName"].IsSet()
-                                                               && !this.UserIpLocator["CityName"].Equals("-"))
+                    if (UserIpLocator["CityName"] != null && UserIpLocator["CityName"].IsSet()
+                                                               && !UserIpLocator["CityName"].Equals("-"))
                     {
-                        location.AppendFormat(", {0}", this.UserIpLocator["CityName"]);
+                        location.AppendFormat(", {0}", UserIpLocator["CityName"]);
                     }
 
                     userProfile.Location = location.ToString();

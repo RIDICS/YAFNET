@@ -27,10 +27,10 @@ namespace YAF.Core.Services
     using System.Web.Security;
 
     using YAF.Classes.Data;
-    using YAF.Types;
-    using YAF.Types.Constants;
-    using YAF.Types.EventProxies;
-    using YAF.Types.Interfaces;
+    using Types;
+    using Types.Constants;
+    using Types.EventProxies;
+    using Types.Interfaces;
 
     /// <summary>
     /// Single Sign On User Class to handle Twitter and Facebook Logins
@@ -67,7 +67,7 @@ namespace YAF.Core.Services
 
                 case AuthService.vokabular:
                 {
-                    return new Auth.Vokabular().GenerateLoginUrl(generatePopUpUrl, connectCurrentUser);
+                    return new Auth.VokabularAuthentication().GenerateLoginUrl(generatePopUpUrl, connectCurrentUser);
                 }
 
                 default:
