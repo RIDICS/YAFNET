@@ -10,7 +10,9 @@ If you have any questions or would like to get in touch with the project, please
 
 ### Installation & Upgrade
 
-1.  [New Installation](https://github.com/YAFNET/YAFNET/wiki/Installation)
+**Attention!** This fork is supposed to use only with the [Vokabulář Webový](https://github.com/RIDICS/ITJakub) and the OpenID Connect Authentication Provider.
+
+1.  [New Installation](https://github.com/RIDICS/YAFNET/wiki/Installation)
 2.  [Upgrade (from Version 1.9.1.8 or earlier)](https://github.com/YAFNET/YAFNET/wiki/Upgrade-(from-Version-1.9.1.8-or-earlier))
 3.  [Upgrade (from Version 1.9.3-1.9.5) ](https://github.com/YAFNET/YAFNET/wiki/Upgrade-%28from-Version-1.9.3--1.9.5%29)
 4.  [Upgrade (from Version 1.9.5.5 or above)](https://github.com/YAFNET/YAFNET/wiki/Upgrade-(from-Version-1.9.5.5-or-above))
