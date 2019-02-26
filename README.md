@@ -8,22 +8,70 @@
 
 If you have any questions or would like to get in touch with the project, please see the contact information at the bottom of this document.
 
-### Installation & Upgrade
-
 **Attention!** This fork is supposed to use only with the [Vokabulář Webový](https://github.com/RIDICS/ITJakub) and the OpenID Connect Authentication Provider.
 
-1.  [New Installation](https://github.com/RIDICS/YAFNET/wiki/Installation)
-2.  [Upgrade (from Version 1.9.1.8 or earlier)](https://github.com/YAFNET/YAFNET/wiki/Upgrade-(from-Version-1.9.1.8-or-earlier))
-3.  [Upgrade (from Version 1.9.3-1.9.5) ](https://github.com/YAFNET/YAFNET/wiki/Upgrade-%28from-Version-1.9.3--1.9.5%29)
-4.  [Upgrade (from Version 1.9.5.5 or above)](https://github.com/YAFNET/YAFNET/wiki/Upgrade-(from-Version-1.9.5.5-or-above))
+## Installation Requirements
 
-### DNN Module
+Make sure your server / Host has the following requirements:
 
-YAF is also available as a DNN Module, you can download it on the [GitHub Project Page](https://github.com/YAFNET/YAFNET-DNN)
+**Minimum Version Supported**
+* Windows 2008 Server (or above)
+* IIS 7.0 (or above)
+* ASP.NET 4.5.2 (or above)
+* SQL Server 2008 (or above)
 
-### Demo Forum
+### STEP 1. UNZIP
 
-A "sandbox" test forum is available here: http://testforum.yetanotherforum.net/.
+1.  The first step after downloading the Install Package, is to Unzip YAF.NET and copy the content to the physical location where the Application (YAF) will be run from. 
+
+By default in IIS (Internet Information Server) expects the sites to be located at _c:\Inetpub\wwwroot\..._
+
+### STEP 2. Configuring the Application in IIS (Internet Information Server)
+
+1.  In IIS you need to create a new Virtual Directory, if you want to run YAF as application, that points to the physical directory where you extracted YAF in to.
+
+2.  How to: [Create and Configure Virtual Directories in IIS](http://msdn.microsoft.com/en-us/library/bb763173.aspx)
+
+3.  Make sure that the Application Pool for YAF is set to .NET 4
+
+### STEP 3. SETUP DATABASE
+
+1.  A valid database needs to exist on your SQL Server with proper permissions set so that YAF can access it. When you run YAF for the first time it will detect that the database is empty (or needs upgrading) and will automatically run you through the process
+ required to create the SQL database structures needed.
+
+### STEP 4. COPY WEB.CONFIG FILE
+
+1.  You need to copy the file **recommended.web.config** to your yaf root Folder and rename it to
+**web.config**. Warning: DO NOT edit the web.config unless you know what you're doing.
+
+### STEP 4a. Generate a Machine Key for your installation.
+
+1.  Open the file web.config and visit our Support Site to...
+
+[Generate a Machine Key](http://yetanotherforum.net/key). 
+
+Copy and paste the generated machine key to your web.config in the &lt;system.web&gt; section.
+
+### STEP 4b. MODIFY &quot;app.config&quot; FILE:
+
+1.  Set OIDC credentials (ClientID and ClientSecret) and authentication provider URL.
+
+2. Set key &quot;LoginCheckBasePath&quot;. Value can be found on authentication provider URL + /.well-known/openid-configuration.
+
+### STEP 4c. MODIFY &quot;mail.config&quot; FILE:
+
+1.  Modify the SMTP settings by entering your mail server information. If you SMTP server requires SSL, you must add:
+
+`<add key="YAF.UseSMTPSSL" value="true" />`
+
+to your app.config or appSettings.
+
+### STEP 5. Run The Install Wizard
+
+1.  Open the file install/default.aspx on your web site. If you are testing on your local computer, under a directory called YetAnotherForum.Net, the address should be: http://localhost/yetanotherforum.net/install/
+
+2.  The wizard will guide you through the Install Process. In Install Process, you are going to create an admin user. This admin user must have the same username and email as an admin user in authentication provider. Without the same username and email, you will not be able to log in the forum and manage it.
+
 
 ## Community Support Forum
 
