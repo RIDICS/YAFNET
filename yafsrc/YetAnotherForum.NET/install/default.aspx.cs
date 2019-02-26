@@ -1063,7 +1063,7 @@ namespace YAF.Install
                     .CreateUser(
                         this.DefaultAuthorName.Text,
                         this.DefaultAuthorPassword.Text,
-                        "info@ridics.cz",
+                        "ujcinfo@example.cz",
                         this.DefaultAuthorSecurityQuestion.Text,
                         this.DefaultAuthorSecurityAnswer.Text,
                         true,
