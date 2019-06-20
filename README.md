@@ -20,6 +20,10 @@ Make sure your server / Host has the following requirements:
 * ASP.NET 4.5.2 (or above)
 * SQL Server 2008 (or above)
 
+### STEP 0. Build
+
+Run `BuildPackages.bat` to build solution and create ZIP packages in `deploy` folder.
+
 ### STEP 1. UNZIP
 
 1.  The first step after downloading the Install Package, is to Unzip YAF.NET and copy the content to the physical location where the Application (YAF) will be run from. 
@@ -44,19 +48,23 @@ By default in IIS (Internet Information Server) expects the sites to be located 
 1.  You need to copy the file **recommended.web.config** to your yaf root Folder and rename it to
 **web.config**. Warning: DO NOT edit the web.config unless you know what you're doing.
 
-### STEP 4a. Generate a Machine Key for your installation.
+### STEP 4a. MODIFY &quot;web.config&quot; FILE:
+
+Generate a Machine Key for your installation.
 
 1.  Open the file web.config and visit our Support Site to...
 
 [Generate a Machine Key](http://yetanotherforum.net/key). 
 
-Copy and paste the generated machine key to your web.config in the &lt;system.web&gt; section.
+2.  Copy and paste the generated machine key to your web.config in the &lt;system.web&gt; section.
 
 ### STEP 4b. MODIFY &quot;app.config&quot; FILE:
 
 1.  Set OIDC credentials (ClientID and ClientSecret) and authentication provider URL.
 
-2. Set key &quot;LoginCheckBasePath&quot;. Value can be found on authentication provider URL + /.well-known/openid-configuration.
+2.  Set key &quot;LoginCheckBasePath&quot; to JavaScript path on Auth service for check if user is logged in. Default value for Vokabulář Auth service is `/Account/CheckLogin`.
+
+3.  Set YAF.ConfigPassword used e.g. for upgrade.
 
 ### STEP 4c. MODIFY &quot;mail.config&quot; FILE:
 
@@ -65,6 +73,10 @@ Copy and paste the generated machine key to your web.config in the &lt;system.we
 `<add key="YAF.UseSMTPSSL" value="true" />`
 
 to your app.config or appSettings.
+
+### STEP 4d. MODIFY &quot;db.config&quot; FILE:
+
+1. Set connection string to the database.
 
 ### STEP 5. Run The Install Wizard
 
