@@ -342,7 +342,8 @@ namespace YAF.Core.Services.Auth
             var userIpAddress = YafContext.Current.Get<HttpRequestBase>().GetUserRealIPAddress();
 
             // Check content for spam
-            if (spamChecker.CheckUserForSpamBot(vokabularUser.UserName, vokabularUser.Email, userIpAddress, out string result))
+            string result;
+            if (spamChecker.CheckUserForSpamBot(vokabularUser.UserName, vokabularUser.Email, userIpAddress, out result))
             {
                 YafContext.Current.Get<ILogger>().Log(
                     null,
@@ -395,6 +396,7 @@ namespace YAF.Core.Services.Auth
             var pass = Membership.GeneratePassword(32, 16);
             var securityAnswer = Membership.GeneratePassword(64, 30);
 
+            MembershipCreateStatus status;
             var user = memberShipProvider.CreateUser(
                 vokabularUser.UserName,
                 pass,
@@ -405,7 +407,7 @@ namespace YAF.Core.Services.Auth
                 memberShipProvider.RequiresQuestionAndAnswer ? securityAnswer : null,
                 true,
                 null,
-                out var status);
+                out status);
 
             if (status != MembershipCreateStatus.Success)
             {
