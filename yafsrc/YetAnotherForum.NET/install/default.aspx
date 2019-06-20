@@ -406,7 +406,7 @@
                                        LabelText="Default author email"
                                        Text="info@ridics.cz"
                                        Type="Email"
-                                       ReadOnly="True"/>
+                                       ReadOnly="False"/>
                     <YAF:ModernTextBox ID="DefaultAuthorPassword" runat="server" 
                                        Placeholder="Enter the password of the deafult auhtor." RenderWrapper="True" 
                                        LabelText="Default author password"

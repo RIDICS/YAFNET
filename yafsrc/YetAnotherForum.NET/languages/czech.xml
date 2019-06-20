@@ -4309,7 +4309,7 @@ Spoiler Content
   <Resource tag="SSO_TWITTER_FAILED2">The Twitter Login failed, an user account with the same user name as the Twitter account already exists, please try to connect you your forum account instead.</Resource>
   <Resource tag="SSO_TWITTERNAME_NOTMATCH">The Twitter User Name must match the Forum Username!</Resource>
   <Resource tag="SSO_VOKABULAR_FAILED">Přihlášení pomocí Vokabuláře webového se nezdařilo. Uživatel neexistuje nebo nedošlo k jeho propojení.</Resource>
-  <Resource tag="SSO_VOKABULAR_FAILED2">Přihlášení pomocí Vokabuláře webového se nezdařilo. Ověření totožnossti selhalo.</Resource>
+  <Resource tag="SSO_VOKABULAR_FAILED2">Přihlášení pomocí Vokabuláře webového se nezdařilo. Ověření totožnosti selhalo.</Resource>
   <Resource tag="SSO_VOKABULARNAME_NOTMATCH">Emailová adresa ve Vokabuláři webovém se musí shodovat s emailovou adresou ve fóru.</Resource>
   <Resource tag="TITLE">Přihlásit</Resource>
   <Resource tag="TWITTER_DM">You have received further Information to your new Account as Private Message on the Forum.</Resource>
