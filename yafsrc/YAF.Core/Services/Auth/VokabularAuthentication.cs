@@ -31,11 +31,20 @@ namespace YAF.Core.Services.Auth
         /// </summary>
         private IDictionary<string, string> UserIpLocator { get; set; }
 
-        private readonly string m_authorizationEndpoint = Config.OidcUrl + "/connect/authorize";
-        private readonly string m_tokenEndpoint = Config.OidcUrl + "/connect/token";
-        private readonly string m_userInfoEndpoint = Config.OidcUrl + "/connect/userinfo?alt=json";
-        private readonly string m_introspectEndpoint = Config.OidcUrl + "/connect/introspect";
-        private readonly string m_scopes = "openid profile";
+        private readonly string m_authorizationEndpoint;
+        private readonly string m_tokenEndpoint;
+        private readonly string m_userInfoEndpoint;
+        private readonly string m_introspectEndpoint;
+        private readonly string m_scopes;
+
+        public VokabularAuthentication()
+        {
+            m_authorizationEndpoint = new Uri(new Uri(Config.OidcUrl + "/"), "connect/authorize").ToString();
+            m_tokenEndpoint = new Uri(new Uri(Config.OidcUrl + "/"), "connect/token").ToString();
+            m_userInfoEndpoint = new Uri(new Uri(Config.OidcUrl + "/"), "connect/userinfo?alt=json").ToString();
+            m_introspectEndpoint = new Uri(new Uri(Config.OidcUrl + "/"), "connect/introspect").ToString();
+            m_scopes = "openid profile";
+        }
 
         /// <summary>
         /// Gets the authorize URL.
@@ -48,11 +57,15 @@ namespace YAF.Core.Services.Auth
         /// </returns>
         public string GetAuthorizeUrl(HttpRequest request)
         {
-            return (m_authorizationEndpoint + "?client_id={0}&response_type={1}&scope={2}&redirect_uri={3}").FormatWith
-                (Config.OidcClientId,
-                "code",
-                HttpUtility.UrlEncode(m_scopes),
-                HttpUtility.UrlEncode(GetRedirectUrl(request)));
+            var queryString = new NameValueCollection
+            {
+                {"client_id", Config.OidcClientId},
+                {"response_type", "code"},
+                {"scope", m_scopes},
+                {"redirect_uri", GetRedirectUrl(request)}
+            };
+
+            return CreateUrl(m_authorizationEndpoint, queryString);
         }
 
         /// <summary>
@@ -69,13 +82,16 @@ namespace YAF.Core.Services.Auth
         /// </returns>
         public VokabularTokens GetAccessToken(string authorizationCode, HttpRequest request)
         {
-            var code = "code={0}".FormatWith(HttpUtility.UrlEncode(authorizationCode)); 
-            var data = "client_id={1}&client_secret={2}&grant_type={4}&{0}&redirect_uri={3}".FormatWith(
-                code,
-                Config.OidcClientId,
-                Config.OidcClientSecret,
-                HttpUtility.UrlEncode(GenerateLoginUrl(false)),
-                "authorization_code");
+            var query = new NameValueCollection
+            {
+                {"client_id", Config.OidcClientId},
+                {"client_secret", Config.OidcClientSecret},
+                {"grant_type", "authorization_code"},
+                {"code", authorizationCode},
+                {"redirect_uri", GenerateLoginUrl(false)}
+            };
+
+            var data = ToQueryString(query);
 
             var response = AuthUtilities.WebRequest(
                 AuthUtilities.Method.POST,
@@ -133,17 +149,13 @@ namespace YAF.Core.Services.Auth
         /// </returns>
         public string GenerateLoginUrl(bool generatePopUpUrl, bool connectCurrentUser = false)
         {
-            var authUrl = "{0}auth.aspx?auth={1}{2}".FormatWith(
-                YafForumInfo.ForumBaseUrl,
-                AuthService.vokabular,
-                connectCurrentUser ? "&connectCurrent=true" : string.Empty);
-
-            return authUrl;
+            var connect = connectCurrentUser ? "&connectCurrent=true" : string.Empty;
+            return $"{YafForumInfo.ForumBaseUrl}auth.aspx?auth={AuthService.vokabular}{connect}";
         }
 
         public bool LoginOrCreateUser(HttpRequest request, string parameters, out string message)
         {
-            throw new NotImplementedException(); //TODO
+            throw new NotImplementedException();
         }
 
         private bool ValidateAccessToken(string accessToken)
@@ -581,6 +593,17 @@ namespace YAF.Core.Services.Auth
             message = string.Empty;
 
             return true;
+        }
+
+        private string CreateUrl(string url, NameValueCollection parameters)
+        {
+            return url + "?" + ToQueryString(parameters);
+        }
+
+        private string ToQueryString(NameValueCollection parameters)
+        {
+            return string.Join("&",
+                       parameters.AllKeys.Select(a => a + "=" + HttpUtility.UrlEncode(parameters[a])));
         }
     }
 }
