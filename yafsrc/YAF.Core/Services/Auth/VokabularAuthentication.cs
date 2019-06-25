@@ -204,6 +204,10 @@ namespace YAF.Core.Services.Auth
                 // Create User if not exists?!
                 return CreateVokabularUser(vokabularUser, userGender, out message);
             }
+            else
+            {
+                UpdateVokabularUser(vokabularUser, membershipUser, out message);
+            }
 
             
             var yafUserData =
@@ -427,6 +431,7 @@ namespace YAF.Core.Services.Auth
             userProfile.Save();
 
             userProfile.Gender = userGender;
+            userProfile.RealName = $"{vokabularUser.FirstName} {vokabularUser.LastName}";
             userProfile.VokabularId = vokabularUser.Subject;
 
             if (YafContext.Current.Get<YafBoardSettings>().EnableIPInfoService && UserIpLocator == null)
@@ -527,6 +532,52 @@ namespace YAF.Core.Services.Auth
 
             YafSingleSignOnUser.LoginSuccess(AuthService.vokabular, user.UserName, userId, true);
 
+            message = string.Empty;
+
+            return true;
+        }
+
+        private bool UpdateVokabularUser(VokabularUser vokabularUser, MembershipUser membershipUser, out string message)
+        {
+            var memberShipProvider = YafContext.Current.Get<MembershipProvider>();
+
+            membershipUser.Email = vokabularUser.Email;
+            memberShipProvider.UpdateUser(membershipUser);
+  
+ 
+            // create empty profile just so they have one
+            var userProfile = YafUserProfile.GetProfile(vokabularUser.UserName);
+
+            userProfile.VokabularId = vokabularUser.Subject;
+            userProfile.RealName = $"{vokabularUser.FirstName} {vokabularUser.LastName}";
+            userProfile.Save();
+
+            // save the time zone...
+            var userId = UserMembershipHelper.GetUserIDFromProviderUserKey(membershipUser.ProviderUserKey);
+
+            var userData = new CombinedUserDataHelper(membershipUser);
+            var test = userData.DBRow;
+            LegacyDb.user_save(
+                userID: userId,
+                boardID: YafContext.Current.PageBoardID,
+                userName: vokabularUser.UserName,
+                displayName: vokabularUser.UserName,
+                email: vokabularUser.Email,
+                timeZone: userData.TimeZone,
+                languageFile: userData.LanguageFile,
+                culture: userData.CultureUser,
+                themeFile: userData.ThemeFile,
+                textEditor: userData.TextEditor,
+                useMobileTheme: userData.UseMobileTheme,
+                approved: null,
+                pmNotification: userData.PMNotification,
+                autoWatchTopics: userData.AutoWatchTopics,
+                dSTUser: userData.DSTUser,
+                hideUser: null,
+                notificationType: null);
+
+            // save avatar
+            //LegacyDb.user_saveavatar(userId, vokabularUser.ProfileImage, null, null);
             message = string.Empty;
 
             return true;
