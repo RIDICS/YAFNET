@@ -22,11 +22,7 @@
  * under the License.
  */
 
-using System.Net;
-using System.Threading;
-using YAF.Core.Services.Auth;
-using YAF.Types.Constants;
-using YAF.Utils;
+using YAF.Classes;
 
 namespace YAF.Pages
 {
@@ -74,7 +70,8 @@ namespace YAF.Pages
     /// </param>
     protected void Page_Load([NotNull] object sender, [NotNull] EventArgs e)
     {
-        Response.Redirect("https://localhost:44395/connect/endsession", false);
+        var uri = new Uri(new Uri(Config.OidcUrl + "/"), "connect/endsession").ToString();
+        Response.Redirect(uri, false);
         
         FormsAuthentication.SignOut();
 
