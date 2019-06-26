@@ -93,9 +93,8 @@ namespace YAF.Controls
                     // show login
                     var loginLink = new ThemeButton
                                         {
-                                            TextLocalizedTag = "LOGIN_CONNECT",
+                                            TextLocalizedTag = "LOGIN_VOKABULAR",
                                             TextLocalizedPage = "TOOLBAR",
-                                            ParamText0 = this.Get<YafBoardSettings>().Name,
                                             TitleLocalizedTag = "LOGIN",
                                             TitleLocalizedPage = "TOOLBAR",
                                            // CssClass = "yaflittlebutton"
@@ -152,6 +151,23 @@ namespace YAF.Controls
                     this.ConnectHolder.Controls.Add(endPoint);
 
                     isRegisterAllowed = true;
+                }
+                else if(Config.VokabularRegisterUrl.IsSet())
+                {
+                    var registerLink = new ThemeButton
+                    {
+                        TextLocalizedTag = "REGISTER_VOKABULAR",
+                        TextLocalizedPage = "TOOLBAR",
+                        TitleLocalizedTag = "REGISTER",
+                        TitleLocalizedPage = "TOOLBAR",
+                        NavigateUrl = Config.VokabularRegisterUrl
+                    };
+
+                    this.ConnectHolder.Controls.Add(new Literal { Text = ",&nbsp;" });
+
+                    this.ConnectHolder.Controls.Add(registerLink);
+
+                    this.ConnectHolder.Controls.Add(endPoint);
                 }
                 else
                 {

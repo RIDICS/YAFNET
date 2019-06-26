@@ -5578,6 +5578,7 @@ Navštivte fórum {forumname} na {forumlink}
   <Resource tag="LOGGED_IN_AS">Jste přihlášen jako: {0}</Resource>
   <Resource tag="LOGIN">Přihlášení</Resource>
   <Resource tag="LOGIN_CONNECT">Přihlášení do vašeho {0} účtu</Resource>
+  <Resource tag="LOGIN_VOKABULAR">Přihlaste se</Resource>
   <Resource tag="LOGIN_TITLE">Zobrazit přihlašovací stránku k fóru.</Resource>
   <Resource tag="LOGOUT">Odhlášení</Resource>
   <Resource tag="LOGOUT_QUESTION">Opravdu se chcete odhlásit?</Resource>
@@ -5595,6 +5596,7 @@ Navštivte fórum {forumname} na {forumlink}
   <Resource tag="NEWPM">({0} Nepřečtené)</Resource>
   <Resource tag="REGISTER">Registrace</Resource>
   <Resource tag="REGISTER_CONNECT">nebo se zaregistrovat novým účtem</Resource>
+  <Resource tag="REGISTER_VOKABULAR">nebo se zaregistrujte</Resource>
   <Resource tag="REGISTER_TITLE">Zobrazit registrační formulář.</Resource>
   <Resource tag="SEARCH">Hledání</Resource>
   <Resource tag="SEARCH_TITLE">Použít vyhledávání ve fóru</Resource>

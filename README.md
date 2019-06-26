@@ -66,6 +66,8 @@ Generate a Machine Key for your installation.
 
 3.  Set YAF.ConfigPassword used e.g. for upgrade.
 
+4.  Set Vokabular.RegisterUrl. Forum redirects user on this URL if he wants to register.
+
 ### STEP 4c. MODIFY &quot;mail.config&quot; FILE:
 
 1.  Modify the SMTP settings by entering your mail server information. If you SMTP server requires SSL, you must add:

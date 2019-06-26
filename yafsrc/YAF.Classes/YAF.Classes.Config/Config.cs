@@ -962,6 +962,18 @@ namespace YAF.Classes
             }
         }
 
+        /// <summary>
+        ///     Gets the Vokabular register URL.
+        /// </summary>
+        [NotNull]
+        public static string VokabularRegisterUrl
+        {
+            get
+            {
+                return GetConfigValueAsString("Vokabular.RegisterUrl") ?? string.Empty;
+            }
+        }
+
         #endregion
 
         #region Public Methods and Operators
