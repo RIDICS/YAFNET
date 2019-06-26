@@ -222,6 +222,9 @@ namespace YAF.Pages
                 return;
             }
 
+            Page.Response.Redirect(YafSingleSignOnUser.GenerateLoginUrl(AuthService.vokabular, true));
+
+
             this.Login1.MembershipProvider = Config.MembershipProvider;
 
             this.PageLinks.AddRoot();
