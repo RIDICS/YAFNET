@@ -26,12 +26,6 @@
         [DataMember(Name = "phone_number")]
         public string PhoneNumber { get; set; }
 
-        [DataMember(Name = "role")]
-        public string[] Role { get; set; }
-
-        [DataMember(Name = "permission")]
-        public string[] Permissions { get; set; }
-
         [DataMember(Name = "picture")]
         public string ProfileImage { get; set; }
         
