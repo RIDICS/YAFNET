@@ -440,11 +440,9 @@ namespace YAF
                     }
                     catch (Exception ex)
                     {
-                        YafContext.Current.Get<ILogger>()
-                            .Error(ex, "Error while trying to login or register the vokabular user");
+                        YafContext.Current.Get<ILogger>().Error(ex, "Error while trying to login or register the vokabular user");
 
                         message = ex.Message;
-                        
                     }
 
                     if (message.IsSet())

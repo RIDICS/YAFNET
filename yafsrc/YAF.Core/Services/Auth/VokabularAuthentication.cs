@@ -504,7 +504,6 @@ namespace YAF.Core.Services.Auth
                 .SendRegistrationNotificationToUser(user, pass, securityAnswer,
                     "NOTIFICATION_ON_VOKABULAR_REGISTER");
 
-            // save the time zone...
             var userId = UserMembershipHelper.GetUserIDFromProviderUserKey(user.ProviderUserKey);
 
             var autoWatchTopicsEnabled = YafContext.Current.Get<YafBoardSettings>().DefaultNotificationSetting
@@ -549,26 +548,22 @@ namespace YAF.Core.Services.Auth
             return true;
         }
 
-        private bool UpdateVokabularUser(VokabularUser vokabularUser, MembershipUser membershipUser, out string message)
+        private void UpdateVokabularUser(VokabularUser vokabularUser, MembershipUser membershipUser, out string message)
         {
             var memberShipProvider = YafContext.Current.Get<MembershipProvider>();
 
             membershipUser.Email = vokabularUser.Email;
             memberShipProvider.UpdateUser(membershipUser);
-  
- 
-            // create empty profile just so they have one
+            
             var userProfile = YafUserProfile.GetProfile(vokabularUser.UserName);
 
             userProfile.VokabularId = vokabularUser.Subject;
             userProfile.RealName = $"{vokabularUser.FirstName} {vokabularUser.LastName}";
             userProfile.Save();
-
-            // save the time zone...
+            
             var userId = UserMembershipHelper.GetUserIDFromProviderUserKey(membershipUser.ProviderUserKey);
 
             var userData = new CombinedUserDataHelper(membershipUser);
-            var test = userData.DBRow;
             LegacyDb.user_save(
                 userID: userId,
                 boardID: YafContext.Current.PageBoardID,
@@ -591,8 +586,6 @@ namespace YAF.Core.Services.Auth
             // save avatar
             //LegacyDb.user_saveavatar(userId, vokabularUser.ProfileImage, null, null);
             message = string.Empty;
-
-            return true;
         }
 
         private string CreateUrl(string url, NameValueCollection parameters)
