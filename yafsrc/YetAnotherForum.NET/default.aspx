@@ -22,7 +22,7 @@
         {
             var url = Config.OidcUrl + Config.OidcLoginCheckBasePath;
     %>
-            <script type="text/javascript" asp-append-version="true" src="<%= url %>" id="sso-script" data-login-url="/auth.aspx?auth=vokabular"></script>
+            <script type="text/javascript" src="<%= url %>" id="sso-script" data-login-url="<%= Page.ResolveUrl("~/auth.aspx?auth=vokabular") %>"></script>
     <%
             var cookie = new HttpCookie("AutoLoginAttempted", "true");
             cookie.Expires = DateTime.Now.AddMinutes(5);
