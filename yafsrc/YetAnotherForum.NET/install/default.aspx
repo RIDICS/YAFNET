@@ -404,7 +404,7 @@
                     <YAF:ModernTextBox ID="DefaultAuthorEmail" runat="server" 
                                        RenderWrapper="True" 
                                        LabelText="Default author email"
-                                       Text="info@ridics.cz"
+                                       Text="vokabular@ujc.cas.cz"
                                        Type="Email"
                                        ReadOnly="False"/>
                     <YAF:ModernTextBox ID="DefaultAuthorPassword" runat="server" 

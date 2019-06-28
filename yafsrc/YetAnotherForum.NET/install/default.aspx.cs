@@ -1026,6 +1026,12 @@ namespace YAF.Install
                     return false;
                 }
 
+                if (this.DefaultAuthorEmail.Text.Length == 0)
+                {
+                    this.ShowErrorMessage("You must enter the default author e-mail,");
+                    return false;
+                }
+
                 if (this.DefaultAuthorPassword.Text.Length == 0)
                 {
                     this.ShowErrorMessage("You must enter a password.");
@@ -1063,7 +1069,7 @@ namespace YAF.Install
                     .CreateUser(
                         this.DefaultAuthorName.Text,
                         this.DefaultAuthorPassword.Text,
-                        "ujcinfo@example.cz",
+                        this.DefaultAuthorEmail.Text,
                         this.DefaultAuthorSecurityQuestion.Text,
                         this.DefaultAuthorSecurityAnswer.Text,
                         true,

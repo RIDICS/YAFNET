@@ -8,7 +8,19 @@
 
 If you have any questions or would like to get in touch with the project, please see the contact information at the bottom of this document.
 
-**Attention!** This fork is supposed to use only with the [Vokabulář Webový](https://github.com/RIDICS/ITJakub) and the OpenID Connect Authentication Provider.
+**Attention!** This fork is supposed to use only with the [Vokabulář webový](https://github.com/RIDICS/ITJakub) and the OpenID Connect Authentication Provider.
+
+## Vokabulář integration
+
+* Forum contains theme "Vokabular" for Vokabulář webový which can be set in `Administration > Settings > Board Settings > Theme`.
+
+* User roles are managed internaly in the forum (Authorazation service roles and permissions are not used, only identity is used).
+
+* Administrator user is specified during installation and he is paired with Authorization service identity by username and e-mail.
+
+* The forum moderator can be specified on User role (Forum Moderator or Access Mask).
+
+* Default author (user) specifed during installation is used for automatically created messages from Vokabulář webový.
 
 ## Installation Requirements
 
