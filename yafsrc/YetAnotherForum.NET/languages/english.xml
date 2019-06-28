@@ -5597,7 +5597,7 @@ Visit {forumname} at {forumlink}
   <Resource tag="LOGGED_IN_AS">Logged in as: {0}</Resource>
   <Resource tag="LOGIN">Login</Resource>
   <Resource tag="LOGIN_CONNECT">Login to your {0} forum account</Resource>
-  <Resource tag="LOGIN_VOKABULAR">Login to your forum account</Resource>
+  <Resource tag="LOGIN_VOKABULAR">Login</Resource>
   <Resource tag="LOGIN_TITLE">Shows the Login Control to the Forum.</Resource>
   <Resource tag="LOGOUT">Logout</Resource>
   <Resource tag="LOGOUT_QUESTION">Are you sure you want to logout?</Resource>
@@ -5615,7 +5615,7 @@ Visit {forumname} at {forumlink}
   <Resource tag="NEWPM">({0} Unread)</Resource>
   <Resource tag="REGISTER">Register</Resource>
   <Resource tag="REGISTER_CONNECT">or Register a new forum account</Resource>
-  <Resource tag="REGISTER_VOKABULAR">or Register a new forum account</Resource>
+  <Resource tag="REGISTER_VOKABULAR">or Register</Resource>
   <Resource tag="REGISTER_TITLE">Shows the Registration Form.</Resource>
   <Resource tag="SEARCH">Search</Resource>
   <Resource tag="SEARCH_TITLE">Use the Forum Search.</Resource>
