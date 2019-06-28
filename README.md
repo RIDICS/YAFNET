@@ -87,6 +87,10 @@ to your app.config or appSettings.
 2.  The wizard will guide you through the Install Process. In Install Process, you are going to create an admin user. This admin user must have the same username and email as an admin user in authentication provider. Without the same username and email, you will not be able to log in the forum and manage it.
 
 
+## Logging
+
+All event logs are stored directly in the database (in the table yaf_EventLog).
+
 ## Community Support Forum
 
 See a real live YAF Forum by visiting the [YAF Community Support forum](http://forum.yetanotherforum.net). Also, get your questions answered by the YAF community.
