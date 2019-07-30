@@ -399,7 +399,7 @@
                     
                     <h3>Default author</h3>
                     <YAF:ModernTextBox ID="DefaultAuthorName" runat="server"
-                                       Text="RIDICS" RenderWrapper="True" 
+                                       Text="info" RenderWrapper="True" 
                                        LabelText="Default author name"/>
                     <YAF:ModernTextBox ID="DefaultAuthorEmail" runat="server" 
                                        RenderWrapper="True" 
