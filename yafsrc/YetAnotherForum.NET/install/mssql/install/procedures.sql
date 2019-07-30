@@ -7295,7 +7295,7 @@ begin
     if @OverrideDefaultTheme is null SET @OverrideDefaultTheme=0
 
     if @UserID is null or @UserID<1 begin
-
+		set @Flags = 0
         if @Approved<>0 set @Flags = @Flags | 2
         if @Email = '' set @Email = null
 

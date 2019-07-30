@@ -1008,13 +1008,13 @@ namespace YAF.Install
 
                 if (this.Password1.Text.Length == 0)
                 {
-                    this.ShowErrorMessage("You must enter a password.");
+                    this.ShowErrorMessage("You must enter a password for the admin.");
                     return false;
                 }
 
                 if (this.Password1.Text != this.Password2.Text)
                 {
-                    this.ShowErrorMessage("The passwords must match.");
+                    this.ShowErrorMessage("The admin passwords must match.");
                     return false;
                 }
 
@@ -1034,13 +1034,13 @@ namespace YAF.Install
 
                 if (this.DefaultAuthorPassword.Text.Length == 0)
                 {
-                    this.ShowErrorMessage("You must enter a password.");
+                    this.ShowErrorMessage("You must enter a password for the default author.");
                     return false;
                 }
 
                 if (this.DefaultAuthorPassword.Text != this.DefaultAuthorPassword2.Text)
                 {
-                    this.ShowErrorMessage("The passwords must match.");
+                    this.ShowErrorMessage("The default author passwords musts match.");
                     return false;
                 }
 
@@ -1137,6 +1137,27 @@ namespace YAF.Install
                     user.UserName,
                     user.Email,
                     user.ProviderUserKey);
+
+                //save default author
+                var defaultAuthorId = UserMembershipHelper.GetUserIDFromProviderUserKey(defaultAuthor.ProviderUserKey);
+                LegacyDb.user_save(
+                    userID: defaultAuthorId,
+                    boardID: YafContext.Current.PageBoardID,
+                    userName: defaultAuthor.UserName,
+                    displayName: defaultAuthor.UserName,
+                    email: defaultAuthor.Email,
+                    timeZone: TimeZoneInfo.Local.Id,
+                    languageFile: null,
+                    culture: null,
+                    themeFile: null,
+                    textEditor: null,
+                    useMobileTheme: null,
+                    approved: true,
+                    pmNotification: YafContext.Current.Get<YafBoardSettings>().DefaultNotificationSetting,
+                    autoWatchTopics: false,
+                    dSTUser: TimeZoneInfo.Local.SupportsDaylightSavingTime,
+                    hideUser: null,
+                    notificationType: null);
             }
             catch (Exception x)
             {
