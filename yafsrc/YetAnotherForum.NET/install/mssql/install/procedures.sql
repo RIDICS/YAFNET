@@ -1065,7 +1065,7 @@ begin
     INSERT INTO [{databaseOwner}].[{objectQualifier}UserGroup](UserID,GroupID) VALUES(@UserIDAdmin,@GroupIDAdmin)
     INSERT INTO [{databaseOwner}].[{objectQualifier}UserGroup](UserID,GroupID) VALUES(@UserIDGuest,@GroupIDGuest)
 
-    -- Category
+    /*-- Category
     INSERT INTO [{databaseOwner}].[{objectQualifier}Category](BoardID,Name,SortOrder) VALUES(@BoardID,'Test Category',1)
     set @CategoryID = SCOPE_IDENTITY()
 
@@ -1077,7 +1077,7 @@ begin
     -- ForumAccess
     INSERT INTO [{databaseOwner}].[{objectQualifier}ForumAccess](GroupID,ForumID,AccessMaskID) VALUES(@GroupIDAdmin,@ForumID,@AccessMaskIDAdmin)
     INSERT INTO [{databaseOwner}].[{objectQualifier}ForumAccess](GroupID,ForumID,AccessMaskID) VALUES(@GroupIDGuest,@ForumID,@AccessMaskIDReadOnly)
-    INSERT INTO [{databaseOwner}].[{objectQualifier}ForumAccess](GroupID,ForumID,AccessMaskID) VALUES(@GroupIDMember,@ForumID,@AccessMaskIDMember)
+    INSERT INTO [{databaseOwner}].[{objectQualifier}ForumAccess](GroupID,ForumID,AccessMaskID) VALUES(@GroupIDMember,@ForumID,@AccessMaskIDMember)*/
 
     SELECT @BoardID;
 end
