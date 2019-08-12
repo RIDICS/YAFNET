@@ -194,6 +194,9 @@ namespace YAF.Core.Services
             // vzrus: uncomment it to not keep install/upgrade objects in db for a place and better security
             // YAF.Classes.Data.DB.system_deleteinstallobjects();
             this.ImportStatics();
+
+            this.ExecuteScript("custom/vokabular-integration.sql", true);
+            this.ExecuteScript("custom/default-board-and-categories.sql", true);
         }
 
         /// <summary>

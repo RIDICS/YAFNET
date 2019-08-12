@@ -1554,6 +1554,8 @@
     <Content Include="Images\Medals\medal_silver_2_small.png" />
     <Content Include="Images\Medals\medal_small.png" />
     <Content Include="Images\YafLogo.png" />
+    <Content Include="install\custom\vokabular-integration.sql" />
+    <Content Include="install\custom\default-board-and-categories.sql" />
     <Content Include="install\custom\custom.sql" />
     <Content Include="install\custom\dnn.sql" />
     <Content Include="install\mssql\install\azure\InstallCommon.sql" />
