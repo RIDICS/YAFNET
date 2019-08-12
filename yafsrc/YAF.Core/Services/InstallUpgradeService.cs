@@ -169,7 +169,7 @@ namespace YAF.Core.Services
             string forumName, string timeZone, string culture, string forumEmail, string forumBaseUrlMask, string adminUserName, string adminEmail, object adminProviderUserKey)
         {
             var cult = StaticDataHelper.Cultures();
-            var langFile = "english.xml";
+            var langFile = "czech.xml";
 
             foreach (DataRow drow in cult.Rows.Cast<DataRow>().Where(drow => drow["CultureTag"].ToString() == culture))
             {
