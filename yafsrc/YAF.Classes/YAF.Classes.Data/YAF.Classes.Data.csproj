@@ -114,6 +114,7 @@
     <Compile Include="mssql\LegacyDb.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="mssql\CreateDatabaseConnectionManager.cs" />
     <Compile Include="mssql\MsSqlDbConnectionManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

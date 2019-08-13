@@ -211,6 +211,17 @@ namespace YAF.Classes
         }
 
         /// <summary>
+        ///     Gets ConnectionString.
+        /// </summary>
+        public static string CreateDatabaseConnectionString
+        {
+            get
+            {
+                return CreateDatabaseConnectionStringSettings != null ? CreateDatabaseConnectionStringSettings.ConnectionString : null;
+            }
+        }
+
+        /// <summary>
         ///     Gets ConnectionStringName.
         /// </summary>
         [NotNull]
@@ -219,6 +230,18 @@ namespace YAF.Classes
             get
             {
                 return GetConfigValueAsString("YAF.ConnectionStringName") ?? "yafnet";
+            }
+        }
+
+        /// <summary>
+        ///     Gets ConnectionStringName.
+        /// </summary>
+        [NotNull]
+        public static string CreateDatabaseConnectionStringName
+        {
+            get
+            {
+                return GetConfigValueAsString("YAF.CreateDatabaseConnectionStringName") ?? "createDatabase";
             }
         }
 
@@ -233,6 +256,20 @@ namespace YAF.Classes
             get
             {
                 return ConfigurationManager.ConnectionStrings[ConnectionStringName];
+            }
+        }
+
+        /// <summary>
+        /// Gets the connection string settings.
+        /// </summary>
+        /// <value>
+        /// The connection string settings.
+        /// </value>
+        public static ConnectionStringSettings CreateDatabaseConnectionStringSettings
+        {
+            get
+            {
+                return ConfigurationManager.ConnectionStrings[CreateDatabaseConnectionStringName];
             }
         }
 

@@ -1,27 +1,3 @@
-/* Yet Another Forum.NET
- * Copyright (C) 2003-2005 Bjørnar Henden
- * Copyright (C) 2006-2013 Jaben Cargman
-* Copyright (C) 2014-2017 Ingo Herbote
- * http://www.yetanotherforum.net/
- * 
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
-
- * http://www.apache.org/licenses/LICENSE-2.0
-
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
-
 namespace YAF.Classes.Data
 {
     #region Using
@@ -38,7 +14,7 @@ namespace YAF.Classes.Data
     /// <summary>
     /// Provides open/close management for DB Connections
     /// </summary>
-    public class MsSqlDbConnectionManager : IDbConnectionManager
+    public class CreateDatabaseConnectionManager : IDbConnectionManager
     {
         #region Constants and Fields
 
@@ -54,7 +30,7 @@ namespace YAF.Classes.Data
         /// <summary>
         ///   Initializes a new instance of the <see cref = "MsSqlDbConnectionManager" /> class.
         /// </summary>
-        public MsSqlDbConnectionManager()
+        public CreateDatabaseConnectionManager()
         {
             // just initalize it (not open)
             this.InitConnection();
@@ -78,15 +54,7 @@ namespace YAF.Classes.Data
         /// </summary>
         public virtual string ConnectionString
         {
-            get { return Config.ConnectionString; }
-        }
-
-        /// <summary>
-        ///   Gets CreateDatabaseConnectionString.
-        /// </summary>
-        public virtual string CreateDatabaseConnectionString
-        {
-            get { return Config.CreateDatabaseConnectionStringName; }
+            get { return Config.CreateDatabaseConnectionString; }
         }
 
         /// <summary>
@@ -160,9 +128,9 @@ namespace YAF.Classes.Data
         {
             if (this._connection == null)
             {
+                var test = this.ConnectionString;
                 // create the connection
                 this._connection = new SqlConnection();
-                this._connection.InfoMessage += this.Connection_InfoMessage;
                 this._connection.ConnectionString = this.ConnectionString;
             }
             else if (this._connection.State != ConnectionState.Open)

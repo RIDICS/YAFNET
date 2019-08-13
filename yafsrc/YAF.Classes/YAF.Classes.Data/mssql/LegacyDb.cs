@@ -3245,10 +3245,26 @@ namespace YAF.Classes.Data
 
             try
             {
-                using (var connMan = new MsSqlDbConnectionManager())
+                using (var connectionManager = new CreateDatabaseConnectionManager())
+                {
+                    var commandText = @"If(db_id(N'VokabularForumDB') IS NULL)
+                    BEGIN
+                    CREATE DATABASE [VokabularForumDB]
+                    END;";
+
+                    using (var cmd = new SqlCommand(commandText, connectionManager.OpenDBConnection))
+                    {
+                        cmd.Connection = connectionManager.DBConnection;
+                        cmd.CommandTimeout = int.Parse(Config.SqlCommandTimeout);
+                        cmd.ExecuteNonQuery();
+                    }
+                    
+                }
+
+                using (var connectionManager = new MsSqlDbConnectionManager())
                 {
                     // just attempt to open the connection to test if a DB is available.
-                    SqlConnection getConn = connMan.OpenDBConnection;
+                    SqlConnection getConn = connectionManager.OpenDBConnection;
                 }
             }
             catch (SqlException ex)
