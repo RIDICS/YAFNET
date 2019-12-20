@@ -233,7 +233,7 @@ namespace YAF.Core.Services.Auth
             if (token.Subject == vokabularUser.Subject
                 && token.Audiences.Contains(Config.OidcClientId)
                 && token.Audiences.Count() == 1
-                && token.Issuer == Config.OidcUrl
+                && token.Issuer == Config.OidcUrl.ToLower()
                 && token.ValidFrom < DateTime.UtcNow
                 && token.ValidTo > DateTime.UtcNow
                 && yafUser.VokabularId == token.Subject)
